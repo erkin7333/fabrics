@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="{% url 'fabrics_main:deliverypage' %}">Доставка</a></li>
+                    </ol>
+                </div>
+            </div>    <!-- delivery -->
+            <div class="delivery">
+                <div class="container">
+                    <div class="delivery-content m-b-60 m-t-30">
+                        <div class="text-content">
+                            <p><strong><span style="font-size: 13px;"><span style="font-family: Helvetica;">Доставка по Ташкенту 15.000 сум.</span></span></strong><span
+                                    style="font-size: 13px;"><span
+                                    style="font-family: Helvetica;"><strong> </strong></span></span></p>
+                            <p>&nbsp;</p>
+                            <p><span style="font-size: 13px;"><span style="font-family: Helvetica;"><strong>Бесплатная доставка </strong>на заказ от 200.000 сум</span></span>
+                            </p>
+                            <p>&nbsp;</p>
+                            <p><span style="font-size: 13px;"><span style="font-family: Helvetica;"><strong>Доставим ваш заказ в Ташкенте день в день,</strong>&nbsp;если заказ оформляется до 12 часов. Оплата при получении любым удобным вам способом.</span></span><span
+                                    style="font-size: 9pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+                            <p><span style="font-size: 13px;"><span style="font-family: Helvetica;">&nbsp;</span></span><span
+                                    style="font-size: 9pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+                            <p><span style="font-size: 13px;"><span style="font-family: Helvetica;">По регионам отправляем через курьерскую службу <strong>до центра города от 20.000 сум</strong>, только&nbsp;после онлайн-оплаты через систему Payme или Click.</span></span>
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+        </div><!-- ./MAIN-CONTENT -->
+
+
+    </main><!-- ./MAIN -->
+{% endblock %}

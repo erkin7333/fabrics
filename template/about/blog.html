@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="{% url 'fabrics_main:blogpage' %}">Блог</a></li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <!-- partners -->
+            <div class="partners">
+                <div class="container">
+                    <div class="entry-content m-v-30"><h1>Блог</h1></div>
+
+                    <div class="partners-items figure-m-v-30 row m-b-60">
+
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/1187/article-medium.jpg' %}"
+                                                              alt="АЮРВЕДИЧЕСКАЯ КОСМЕТИКА: ЦЕЛЕБНЫЕ СРЕДСТВА ИЗ ПРИРОДНОЙ СОКРОВИЩНИЦЫ"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>АЮРВЕДИЧЕСКАЯ КОСМЕТИКА: ЦЕЛЕБНЫЕ СРЕДСТВА ИЗ ПРИРОДНОЙ СОКРОВИЩНИЦЫ</h4>
+                                <p>В последнее время мы все чаще слышим о чудодейственных свойствах аюрведической
+                                    косметики, но не знаем, что это такое, и как она работает. На этой странице мы
+                                    расскажем о всех нюансах использования этой замечательной косметики из Индии, как
+                                    правильно подойти к ее выбору, и какими средствами можно воспользоваться из ее
+                                    богатого арсенала.&nbsp;</p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/1167/article-medium.jpg' %}"
+                                                            alt="Зачем нужна База под макияж"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Зачем нужна База под макияж</h4>
+                                <p>Профессиональные визажисты уже давно используют в своей работе базы под макияж, чтобы
+                                    косметические средства ложились ровнее, а мэйкап был более стойким&nbsp;</p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src={% static 'images/articles/979/article-medium.jpg' %}
+                                                           alt=""></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Применение витамина Е для кожи лица</h4>
+                                <p>Практически каждая женщина очень болезненно переносит увядание своей молодости. И
+                                    практически каждая ищет панацею от морщинок у глаз и дряблости щек. Помочь в этой
+                                    непростой борьбе со временем может витамин Е.</p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/978/article-medium.jpg' %}"
+                                                          alt="Признание достижений"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Признание достижений</h4>
+                                <p>&nbsp;В праздновании 70-летия лидерства и развития Hemani Group проходившем в Дубае
+                                    нашу фирму выбрали лучшим дистрибьютором в Центральной Азии</p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/969/article-medium.jpg' %}"
+                                                          alt="Что такое масляные духи?"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Что такое масляные духи?</h4>
+                                <p>Многие из нас наверняка задавались такими вопросами, как: Что такое масляные духи? Из
+                                    чего состоят масляные духи? Как делают масляные духи?</p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/958/article-medium.jpg' %}"
+                                                         alt="Муцин улитки в косметологии"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Муцин улитки в косметологии</h4>
+                                <p><span style="font-size: 14px;">&nbsp;Улиточный муцин был открыт относительно недавно, в восьмидесятых годах прошлого столетия. Сейчас косметические средства и процедуры на его основе уже завоевали широкую популярность на рынке косметики. Так что же такое муцин улитки? И как муцин улитки используется в косметологии?</span>
+                                </p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/957/article-medium.jpg' %}"
+                                                          alt="Как пользоваться скрабом для тела"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Как пользоваться скрабом для тела</h4>
+                                <p><span style="font-size: 14px;"><span style="font-family: Arial;">Вроде бы очень простая штука, но вызывает массу вопросов. Как часто применять? Какие частицы должны быть в составе? Нужны ли отдельные скрабы для рук, ног и всего остального? Отвечаем.</span></span>
+                                </p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/956/article-medium.jpg' %}"
+                                                         alt="Масло карите (ши)"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Масло карите (ши)</h4>
+                                <p><span style="font-size: 14px;"><span style="font-family: Arial;"><span
+                                        style="color: rgba(0, 0, 0, 0.8); white-space: pre-wrap;">Это масло из косточек плодов дерева с латинским названием Vittellaria paradoxa. В Мали оно называется ши, в Сенегале &mdash; карите. Удивительное дерево растет только в естественных условиях Западной Африки. Многочисленные попытки открыть питомники ши не увенчались успехом.</span></span></span>
+                                </p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="img-content col-md-4 flex-center p-h-15">
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> <img src="{% static 'images/articles/955/article-medium.jpg' %}"
+                                                         alt="Парфюмированные кремы: ароматерапия и уход в одном флаконе!"></a>
+                            </div>
+                            <div class="desc-content col-md-8 p-h-15">
+                                <h4>Парфюмированные кремы: ароматерапия и уход в одном флаконе!</h4>
+                                <p><strong>Кремы</strong><strong> как дополнение: наносим аромат слоями</strong></p>
+                                <p>Настоящие поклонницы того или иного аромата часто мечтают не просто ощущать любимый
+                                    парфюм на коже, но и окутаться в аромат целиком, как в шаль. Использование
+                                    парфюмированного крема для тела вместе с соответствующим парфюмом помогает создать
+                                    &laquo;слоистость&raquo; аромата на коже.</p>
+                                <a href="{% url 'fabrics_main:blogdetail' %}"> Читать...</a>
+                            </div>
+                        </figure>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+        </div><!-- ./MAIN-CONTENT -->
+
+    </main><!-- ./MAIN -->
+{% endblock %}

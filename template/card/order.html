@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="#">Оформить заказ</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- order -->
+            <div class="cabinet">
+                <div class="container">
+                    <div class="entry-content text-uppercase"><h2 class="h-clear m-v-10">Оформить заказ</h2></div>
+                    <div class="cabinet-user-content">
+                        <div class="user-control col-md-12 p-b-15">
+                            <font color="green" id="order_success"></font>
+
+                            <form id="orderproducts" action="https://www.banafa.uz/basket/order.php" method="post">
+                                <div class="user-settings col-md-6 m-v-10" id="user-settings">
+                                    <div class="col-md-12 input-content"><label>Ф.И.О.*</label><input type="text"
+                                                                                                      name="name"
+                                                                                                      value=""
+                                                                                                      class="inp form-control"
+                                                                                                      placeholder="Ф.И.О.">
+                                    </div>
+                                    <div class="col-md-12 input-content"><label>Телефон*</label><input type="text"
+                                                                                                       name="phone"
+                                                                                                       value=""
+                                                                                                       class="inp phone form-control"
+                                                                                                       placeholder="Телефон">
+                                    </div>
+                                    <div class="col-md-12 input-content"><label>E-mail<br> <small
+                                            style="font-weight: 400">не обязательно</small></label><input type="text"
+                                                                                                          name="email"
+                                                                                                          value=""
+                                                                                                          class="form-control"
+                                                                                                          placeholder="E-mail">
+                                    </div>
+                                    <div class="col-md-12 input-content"><label>Адрес*</label><input type="text"
+                                                                                                     name="address"
+                                                                                                     value=""
+                                                                                                     class="inp form-control"
+                                                                                                     placeholder="Адрес">
+                                    </div>
+                                    <br/><br/>
+                                </div>
+
+                                <div class="user-settings col-md-6 m-v-10" id="your_order">
+                                    <div class="__total totalcost-content color-primary m-v-5 p-v-15 p-h-10"
+                                         style="border: 1px solid #aeaeae;display: inline-block;">
+                                        <p class="col-xs-6">Товаров (<span class="bakset-cnt">0</span>):</p>
+                                        <p class="col-xs-6 text-center"><span class="totalprice-products">0</span> сум
+                                        </p>
+                                        <p class="col-xs-6">Доставка:</p>
+                                        <p class="col-xs-6 text-center"><span class="delivery">0</span> сум</p>
+                                        <div class="itog ">
+                                            <h5 class="col-xs-6">Итого к оплате</h5>
+                                            <h5 class="col-xs-6 text-center"><span class="price amount-due">0</span> сум
+                                            </h5>
+                                            <span class="totalPayment"></span>
+                                        </div>
+                                        <span class="col-xs-12 btn-def inline-block">
+                                    <button id="order" class="btn-res" alt="Order" title="Оформить заказ" type="submit"
+                                            style="width: 100%; z-index:1;">Оформить заказ</button>
+                                </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 text-left-sm">
+                                    <label class="col-md-12">Выберите способ оплаты: </label>
+                                    <div style="color:red;" id="error_payment"></div>
+                                    <div class="paymethod col-md-6">
+                                        <div class="pay col-md-3">
+                                            <label><input type="radio" class="payment" name="payment" value="cash"><img
+                                                    src="{% static 'banafa-ru/img/icons/wallet-filled-money-tool.svg' %}"
+                                                    height="30px">Наличные</label>
+                                        </div>
+                                        <div class="pay col-md-3">
+                                            <label><input type="radio" class="payment" name="payment"
+                                                          value="terminal"><img
+                                                    src="{% static 'banafa-ru/img/icons/calculator.svg' %}" height="30px">Терминал</label>
+                                        </div>
+                                        <div class="pay col-md-3">
+                                            <label><input type="radio" class="payment" name="payment" value="click"><img
+                                                    src="{% static 'banafa-ru/img/icons/clickuz.png' %}" height="30px"></label>
+                                        </div>
+                                        <div class="pay col-md-3">
+                                            <label><input type="radio" class="payment" name="payment"
+                                                          value="payme"><font color="red"></font><img
+                                                    src="{% static 'banafa-ru/img/icons/payme.png' %}" height="30px"></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 input-content text-left-sm delivery_method">
+                                    <label>Выберите способ доставки: </label>
+                                    <div style="color:red;" id="error_delivery"></div>
+                                    <div class="paymethod col-md-12">
+                                        <label class="m-v-5 m-t-15 free_box">
+                                            <input type="radio" id="free" name="delivery" value="free"
+                                                   data-delivery="0"> Бесплатная доставка в течении 24-х часов – <b>бесплатно</b>
+                                            при заказе от 200 000 сум.
+                                        </label>
+                                        <label class="m-v-5">
+                                            <input type="radio" id="regular" name="delivery" value="regular"
+                                                   data-delivery="15000">Обычная доставка в течении 24-х часов – <b>15
+                                            000</b> сум при заказе меньше 200 000 сум.
+                                        </label>
+                                        <label class="m-v-5">
+                                            <input type="radio" id="express" name="delivery" value="express"
+                                                   data-delivery="20000"> Отправка в областные центры через курьерскую
+                                            службу только после оплаты через Payme или Click - <b>20 000</b> сум за 1кг.
+                                        </label>
+
+                                        <label class="m-v-5"><input type="radio" id="pickup" name="delivery"
+                                                                    value="pickup" data-delivery="0">Самовывоз из
+                                            магазина "Banafa Cosmetics" метро Тинчлик</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-payments"></div>
+
+                        </div>
+                    </div>
+
+                    <br><br><br>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- ./MAIN-CONTENT -->
+        <style>
+            input.form-control.error {
+                border-color: #f10000;
+            }
+        </style>
+
+    </main><!-- ./MAIN -->
+{% endblock %}
+

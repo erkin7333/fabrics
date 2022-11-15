@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="{% url 'fabrics_main:how_to_order' %}">Как оформить заказ?</a></li>
+                    </ol>
+                </div>
+            </div>    <!-- about -->
+            <div class="about">
+                <div class="container">
+                    <div class="about-content m-b-60">
+                        <div class="entry-content text-center color-1 m-v-30"><h1>Как оформить заказ?</h1></div>
+                        <div class="text-content m-v-30">
+                            <p><strong>1. Выберите нужную вам категорию в верхнем меню. Вы можете выбирать бренды или же
+                                категории товаров</strong></p>
+                            <div><strong><img src="{% static 'images/shared/0.jpg' %}" class="box-100" alt=""/></strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div>
+                                <div><strong>2. Найдите нужный товар, нажмите на кнопку &laquo;Добавить в
+                                    корзину&raquo;</strong></div>
+                            </div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div><strong><img src="{% static 'images/shared/1.jpg' %}" class="box-100" alt=""/></strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div>
+                                <div><strong>3. Когда вы добавите в корзину все необходимые товары, зайдите в корзину в
+                                    верхнем углу сайта.</strong></div>
+                            </div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div><strong><img src="{% static 'images/shared/3.jpg' %}" class="box-100" alt=""/></strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div>
+                                <div><strong>4. В корзине можете редактировать количество товаров. Нажмите кнопку
+                                    &laquo;Перейти к оформлению&raquo;</strong></div>
+                            </div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div><strong><img src="{% static 'images/shared/4.jpg' %}" class="box-100" alt=""/></strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div>
+                                <div><strong>5. Заполните поля: Имя, номер телефона для связи, электронную почту и
+                                    адрес, куда нужно доставить Ваш заказ.</strong></div>
+                                <div>
+                                    <div><strong>&nbsp;</strong></div>
+                                    <div><strong>6. Выберите способ оплаты и доставки.</strong></div>
+                                    <div><strong>&nbsp;</strong></div>
+                                    <div><strong>7. Нажмите &laquo;Оформить заказ&raquo;</strong></div>
+                                </div>
+                            </div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div><strong><img src="{% static 'images/shared/5.jpg' %}" class="box-100" alt=""/></strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                            <div>
+                                <div><strong>8. Вам придет уведомление об оформлении заказа. Письмо также может попасть
+                                    в спам.</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+        </div><!-- ./MAIN-CONTENT -->
+
+    </main><!-- ./MAIN -->
+{% endblock %}

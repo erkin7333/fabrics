@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="{% url 'user_account:register' %}">Регистрация</a></li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <!-- partners -->
+            <div class="partners">
+                <div class="container">
+                    <div class="entry-modal modal fade animated" id="form-entry" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="btn" data-dismiss="modal"><span
+                                        class="icon-bar"></span><span
+                                        class="icon-bar"></span></button>
+                                <div class="modal-body">
+                                    <!-- success-info -->
+                                    <div class="col-md-12 success-info m-b-20 text-center">
+                                        <font color="red">
+                                            <div class="info-suc" id=""></div>
+                                        </font>
+                                        <font color="green">
+                                            <div class="info-err" id=""></div>
+                                        </font>
+                                    </div>
+                                    <div class="form-content col-md-12">
+                                        <form method="POST" enctype="multipart/form-data" id="sign-in-form">
+                                            <h3 class="text-center">Войти</h3>
+                                            <div class="col-md-12">
+                                                <label>Логин</label>
+                                                <input class="form-control" type="text" name="sign_in[login]" value="">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-xs-6 m-v-5">Пароль</label>
+                                                <div class="col-xs-6 m-v-5 text-right"><p><b><a href=""
+                                                                                                title="Забыли пароль?"
+                                                                                                underline>Забыли
+                                                    пароль?</a></b></p></div>
+                                                <input class="form-control" type="password" name="sign_in[password]"
+                                                       value="">
+                                            </div>
+
+                                            <br>
+                                            <div class="form-footer">
+                                                <button type="button" class="btn-def color-white btn-res"><b>Вход</b>
+                                                </button>
+                                                <div class="col-md-12 m-v-5">
+                                                    <div class="linebutton"><a href="{% url 'user_account:register' %}"
+                                                                               title="Регистрация"
+                                                                               underline>Регистрация</a></div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+        </div><!-- ./MAIN-CONTENT -->
+
+    </main><!-- ./MAIN -->
+{% endblock %}

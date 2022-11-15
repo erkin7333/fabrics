@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+
+
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="#">Корзина</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- about -->
+            <div class="basket">
+                <div class="container">
+                    <div class="basket-content">
+                        <div class="entry-content text-center color-1"><h1 align="left">Корзина</h1></div>
+                    </div>
+                    <!-- Корзина пуста -->
+                    <div class="basket-empty text-center" style="display: none;"><h2 class="color-2">В корзине
+                        пусто</h2>
+                        <p><i class="fa fa-2x color-1 fa-shopping-cart"></i></p></div>
+
+                    <div class="basket-delete-info text-center" style="display: none;"><h2 class="color-2">В вашей
+                        корзине больше нет товара</h2>
+                        <p><i class="fa fa-2x color-1 fa-shopping-cart"></i></p></div>
+
+                    <div class="basket-items clearfix m-v-30 row figure-m-v-5"></div>
+
+                    <div class="recalculate-form m-v-15">
+                        <div class="row">
+                            <div class="col-md-6 p-h-15 flex"><label class="m-v-5 text-center"><a data-action="clear"
+                                                                                                  class="clear-cart btn-def inline-block"><b>Очистить
+                                корзину</b></a></label></div>
+                            <div class="col-md-6 p-h-15 flex" style="justify-content: flex-end;"><h4>Итого к оплате</h4>
+                                <h4 class="p-l-15"><span class="price totalprice-products">0</span> сум</h4></div>
+                        </div>
+                    </div>
+
+                    <div class="orders-details m-v-15 cleafix">
+                        <hr style="border-color: rgb(154, 71, 129);">
+                        <div class="col-md-12 col-xs-12 m-v-5">
+                            <div class="shop-cart-total text-right-md">
+                                <a href="{% url 'fabrics_main:order' %}" class="btn-def btn-res reverse inline-block">Перейти к
+                                    оформлению</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </main>
+{% endblock %}

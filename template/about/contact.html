@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden bg-texture-1">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Bosh sahifa</a></li>
+                        <li class="active"><a href="{% url 'fabrics_main:contactpage' %}">Kontaktlar</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- contacts -->
+            <div class="contacts">
+                <div class="container">
+                    <div class="entry-content m-v-60">
+                        <div class="contacts-info row">
+
+                            <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                                <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="phone-call"
+                                                                                                src="{% static 'banafa-uz/img/icons/phone-call-2.svg' %}"
+                                                                                                alt="+998 (95) 177-00-05">
+                                </div>
+                                <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                    <h3>Aloqa telefon raqami</h3>
+                                    <p>+998 (95) 177-00-05</p>
+                                    <p> +998 (95) 177-65-15</p></div>
+                            </div>
+                            <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                                <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="map-marker"
+                                                                                                src="{% static 'banafa-uz/img/icons/map-marker.svg' %}"
+                                                                                                alt="Toshkent shahri, Beruniy ko&#039;chasi, 2-uy +998951770005">
+                                </div>
+                                <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                    <h3>Manzil</h3>
+                                    <p>Toshkent shahri, Beruniy ko&#039;chasi, 2-uy +998951770005</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-md-offset-1 p-h-15 m-v-30 clearfix">
+                                <div class="icon-content col-md-3 col-xs-3 text-center-sm"><img class="envelope"
+                                                                                                src="{% static 'banafa-uz/img/icons/envelope.svg' %}"
+                                                                                                alt="info@banafa.uz">
+                                </div>
+                                <div class="desc-content col-md-9 col-xs-9 text-left-sm">
+                                    <h3>E-mail</h3>
+                                    <p>info@banafa.uz</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- map -->
+            <div class="map clearfix">
+                <div class="map-content col-xs-12" data-aos="fade">
+                    <div id="map-canvas" class="map-container col-md-12 m-t-30"></div>
+                </div>
+            </div>
+
+        </div><!-- ./MAIN-CONTENT -->
+
+
+    </main><!-- ./MAIN -->
+{% endblock %}

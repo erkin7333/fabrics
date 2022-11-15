@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden m-b-30">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="products-article table-content">
+                <div class="container">
+                    <div class="row">
+
+
+                        <div class="carousel-article col-md-4 p-h-15">
+                            <div class="carousel carousel-main">
+
+                                <div class="carousel-cell " data-color="">
+                                    <div class="img-content">
+                                        <a href="{% static 'images/gallery/big-4e573e.jpg' %}" data-fancybox>
+                                            <img src="{% static 'images/gallery/medium-4e573e.jpg' %}"
+                                                 data-zoom-image="{% static 'images/gallery/big-4e573e.jpg' %}">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel carousel-nav">
+
+                                <div data-id="" class="carousel-cell ">
+                                    <div class="img-content"><img src="{% static 'images/gallery/medium-4e573e.jpg' %}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="products-article-content col-md-5 p-h-15 parag-m-v-15">
+                            <h1>Тональный крем DD Cream natural 01 </h1>
+                            <p><small>Производитель: <b>
+
+                                <a href="{% static 'brands/brendy/arcaya/index.html' %}">Arcaya</a>
+                            </b></small><br/>
+                                <small>Артикул: <b>12512</b></small></p>
+                            <p><strong>&nbsp;<span
+                                    style="color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">DD Cream Natural 01</span></strong>
+                            </p>
+
+                            <div class="block_price">
+
+                                <p><span class="discountprice">Цена: <b>297 000 <small>сум</small></b></span></p>
+
+                            </div>
+
+
+                            <div class="products-cnt">
+                                <h3 class="color-gray-2">Количество</h3>
+                                <div class="products-btns">
+                                    <div class="products-cnt-form" data-counter="1">
+                                        <input class="cnt-input" name="bulk" value="1" data-counter-input>
+                                        <button type="button" class="cnt-btn minus" data-counter-btn>-</button>
+                                        <button type="button" class="cnt-btn plus" data-counter-btn>+</button>
+                                    </div>
+                                    <div class="col-md-6 p-h-15 m-v-30 row">
+																		<span class="btn btn-def reverse">
+										<a id="1854" class="add_basket" product="1854"
+                                           style="margin: auto; padding:7px 16px;">Добавить в корзину</a>
+									</span>
+                                    </div>
+                                    <div class="float-left-md p-h-15 m-v-30">
+                                        <form class="" action="#" method="post">
+                                            <input type="hidden" name="id" value="1854">
+                                            <input type="hidden" name="izbr" value="1"/>
+                                            <span class="btn btn-opacity reverse flex-center inline-block">
+									<i class="ls-like"></i>
+									<button type="submit" style="border: none;background: none; ">В избранное</button>
+								</span>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prod_available col-md-3 p-t-15 parag-m-v-10">
+                            <p>Товар в наличии <i style="color:green;" class="fa fa-check" aria-hidden="true"></i></p>
+                            <p>Доставка по Узбекистану <a href="../../../delivery.html"<i style="color:#9a4781;"
+                                                                                          class="fa fa-question-circle"
+                                                                                          aria-hidden="true"></i></a>
+                            </p>
+                            <p>Способы оплаты</p>
+                            <p>
+                                <img src="{% static 'banafa-ru/img/icons/wallet-filled-money-tool.svg' %}"
+                                     height="25px">
+                                <img src="{% static 'banafa-ru/img/icons/calculator.svg' %}" height="25px">
+                                <img src="{% static 'banafa-ru/img/icons/clickuz.png' %}" height="25px">
+                                <img src="{% static 'banafa-ru/img/icons/payme.png' %}" height="25px">
+
+                            </p></div>
+
+                        <div class="products-tabs col-md-12">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#products-tab-1" data-toggle="tab">Описание</a></li>
+                                <li><a href="#products-tab-2" data-toggle="tab">Применение</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade table-content in active" id="products-tab-1">
+                                    <p>&nbsp;<span
+                                            style="background-color: rgb(255, 255, 255); color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px;">Увлажнение и anti-age уход с тональным эффектом.&nbsp;</span>
+                                    </p>
+                                    <div style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                                        DD-крем создан в 2х тонах: Natural (тон 01) и Sand (тон 02).
+                                    </div>
+                                    <div style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                                        Мульти-универсальное тональное средство с anti-age эффектом:
+                                    </div>
+                                    <ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                                        <li style="box-sizing: border-box;">прекрасно увлажняет и питает кожу;</li>
+                                        <li style="box-sizing: border-box;">уменьшает глубину морщин;</li>
+                                        <li style="box-sizing: border-box;">светоотражающие 3D-пигменты маскируют мелкие
+                                            морщинки и линии;
+                                        </li>
+                                        <li style="box-sizing: border-box;">предотвращает процесс старения кожи;</li>
+                                        <li style="box-sizing: border-box;">защищает от УФ излучения А и В.</li>
+                                    </ul>
+                                    <div style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                                        Антивозрастное действие в сочетании с великолепным маскирующим эффектом
+                                        обеспечивает безупречное покрытие на протяжении всего дня.
+                                    </div>
+                                    <div style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                                        DD-крем содержит антиоксиданты, увлажнители; прошел дерматологический контроль;
+                                        не вызывает образование комедонов.
+                                    </div>
+                                    <div style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                                        Отсутствие парабенов и масел делает его идеальным средством для чувствительной
+                                        кожи. Прекрасно держится весь день.
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade table-content " id="products-tab-2"><p>
+                                    &nbsp;<span
+                                        style="color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Используйте DD-крем в качестве самостоятельного тонального средства для нормальной и склонной к сухости кожи. Нанесите на очищенную кожу лица с помощью кисти или подушечками пальцев. Вы можете регулировать плотность покрытия, используя технику послойного нанесения. Для очень сухой кожи используйте DD-крем после нанесения увлажняющей ампулы, сыворотки или крема.</span>
+                                </p></div>
+                            </div>
+                        </div>
+
+
+                        <div class="products-content col-md-12">
+                            <div class="entry-header"><h1 class="text-center text-uppercase">Также используют</h1></div>
+                            <div class="text-center figure-m-v-15 boxes-5 products-items">
+
+                                <figure class="hover-content hover-product">
+                                    <div class="wrapper">
+                                        <div class="img-content">
+                                            <div class="img"
+                                                 style="background-image: url({% static 'images/articles/1854/article-medium.jpg' %});"
+                                                 alt="Тональный крем DD Cream natural 01"></div>
+                                        </div>
+
+                                        <div class="desc-content m-v-5">
+                                            <div class="cap-content">
+
+
+                                                <h3>Arcaya</h3>
+
+
+                                            </div>
+                                            <p>Тональный крем DD Cream natural 01</p>
+                                            <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                               aria-hidden="true"></i></b></p>
+                                            <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                                <div class="p-h-15">
+
+                                                    <p class="currentPrice"><b>297 000</b> <small>Сум</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell-hover text-center">
+                                            <div>
+                                                <a href="DD-Cream-natural-01.html"
+                                                   title="Тональный крем DD Cream natural 01" class="link-item"></a>
+                                                <a id="1854" product="1854" class="add_to_basket link-icon"
+                                                   style="cursor: pointer;"><span class="circle"><i
+                                                        class="ls-shopping-bag"></i></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                                <figure class="hover-content hover-product">
+                                    <div class="wrapper">
+                                        <div class="img-content">
+                                            <div class="img"
+                                                 style="background-image: url('{% static 'images/articles/1696/article-medium.jpg' %}');"
+                                                 alt="BB крем Vitamin E perfect cover BB cream 30gr"></div>
+                                        </div>
+
+                                        <div class="desc-content m-v-5">
+                                            <div class="cap-content">
+
+
+                                                <h3>Dr Rashel</h3>
+
+
+                                            </div>
+                                            <p>BB крем Vitamin E perfect cover BB cream 30gr</p>
+                                            <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                               aria-hidden="true"></i></b></p>
+                                            <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                                <div class="p-h-15">
+
+                                                    <p class="currentPrice"><b>40 000</b> <small>Сум</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell-hover text-center">
+                                            <div>
+                                                <a href=""
+                                                   title="BB крем Vitamin E perfect cover BB cream 30gr"
+                                                   class="link-item"></a>
+                                                <a id="1696" product="1696" class="add_to_basket link-icon"
+                                                   style="cursor: pointer;"><span class="circle"><i
+                                                        class="ls-shopping-bag"></i></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                                <figure class="hover-content hover-product">
+                                    <div class="wrapper">
+                                        <div class="img-content">
+                                            <div class="img"
+                                                 style="background-image: url({% static 'images/articles/1779/article-medium.jpg' %});"
+                                                 alt="Тональный BB крем MY LUMINOUS NATURAL GLOW BB 01 55ml"></div>
+                                        </div>
+
+                                        <div class="desc-content m-v-5">
+                                            <div class="cap-content">
+
+
+                                                <h3>Tony Moly</h3>
+
+
+                                            </div>
+                                            <p>Тональный BB крем MY LUMINOUS NATURAL GLOW BB 01 55ml</p>
+                                            <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                               aria-hidden="true"></i></b></p>
+                                            <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                                <div class="p-h-15">
+
+                                                    <p class="currentPrice"><b>138 000</b> <small>Сум</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell-hover text-center">
+                                            <div>
+                                                <a href=""
+                                                   title="Тональный BB крем MY LUMINOUS NATURAL GLOW BB 01 55ml"
+                                                   class="link-item"></a>
+                                                <a id="1779" product="1779" class="add_to_basket link-icon"
+                                                   style="cursor: pointer;"><span class="circle"><i
+                                                        class="ls-shopping-bag"></i></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
