@@ -235,7 +235,7 @@
                 <div class="row flex-content">
                     <div class="logo p-h-15 box-md-3">
                         <div class="img-content pie-md pie-dry"><a href="{% url 'fabrics_main:homepage' %}"><img
-                                src="{% static 'images/logo.png' %}"
+                                src="{% static 'images/logosofdil.jpg' %}"
                                 atl="Интернет-магазин косметики в Ташкенте Banafa.uz"></a>
                         </div>
                     </div>
@@ -253,7 +253,7 @@
                                     <a href="{% url 'fabrics_main:addtocard' %}" title="basket">
                                         <div class="icon-wrapper pie-flex-center">
                                             <div>
-                                                <i><img src="{% static 'banafa-ru/img/basket.png' %}" width="50%"></i>
+                                                <i><img src="{% static 'images/icone-de-panier-orange.png' %}" width="55%"></i>
                                             </div>
                                         </div>
                                         <div class="basket-circle"><span class="bakset-cnt">0</span></div>
@@ -265,11 +265,11 @@
 
                     <div class="phones p-h-15 text-right box-md-3 hover-color-1">
                         <div class="header-phone vam">
-                            <div class="vam p-r-10"><img src="{% static 'banafa-ru/img/icons/telephone.png' %}"
+                            <div class="vam p-r-10"><img src="{% static 'images/-916104889894t46gwjx64.png' %}"
                                                          alt="Телефон"
                                                          width="32"></div>
-                            <div class="vam"><p>Служба поддержки:</p>
-                                <p><b>+998 (95) 177-00-05</b></p></div>
+                            <div class="vam"><p class="text-bg">Служба поддержки:</p>
+                                <p><b class="text-bg">+998 (95) 177-00-05</b></p></div>
                         </div>
                     </div>
                 </div>
@@ -1301,12 +1301,6 @@
             <div class="footer-content clearfix color-white">
 
                 <div class="col-md-3">
-                    <div class="footer-logo m-v-35">
-                        <div class="img-content filter-white"><a href="index.html"><img
-                                src="{% static 'images/logo.png' %}"
-                                atl="Интернет-магазин косметики в Ташкенте Banafa.uz"></a>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-md-7">
                     <!-- subscribe -->
@@ -1317,7 +1311,7 @@
                                     Новостей</h2></div>
                                 <div class="form-content col-md-12 p-h-15">
 
-                                    <form action="https://www.banafa.uz/subscription.php" method="post" id="newsletter"
+                                    <form action="" method="post" id="newsletter"
                                           name="newsletter">
                                         <div class="search-input center-block">
                                             <input class="tp-form-control color-black" type="email" name="signup-email"
@@ -1392,7 +1386,7 @@
                     <div class="col-md-12 p-h-15">
                         <div class="row">
                             <div class="dev hidden-xs hidden-sm float-right-md text-right-md col-md-4 m-v-15 p-h-15">
-                                <a href="https://www.life-style.uz/" class="link"
+                                <a href="" class="link"
                                    title="Создание и продвижение сайтов в Ташкенте" target="_blank">Создание сайтов <em><span
                                         class="color-1">Life </span></em>Style</a>
                             </div>
@@ -1502,90 +1496,6 @@
 <script type="text/javascript" src="{% static 'basket/basket.js' %}"></script>
 <script type="text/javascript" src="{% static 'basket/maskedinput.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/mail-bron.js' %}"></script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    var yaParams = {};
-</script>
-
-<script type="text/javascript">
-    var yaParams = {};
-</script>
-
-<div style="display:none;">
-    <script type="text/javascript">
-        (function (w, c) {
-            (w[c] = w[c] || []).push(function () {
-                try {
-                    w.yaCounter51015812 = new Ya.Metrika({
-                        id: 51015812,
-                        enableAll: true,
-                        webvisor: true,
-                        ut: "noindex",
-                        params: window.yaParams || {}
-                    });
-                } catch (e) {
-                }
-            });
-        })(window, 'yandex_metrika_callbacks');
-    </script>
-</div>
-<script src="../mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
-<noscript>
-    <div><img src="http://mc.yandex.ru/watch/51015812" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
-
-
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-129153207-1', 'www.banafa.uz');
-    ga('send', 'pageview');
-
-</script>
-
-
-<!-- BEGIN JIVOSITE CODE  -->
-
-<script type='text/javascript'>
-    (function () {
-        var widget_id = 'itWlp2bynR';
-        var d = document;
-        var w = window;
-
-        function l() {
-            var s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = '//code.jivosite.com/script/widget/' + widget_id;
-            var ss = document.getElementsByTagName('script')[0];
-            ss.parentNode.insertBefore(s, ss);
-        }
-
-        if (d.readyState == 'complete') {
-            l();
-        } else {
-            if (w.attachEvent) {
-                w.attachEvent('onload', l);
-            } else {
-                w.addEventListener('load', l, false);
-            }
-        }
-    })();</script>
-
-<!--  END JIVOSITE CODE -->
-
 {% block js %}{% endblock %}
 </body>
 </html>
