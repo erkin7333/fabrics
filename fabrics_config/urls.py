@@ -5,6 +5,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include("ckeditor_uploader.urls")),
     path('', include('fabrics_main.urls')),
-    path('user_account/', include('user_account.urls'))
+    path('user_account/', include('user_account.urls')),
+    path('about/', include('fabrics_about.urls'))
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+def get_filename(filename, request):
+    return filename.upper()

@@ -175,16 +175,16 @@
                     <div class="menu text-left pie-md-3 p-h-15 hover-color-1 text-nowrap">
                         <nav>
                             <ul>
-                                <li><a href="{% url 'fabrics_main:aboutpage' %}" title="О компании">О компании</a></li>
-                                <li><a href="{% url 'fabrics_main:deliverypage' %}" title="Доставка">Доставка</a></li>
-                                <li><a href="{% url 'fabrics_main:contactpage' %}" title="Контакты">Контакты</a></li>
-                                <li><a href="{% url 'fabrics_main:reviewspage' %}" title="Отзывы">Отзывы</a></li>
-                                <li><a href="{% url 'fabrics_main:agreementpage' %}" title="Публичная оферта">Публичная
+                                <li><a href="{% url 'fabrics_about:aboutpage' %}" title="О компании">О компании</a></li>
+                                <li><a href="{% url 'fabrics_about:deliverypage' %}" title="Доставка">Доставка</a></li>
+                                <li><a href="{% url 'fabrics_about:contactpage' %}" title="Контакты">Контакты</a></li>
+                                <li><a href="{% url 'fabrics_about:reviewspage' %}" title="Отзывы">Отзывы</a></li>
+                                <li><a href="{% url 'fabrics_about:agreementpage' %}" title="Публичная оферта">Публичная
                                     оферта</a></li>
-                                <li><a href="{% url 'fabrics_main:how_to_order' %}" title="Как оформить заказ?">Как
+                                <li><a href="{% url 'fabrics_about:how_to_order' %}" title="Как оформить заказ?">Как
                                     оформить заказ?</a></li>
-                                <li><a href="{% url 'fabrics_main:filialypage' %}" title="Филиалы">Филиалы</a></li>
-                                <li><a href="{% url 'fabrics_main:blogpage' %}" title="Блог">Блог</a></li>
+                                <li><a href="{% url 'fabrics_about:filialypage' %}" title="Филиалы">Филиалы</a></li>
+                                <li><a href="{% url 'fabrics_about:blogpage' %}" title="Блог">Блог</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -193,10 +193,6 @@
                         <div class="flex-content pie-flex-justify row">
 
                             <div class="panel-face p-h-15 unauthorized">
-                                <a class="p-h-5" data-toggle="modal" data-target="#form-entry" role="button" title="">
-                                    <span class="icon-content vam"><i class="fa fa-sign-in p-r-5"></i></span>
-                                    <span class="text-content vam"><p>Вход</p></span>
-                                </a>
                                 <a class="p-h-5" href="{% url 'user_account:register' %}" role="button"
                                    title="Регистрация">
                                     <span class="icon-content vam"><i class="fa fa-user p-r-5"></i></span>

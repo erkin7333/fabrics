@@ -2,18 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fabrics_about/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/migrations/0002_alter_about_description.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_about/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/phone.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/phone.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/banafa-ru/css/edited.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/banafa-ru/css/edited.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/banafa-ru/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/banafa-ru/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Sofdilshop.uz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/logosofdil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/logosofdil.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/photo_2022-11-16_10-33-49.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/sofdilshop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/banafa-ru/img/fabrics.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/blogdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/blogdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/delivery.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/delivery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/filiallar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/filiallar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/how-to-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/how-to-order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/product/productdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/productdetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/product/productfilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/productfilter.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +140,8 @@
       <workItem from="1668573900418" duration="7222000" />
       <workItem from="1668583465872" duration="12754000" />
       <workItem from="1668598450727" duration="5174000" />
-      <workItem from="1668612076802" duration="8831000" />
+      <workItem from="1668612076802" duration="9494000" />
+      <workItem from="1668660411295" duration="14602000" />
     </task>
     <servers />
   </component>
