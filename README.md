@@ -1,2 +1,4 @@
-# fabrics
-Matolar projecti uchun qilingan ishlar
+Parfumeriya 
+
+
+Parfumeriya internet magazinii uchun qilingan ishlar
