@@ -2,68 +2,89 @@
 {% load static %}
 
 
-
 {% block content %}
-    <main data-aos="fade" data-aos-delay="0">
-        <div class="main-content over-hidden bg-texture-1">
-            <!-- breadcrumb -->
-            <div class="container">
-                <div class="breadcrumb-container text-center-sm">
-                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
-                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
-                        <li class="active"><a href="{% url 'fabrics_main:filialypage' %}">Филиалы</a></li>
-                    </ol>
-                </div>
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden bg-texture-1">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="active"><a href="{% url 'fabrics_about:filialypage' %}">Филиалы</a></li>
+                </ol>
             </div>
+        </div>
 
-            <!-- contacts -->
-            <div class="contacts">
-                <div class="container">
-                    <div class="entry-content m-v-60">
-                        <div class="entry-content text-center color-1 m-v-30"><h1>Оптовый магазин в Урикзаре</h1></div>
-                        <div class="contacts-info row">
+        <!-- contacts -->
+        <div class="contacts">
+            <div class="container">
+                <div class="entry-content m-v-60">
+                    <div class="entry-content text-center color-1 m-v-30"><h1>Оптовый магазин в Урикзаре</h1></div>
+                    <div class="contacts-info row">
 
-                            <div class="col-md-4 p-h-15 m-v-30 clearfix">
-                                <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="phone-call"
-                                                                                                src="{% static 'banafa-ru/img/icons/phone-call-2.svg' %}"
-                                                                                                alt="phone"></div>
-                                <div class="desc-content col-md-10 col-xs-9 text-left-sm">
-                                    <h3>Контактный телефон</h3>
-
+                        <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="phone-call"
+                                                                                            src="{% static 'banafa-ru/img/icons/phone-call-2.svg' %}"
+                                                                                            alt="phone"></div>
+                            <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                <h3>Контактный телефон</h3>
+                                <p>
+                                    {% for a in branch_detail %}
+                                <p>{{ a.phone }}</p>
+                                {% endfor %}
+                                </p>
+                            </div>
+                            <div class="map clearfix">
+                                <div class="map-content col-xs-12" data-aos="fade">
+                                    <div id="map-canvas" class="map-container col-md-12 m-t-30"></div>
                                 </div>
                             </div>
-                            <div class="col-md-4 p-h-15 m-v-30 clearfix">
-                                <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="map-marker"
-                                                                                                src="{% static 'banafa-ru/img/icons/map-marker.svg' %}"
-                                                                                                alt=""></div>
-                                <div class="desc-content col-md-10 col-xs-9 text-left-sm">
-                                    <h3>Адрес</h3>
-                                    <p>Киоск 166</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-md-offset-1 p-h-15 m-v-30 clearfix">
-                                <div class="icon-content col-md-3 col-xs-3 text-center-sm"><img class="envelope"
-                                                                                                src="{% static 'banafa-ru/img/icons/envelope.svg' %}"
-                                                                                                alt="info@banafa.uz">
-                                </div>
-                                <div class="desc-content col-md-9 col-xs-9 text-left-sm">
-                                    <h3>Email</h3>
-                                    info@banafa.uz
-                                </div>
-                            </div>
-
                         </div>
+                        <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="map-marker"
+                                                                                            src="{% static 'banafa-ru/img/icons/map-marker.svg' %}"
+                                                                                            alt=""></div>
+                            <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                <h3>Адрес</h3>
+                                <p>
+                                    {% for a in branch_detail %}
+                                <p>{{ a.address }}</p>
+                                {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-md-offset-1 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-3 col-xs-3 text-center-sm"><img class="envelope"
+                                                                                            src="{% static 'banafa-ru/img/icons/envelope.svg' %}"
+                                                                                            alt="info@banafa.uz">
+                            </div>
+                            <div class="desc-content col-md-9 col-xs-9 text-left-sm">
+                                <h3>Email</h3>
+                                <p>
+                                    {% for a in branch_detail %}
+                                <p>{{ a.email }}</p>
+                                {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- map -->
-            <div class="map clearfix">
-                <div class="map-content col-xs-12" data-aos="fade">
-                    <div id="map-canvas" class="map-container col-md-12 m-t-30"></div>
-                </div>
-            </div>
+        <!-- LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL -->
 
-        </div><!-- ./MAIN-CONTENT -->
-    </main><!-- ./MAIN -->
+        <div class="mapouter">
+            {% for lon in branch_detail %}
+            <h3>{{ lon.location }}</h3>
+            <iframe src="{{ lon.location.URL }}"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {% endfor %}
+        </div>
+
+
+    </div><!-- ./MAIN-CONTENT -->
+</main><!-- ./MAIN -->
 {% endblock %}

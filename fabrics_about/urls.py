@@ -20,7 +20,7 @@ urlpatterns = [
 
     path('filialy/', filialypage, name='filialypage'),
 
-    path('filialy-detail/', filiaydetailpage, name='filiaydetail'),
+    path('filialy-detail/<int:pk>/', filiaydetailpage, name='filiaydetail'),
 
     path('blog/', blogpage, name='blogpage'),
 

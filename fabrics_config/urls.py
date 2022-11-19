@@ -10,7 +10,7 @@ urlpatterns = [
     path('user_account/', include('user_account.urls')),
     path('about/', include('fabrics_about.urls'))
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 def get_filename(filename, request):

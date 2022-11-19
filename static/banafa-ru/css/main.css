@@ -13891,10 +13891,10 @@ html body .tp-bullets.simplebullets.round .bullet {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     top: 50%;
-    color: #ff78be; }
+    color: #ff7f00; }
     .carousel-prev-next .next:hover, .carousel-prev-next .prev:hover {
       cursor: pointer;
-      color: #ff78be; }
+      color: #1a2b56; }
   .carousel-prev-next .next {
     right: 0; }
   .carousel-prev-next .prev {

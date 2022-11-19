@@ -20,7 +20,7 @@
                     <div class="entry-content text-center color-1 m-v-30"><h1>О компании</h1></div>
                     <div class="text-content m-v-30">
                         {% for about in about_post %}
-                            <p>{{ about.description }}</p>
+                            <p>{{ about.description | safe }}</p>
                         {% endfor %}
                     </div>
                 </div>
