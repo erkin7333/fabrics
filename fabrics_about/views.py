@@ -55,6 +55,7 @@ def filialypage(request):
 
 def filiaydetailpage(request, pk):
     branch_detail = BranchDetail.objects.filter(branch_id=pk)
+    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', branch_detail)
     context = {
         'branch_detail': branch_detail
     }

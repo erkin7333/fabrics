@@ -76,15 +76,14 @@
         <!-- LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL -->
 
         <div class="mapouter">
+
             {% for lon in branch_detail %}
-            <h3>{{ lon.location }}</h3>
-            <iframe src="{{ lon.location.URL }}"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="{{ lon.location }}"
+        width="100%" height="450" style="border:0;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
             {% endfor %}
         </div>
-
-
     </div><!-- ./MAIN-CONTENT -->
 </main><!-- ./MAIN -->
 {% endblock %}
