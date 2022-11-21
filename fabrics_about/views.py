@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import (About, Delivery, Contact, Comment, PublicOffer, Order, Branches, BranchDetail)
+from .models import (About, Delivery, Contact, Comment, PublicOffer,
+                     Order, Branches, BranchDetail, Blog, BlogDetail)
 
 
 
@@ -63,9 +64,17 @@ def filiaydetailpage(request, pk):
 
 
 def blogpage(request):
-    return render(request, 'about/blog.html')
+    blog_page = Blog.objects.all()
+    context = {
+        'blog_page': blog_page
+    }
+    return render(request, 'about/blog.html', context=context)
 
 
-def blogdetailpage(request):
-    return render(request, 'about/blogdetail.html')
+def blogdetailpage(request, pk):
+    detail_blog = BlogDetail.objects.filter(blog_id=pk)
+    context = {
+        'detail_blog': detail_blog
+    }
+    return render(request, 'about/blogdetail.html', context=context)
 

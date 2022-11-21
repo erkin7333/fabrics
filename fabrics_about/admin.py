@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django import forms
 from ckeditor.widgets import CKEditorWidget
-from .models import (About, Delivery, Contact, Comment, PublicOffer, Order, Branches, BranchDetail)
+from .models import (About, Delivery, Contact, Comment, PublicOffer,
+                     Order, Branches, BranchDetail, Blog, BlogDetail)
 
 
 class AboutModelForm(forms.ModelForm):
@@ -79,3 +80,23 @@ class BranchDetailAdmin(admin.ModelAdmin):
     class Meta:
         model = BranchDetail
 admin.site.register(BranchDetail, BranchDetailAdmin)
+
+
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'content', 'image')
+    list_display_links = ('id', 'title')
+    class Mete:
+        model = Blog
+admin.site.register(Blog, BlogAdmin)
+
+
+class BlogForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget)
+    class Meta:
+        model = BranchDetail
+        fields = '__all__'
+
+class BlogDetailAdmin(admin.ModelAdmin):
+    form = BlogForm
+
+admin.site.register(BlogDetail, BlogDetailAdmin)

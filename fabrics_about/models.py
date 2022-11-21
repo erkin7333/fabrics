@@ -93,3 +93,24 @@ class BranchDetail(models.Model):
 
     class Meta:
         verbose_name = "Filial Tavsifi"
+
+
+# Blog uchun model
+class Blog(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='blog')
+    content = models.TextField()
+    def __str__(self):
+        return str(self.title)
+    class Meta:
+        verbose_name = "Blog"
+
+
+# BlogDetail uchun model
+class BlogDetail(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, blank=True, null=True)
+    description = models.TextField()
+    def __str__(self):
+        return str(self.blog)
+    class Meta:
+        verbose_name = "Blog Tavsifi"
