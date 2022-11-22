@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/images/logosofdil-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_account/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_account/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/banafa-ru/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/banafa-ru/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/filialydetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/filialydetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
