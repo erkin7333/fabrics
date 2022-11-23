@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django_admin_geomap',
     'fabrics_main',
     'fabrics_about',
-    'user_account'
+    'user_account',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -115,6 +116,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/assets/static')

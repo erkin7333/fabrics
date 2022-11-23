@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
 <main data-aos="fade" data-aos-delay="0">
@@ -14,50 +14,20 @@
                 </ol>
             </div>
         </div>
-        <div class="form__block">
-            <div class="container">
-            <div class="registration mx-auto d-block w-100">
-                <div class="page-header text-center">
-                    <h1>Sign up</h1>
-                </div>
-
-                <form id="member-registration" action="/astroidnew/index.php/pages/register?task=registration.register"
-                      method="post" class="form-validate form-horizontal well" enctype="multipart/form-data">
-                    <fieldset>
-                        <legend>User Registration</legend>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Username *</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password *</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="form-group d-flex justify-content-start">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </fieldset>
-
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary">Saqlash</button>
                 </form>
             </div>
-        </div>
         </div>
     </div>
 
 </main>
 
-<style>
-	@media (min-width:767px){
-		.registration{
-			max-width: 400px;
-            margin-left: 32%;
-		}
-	}
-
-
-
-</style>
 
 {% endblock %}
