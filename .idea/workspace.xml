@@ -2,18 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fabrics_config/validators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_account/migrations/0002_alter_user_phone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_config/context_processors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0002_caregoriy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0003_alter_caregoriy_parent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_main/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_main/templatetags/filtercategory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_FXI4loA.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_TXRj1j7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_k0mb6v3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_p64Drv7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_rLTR7Qo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/account/sing-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/account/sing-up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_account/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/Sofdilshop.uz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/pil.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/sofdilshop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +56,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/erkin/data_site/regis",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/erkin/data_site/parfiyum/fabrics&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/fabrics_main" />
@@ -166,6 +175,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

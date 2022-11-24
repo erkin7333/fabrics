@@ -68,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'fabrics_config.context_processors.dropdownmenu',
+
             ],
         },
     },
@@ -287,8 +289,13 @@ JAZZMIN_SETTINGS = {
         # model admin to link to (Permissions checked against model)
         {"model": "auth.User"},
 
+        {'model': "fabrics_main.MenuCategoriy"},
+        {'model': "fabrics_main.Caregoriy"},
+
         # App with dropdown menu to all its models pages (Permissions checked against models)
         {"app": "books"},
+
+
     ],
 
     #############
@@ -315,7 +322,7 @@ JAZZMIN_SETTINGS = {
     "hide_apps": [],
 
     # Hide these models when generating side menu (e.g auth.user)
-    "hide_models": [],
+    "hide_models": ["fabrics_main.MenuCategoriy", "fabrics_main.Caregoriy"],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
