@@ -9,10 +9,10 @@
         <div class="fullscreen-container">
             <div class="rev-slider bg-color-white">
                 <ul>
-
+                    {% for img in image %}
                     <li data-transition="boxfade" data-masterspeed="1200">
                         <a href="#" class="fulllink"></a>
-                        <img src="{% static 'images/sliders/13/primary-original.jpg' %}" alt="  ">
+                        <img src="{{ img.image.url }}" alt="  ">
                         <div class="wrapper-bg tp-caption customin customout start hidden"
                              data-x="center"
                              data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
@@ -29,83 +29,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-transition="boxfade" data-masterspeed="1200">
-                        <a href="lechebnoe/lechebnoe_maslo/12443.html" class="fulllink"></a>
-                        <img src="{% static 'images/sliders/12/primary-original.jpg' %}" alt="  ">
-                        <div class="wrapper-bg tp-caption customin customout start hidden"
-                             data-x="center"
-                             data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
-                             data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
-                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                             data-captionhidden="on"></div>
-                        <div class="container">
-                            <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
-                                 data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
-                                 data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
-                                 data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                                 data-captionhidden="on">
-                                <h2></h2>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-transition="boxfade" data-masterspeed="1200">
-                        <a href="lechebnoe/lechebnoe_maslo/12443.html" class="fulllink"></a>
-                        <img src="{% static 'images/sliders/8/primary-original.jpg' %}" alt="  ">
-                        <div class="wrapper-bg tp-caption customin customout start hidden"
-                             data-x="center"
-                             data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
-                             data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
-                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                             data-captionhidden="on"></div>
-                        <div class="container">
-                            <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
-                                 data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
-                                 data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
-                                 data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                                 data-captionhidden="on">
-                                <h2></h2>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-transition="boxfade" data-masterspeed="1200">
-                        <a href="new_products/index.html" class="fulllink"></a>
-                        <img src="{% static 'images/sliders/9/primary-original.jpg' %}" alt="  ">
-                        <div class="wrapper-bg tp-caption customin customout start hidden"
-                             data-x="center"
-                             data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
-                             data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
-                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                             data-captionhidden="on"></div>
-                        <div class="container">
-                            <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
-                                 data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
-                                 data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
-                                 data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                                 data-captionhidden="on">
-                                <h2></h2>
-                                <h3></h3></div>
-                        </div>
-                    </li>
-                    <li data-transition="boxfade" data-masterspeed="1200">
-                        <a href="search931b.html?query=%D0%B2%D0%B8%D1%82%D0%B0%D0%BC%D0%B8%D0%BD%D0%BE%D0%BC+%D1%81"
-                           class="fulllink"></a>
-                        <img src="{% static 'images/sliders/6/primary-original.jpg' %}" alt=" ">
-                        <div class="wrapper-bg tp-caption customin customout start hidden"
-                             data-x="center"
-                             data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
-                             data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
-                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                             data-captionhidden="on"></div>
-                        <div class="container">
-                            <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
-                                 data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
-                                 data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
-                                 data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                                 data-captionhidden="on">
-                                <h2></h2>
-                            </div>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="arrow-container container"></div>

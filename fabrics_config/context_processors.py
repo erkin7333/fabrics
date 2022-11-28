@@ -1,15 +1,17 @@
-from fabrics_main.models import MenuCategoriy, Caregoriy
-
-
-
+from fabrics_main.models import MenuCategory, Caregory, Collection, Brand
 
 
 
 def dropdownmenu(request):
-    m_categoriy = MenuCategoriy.objects.filter()
-    categori = Caregoriy.objects.filter(parent=None, menucategoriy_id=2)
-    print("ASDFGHJKJTREWQWERTYU-------------__?>>>>>>>>>>.", categori)
-    return {
-        'm_categoriy': m_categoriy,
-        'categori': categori
+    menu_category = MenuCategory.objects.all()
+    collection = Collection.objects.all()
+    brand = Brand.objects.all()
+    print("AAAAAAAAAAAAAAAA------------------>>>>>>>>>>>", menu_category)
+    ctx = {
+        'menu_category': menu_category,
+        'collection': collection,
+        'brand': brand
     }
+    return ctx
+
+

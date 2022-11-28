@@ -4,7 +4,7 @@ from django.db import models
 
 
 # Navabr uchun Menyu Kategoriya modeli
-class MenuCategoriy(models.Model):
+class MenuCategory(models.Model):
     name = models.CharField(max_length=80)
     image = models.ImageField(upload_to='menucategory')
 
@@ -14,17 +14,84 @@ class MenuCategoriy(models.Model):
         verbose_name = "Menyu Kategoriya"
 
 
-# Categoriya va Parent uchun Model
-class Caregoriy(models.Model):
-    menucategoriy = models.ForeignKey(MenuCategoriy, on_delete=models.CASCADE, blank=True, null=True)
-    parent = models.ForeignKey('Caregoriy', on_delete=models.CASCADE, blank=True, null=True, default=None)
+# Categoriya  uchun Model
+class Caregory(models.Model):
+    menucategory = models.ForeignKey(MenuCategory, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=80)
     # path = models.
 
     def __str__(self):
-        return self.name
+        return self.menucategory.name + " -- " + self.name
     class Meta:
         verbose_name = 'Kategoriya'
+
+
+class SubCategory(models.Model):
+    category = models.ForeignKey(Caregory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=80)
+    def __str__(self):
+        return self.category.menucategory.name + ' -- ' + self.category.name + ' -- ' + self.name
+
+
+# To'plam uchun model
+class Collection(models.Model):
+    name = models.CharField(max_length=50)
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "To'plam"
+
+# Brendlar uchun model
+class Brand(models.Model):
+    name = models.CharField(max_length=60)
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Brendlar"
+
+
+# Maxsulotlar uchun model
+class Product(models.Model):
+    menucategoriy = models.ForeignKey(MenuCategory, on_delete=models.RESTRICT, blank=True, null=True)
+    categories = models.ForeignKey(Caregory, on_delete=models.RESTRICT, blank=True, null=True)
+    collection = models.ForeignKey(Collection, on_delete=models.RESTRICT, blank=True, null=True)
+    brand = models.ForeignKey(Brand, on_delete=models.RESTRICT, blank=True, null=True)
+    name = models.CharField(max_length=100, verbose_name="Maxsulot nomi")
+    manufacturer = models.CharField(max_length=200, verbose_name="Ishlab chiqaruvchi")
+    vendor_code = models.CharField(max_length=10, verbose_name="Sotuvchi kodi")
+    title = models.CharField(max_length=255, verbose_name="Sarlovha")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

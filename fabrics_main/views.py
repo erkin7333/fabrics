@@ -1,7 +1,14 @@
 from django.shortcuts import render
+from .models import MenuCategory, Caregory
 
 def homepage(request):
-    return render(request, 'main/index.html')
+    image = MenuCategory.objects.all()
+    # menu_category = MenuCategory.objects.all()
+    context = {
+        # 'menu_category': menu_category,
+        'image': image
+    }
+    return render(request, 'base.html', context=context)
 
 
 

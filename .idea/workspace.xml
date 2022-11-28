@@ -2,27 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fabrics_config/context_processors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0002_caregoriy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0003_alter_caregoriy_parent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/templatetags/filtercategory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_FXI4loA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_TXRj1j7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_k0mb6v3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_p64Drv7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_rLTR7Qo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/Screenshot_from_2022-11-24_15-45-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/Screenshot_from_2022-11-24_16-26-12_TjTOC2Z.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_0ellQuB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_7vl5y7F.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_OVDda8O.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_TH5ICjp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_uzO4vWq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_xNb4Zwg.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_config/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/Sofdilshop.uz.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0002_caregoriy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0003_alter_caregoriy_parent.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/pil.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/sofdilshop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/templatetags/filtercategory.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/templatetags/filtercategory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/main/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,7 +61,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/erkin/data_site/parfiyum/fabrics&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/erkin/projects/main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
