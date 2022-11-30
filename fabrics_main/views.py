@@ -8,7 +8,7 @@ def homepage(request):
         # 'menu_category': menu_category,
         'image': image
     }
-    return render(request, 'base.html', context=context)
+    return render(request, 'main/index.html', context=context)
 
 
 

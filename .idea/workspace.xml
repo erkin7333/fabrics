@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/media/menucategory/Screenshot_from_2022-11-24_15-45-12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/Screenshot_from_2022-11-24_16-26-12_TjTOC2Z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_0ellQuB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_7vl5y7F.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_OVDda8O.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_TH5ICjp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_uzO4vWq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_xNb4Zwg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2022,_14_49_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2022__14_49__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_config/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0002_caregoriy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0003_alter_caregoriy_parent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/templatetags/filtercategory.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/templatetags/filtercategory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/banafa-ru/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/banafa-ru/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/main/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
