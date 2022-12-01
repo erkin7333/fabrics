@@ -294,6 +294,7 @@ JAZZMIN_SETTINGS = {
         {'model': "fabrics_main.SubCategory"},
         {'model': "fabrics_main.Collection"},
         {'model': "fabrics_main.Brand"},
+        {'model': "fabrics_main.Product"},
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
         {"app": "books"},
@@ -327,7 +328,7 @@ JAZZMIN_SETTINGS = {
     # Hide these models when generating side menu (e.g auth.user)
     "hide_models": ["fabrics_main.MenuCategory",
                     "fabrics_main.Caregory", "fabrics_main.SubCategory",
-                    "fabrics_main.Collection", "fabrics_main.Brand"],
+                    "fabrics_main.Collection", "fabrics_main.Brand", "fabrics_main.Product"],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": ["auth", "books", "books.author", "books.book"],

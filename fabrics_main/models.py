@@ -61,7 +61,14 @@ class Product(models.Model):
     manufacturer = models.CharField(max_length=200, verbose_name="Ishlab chiqaruvchi")
     vendor_code = models.CharField(max_length=10, verbose_name="Sotuvchi kodi")
     title = models.CharField(max_length=255, verbose_name="Sarlovha")
+    available = models.BooleanField(default=False, verbose_name='Sotuvda bormi')
+    top = models.BooleanField(default=False, verbose_name="Top productga qo'shish")
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.name
 
+    class Meta:
+        verbose_name = 'Maxsulot'
 
 
 
