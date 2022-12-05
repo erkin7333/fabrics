@@ -35,6 +35,8 @@
                             <a href="{% url 'fabrics_about:blogdetail' blog.pk %}"> Читать...</a>
                         </div>
                     </figure>
+                    {% empty %}
+                    <h>Kechirasiz hozircha malumot kiritilmagan</h>
                     {% endfor %}
                 </div>
                 <br><br><br>

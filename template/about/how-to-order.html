@@ -24,6 +24,8 @@
                             <p><strong>{{ row.title }}</strong></p>
                             <div><strong><img src="{{ row.image.url }}" class="box-100" alt=""/></strong></div>
                             <div><strong>&nbsp;</strong></div>
+                            {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                             {% endfor %}
                         </div>
                     </div>

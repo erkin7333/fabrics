@@ -2,41 +2,40 @@
 {% load static %}
 
 
-
 {% block content %}
 
-    <div class="main-slider">
-        <div class="fullscreen-container">
-            <div class="rev-slider bg-color-white">
-                <ul>
-                    {% for img in image %}
-                    <li data-transition="boxfade" data-masterspeed="1200">
-                        <a href="#" class="fulllink"></a>
-                        <img src="{{ img.image.url }}" alt="  ">
-                        <div class="wrapper-bg tp-caption customin customout start hidden"
-                             data-x="center"
-                             data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
-                             data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
+<div class="main-slider">
+    <div class="fullscreen-container">
+        <div class="rev-slider bg-color-white">
+            <ul>
+                {% for img in image %}
+                <li data-transition="boxfade" data-masterspeed="1200">
+                    <a href="{% url 'fabrics_main:menu_product' img.pk %}" class="fulllink"></a>
+                    <img src="{{ img.image.url }}" alt="  ">
+                    <div class="wrapper-bg tp-caption customin customout start hidden"
+                         data-x="center"
+                         data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
+                         data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
+                         data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
+                         data-captionhidden="on"></div>
+                    <div class="container">
+                        <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
+                             data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
+                             data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
                              data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                             data-captionhidden="on"></div>
-                        <div class="container">
-                            <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
-                                 data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
-                                 data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
-                                 data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                                 data-captionhidden="on">
-                                <h2></h2>
-                            </div>
+                             data-captionhidden="on">
+                            <h2></h2>
                         </div>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="arrow-container container"></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
+        <div class="arrow-container container"></div>
     </div>
+</div>
 
-    <style>
+<style>
 
         .fulllink {
             width: 100%;
@@ -44,900 +43,219 @@
             display: block;
             position: absolute;
         }
-    </style>
 
-    <div class="short-advantages">
-        <div class="container p-v-10">
-            <div class="row">
-                <div class="short-advantages-items text-left-sm boxes hidden-xs hidden-sm figure-m-v-5">
-                    <figure>
-                        <div class="img-content pie-xs-4 p-h-15">
-                            <div class="icon pie-flex-center text-center">
-                                <div><i class="fa fa-truck"></i></div>
-                            </div>
+
+</style>
+
+<div class="short-advantages">
+    <div class="container p-v-10">
+        <div class="row">
+            <div class="short-advantages-items text-left-sm boxes hidden-xs hidden-sm figure-m-v-5">
+                <figure>
+                    <div class="img-content pie-xs-4 p-h-15">
+                        <div class="icon pie-flex-center text-center">
+                            <div><i class="fa fa-truck"></i></div>
                         </div>
-                        <div class="desc-content pie-xs-8 p-h-15"><p>Доставка по Узбекистану в течении 2-х
-                            дней</p></div>
-                    </figure>
-                    <figure>
-                        <div class="img-content pie-xs-4 p-h-15">
-                            <div class="icon pie-flex-center text-center">
-                                <div><i class="fa fa-mail-reply-all"></i></div>
-                            </div>
+                    </div>
+                    <div class="desc-content pie-xs-8 p-h-15"><p>Доставка по Узбекистану в течении 2-х
+                        дней</p></div>
+                </figure>
+                <figure>
+                    <div class="img-content pie-xs-4 p-h-15">
+                        <div class="icon pie-flex-center text-center">
+                            <div><i class="fa fa-mail-reply-all"></i></div>
                         </div>
-                        <div class="desc-content pie-xs-8 p-h-15"><p>Удобные способы оплаты</p></div>
-                    </figure>
-                    <figure>
-                        <div class="img-content pie-xs-4 p-h-15">
-                            <div class="icon pie-flex-center text-center">
-                                <div><i class="fa fa-bullhorn"></i></div>
-                            </div>
+                    </div>
+                    <div class="desc-content pie-xs-8 p-h-15"><p>Удобные способы оплаты</p></div>
+                </figure>
+                <figure>
+                    <div class="img-content pie-xs-4 p-h-15">
+                        <div class="icon pie-flex-center text-center">
+                            <div><i class="fa fa-bullhorn"></i></div>
                         </div>
-                        <div class="desc-content pie-xs-8 p-h-15"><p>Только подлинные товары</p></div>
-                    </figure>
-                </div>
+                    </div>
+                    <div class="desc-content pie-xs-8 p-h-15"><p>Только подлинные товары</p></div>
+                </figure>
             </div>
         </div>
     </div>
+</div>
 
 
-    <div class="productions-tab bg-texture-1 flickity-btn-1">
-        <div class="container">
-            <div class="entry-header m-v-30">
-                <h2 class="font-family-2 color-1 h-clear">Best products</h2>
-                <h1 class="h-clear">Товары Banafa.uz<span class="color-1"></span></h1>
-                <div class="productions-tablist hide float-right-md">
-                    <ul class="list-inline">
-                        <li class="active"><a href="#production-tab-1" data-toggle="tab" flickity="resize">Новинки</a>
-                        </li>
-                        <li><a href="#production-tab-2" data-toggle="tab" flickity="resize">Популярные</a></li>
-                        <li><a href="#production-tab-3" data-toggle="tab" flickity="resize">Распродажа</a></li>
-                    </ul>
+<div class="productions-tab bg-texture-1 flickity-btn-1">
+    <div class="container">
+        <div class="entry-header m-v-30">
+            <h2 class="font-family-2 color-1 h-clear">Best products</h2>
+            <h1 class="h-clear">Товары Banafa.uz<span class="color-1"></span></h1>
+            <div class="productions-tablist hide float-right-md">
+                <ul class="list-inline">
+                    <li class="active"><a href="#production-tab-1" data-toggle="tab" flickity="resize">Новинки</a>
+                    </li>
+                    <li><a href="#production-tab-2" data-toggle="tab" flickity="resize">Популярные</a></li>
+                    <li><a href="#production-tab-3" data-toggle="tab" flickity="resize">Распродажа</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content">
+
+            <div role="tabpanel" id="production-tab-1">
+                <div class="productions-carousel relative">
+                    <div class="col-xs-6 production-cap  text-left-sm"><h2>Новинки</h2></div>
+                    <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
+                            href="{% url 'fabrics_main:newproduct' %}">
+                        <div class="buttons">Все новинки</div>
+                    </a></div>
+
+                    <div class="text-center carousel-items">
+                        {% for product in products %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ product.image.url }});"
+                                         alt="Тональный крем DD Cream natural 01"></div>
+                                </div>
+
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+
+
+                                        <h3>{{ product.name }}</h3>
+
+
+                                    </div>
+                                    <p>{{ product.title }}</p>
+                                    <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                       aria-hidden="true"></i></b></p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                        <div class="p-h-15">
+
+                                            <p class="currentPrice"><b>{{ product.price }}</b> <small>Сум</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' product.pk %}"
+                                           title="Тональный крем DD Cream natural 01" class="link-item"></a>
+                                        <a href="{% url 'fabrics_main:addtocard' product.id %}" class="add_to_basket link-icon"
+                                           style="cursor: pointer;"><span class="circle"><i
+                                                class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% empty %}
+                        <div class="desc-content m-v-5">
+                            <div class="cap-content">
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-prev-next hide">
+                        <span class="next"> <i class="fa fa-angle-right"></i></span>
+                        <span class="prev"> <i class="fa fa-angle-left"></i></span>
+                    </div>
                 </div>
             </div>
 
-            <div class="tab-content">
+            <div role="tabpanel" id="production-tab-2">
+                <div class="productions-carousel relative">
 
-                <div role="tabpanel" id="production-tab-1">
-                    <div class="productions-carousel relative">
-                        <div class="col-xs-6 production-cap  text-left-sm"><h2>Новинки</h2></div>
-                        <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
-                                href="">
-                            <div class="buttons">Все новинки</div>
-                        </a></div>
+                    <div class="col-xs-6 production-cap text-left-sm"><h2>Популярные</h2></div>
+                    <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
+                            href="{% url 'fabrics_main:top_product' %}">
+                        <div class="buttons">Все популярные</div>
+                    </a></div>
 
-                        <div class="text-center carousel-items">
+                    <div class="text-center carousel-items">
+                        {% for top in top_product %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ top.image.url }});"
+                                         alt="Касторовое масло (castor oil) 40ml"></div>
+                                </div>
 
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1854/article-medium.jpg' %});"
-                                             alt="Тональный крем DD Cream natural 01"></div>
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+                                        <h3>{{ top.name }}</h3>
                                     </div>
+                                    <p>{{ top.name }}</p>
+                                    <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                       aria-hidden="true"></i></b></p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
 
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
+                                        <div class="p-h-15">
 
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Тональный крем DD Cream natural 01</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>297 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="makiyazh/face/tonalnaya_osnova/DD-Cream-natural-01.html"
-                                               title="Тональный крем DD Cream natural 01" class="link-item"></a>
-                                            <a id="1854" product="1854" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
+                                            <p class="currentPrice"><b>{{ top.price }}</b> <small>Сум</small></p>
                                         </div>
                                     </div>
                                 </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1853/article-medium.jpg' %});"
-                                             alt="Тональный крем CC Cream all skin types 30ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Тональный крем CC Cream all skin types 30ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>275 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/CC-Cream-all-skin-types-30ml.html"
-                                               title="Тональный крем CC Cream all skin types 30ml"
-                                               class="link-item"></a>
-                                            <a id="1853" product="1853" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' top.pk %}"
+                                           title="Касторовое масло (castor oil) 40ml" class="link-item"></a>
+                                        <a href="#" class="add_to_basket link-icon"
+                                           style="cursor: pointer;"><span class="circle"><i
+                                                class="ls-shopping-bag"></i></span></a>
                                     </div>
                                 </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1852/article-medium.jpg' %});"
-                                             alt="Тональный крем BB Cream natural 01 30ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Тональный крем BB Cream natural 01 30ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>275 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/BB-Cream-natural-01-30ml.html"
-                                               title="Тональный крем BB Cream natural 01 30ml"
-                                               class="link-item"></a>
-                                            <a id="1852" product="1852" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1851/article-medium.jpg' %});"
-                                             alt="Сыворотка Matt &amp; Pure Serum 30ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Сыворотка Matt &amp; Pure Serum 30ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>218 900</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/Matt-Pure-Serum-30ml.html"
-                                               title="Сыворотка Matt &amp; Pure Serum 30ml"
-                                               class="link-item"></a>
-                                            <a id="1851" product="1851" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1850/article-medium.jpg' %});"
-                                             alt="Сыворотка Eye Lift Serum 30ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Сыворотка Eye Lift Serum 30ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>352 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/Eye-Lift-Serum-30ml.html"
-                                               title="Сыворотка Eye Lift Serum 30ml" class="link-item"></a>
-                                            <a id="1850" product="1850" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1849/article-medium.jpg' %});"
-                                             alt="Пилинг для лица Amber Peeling 100ml "></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Пилинг для лица Amber Peeling 100ml </p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>258 500</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/Amber-Peeling-100ml.html"
-                                               title="Пилинг для лица Amber Peeling 100ml "
-                                               class="link-item"></a>
-                                            <a id="1849" product="1849" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1846/article-medium.jpg' %});"
-                                             alt="Крем для лица Vitamin С Cream 100ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Крем для лица Vitamin С Cream 100ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>429 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/Vitamin-Cream-100ml.html"
-                                               title="Крем для лица Vitamin С Cream 100ml"
-                                               class="link-item"></a>
-                                            <a id="1846" product="1846" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1845/article-medium.jpg' %});"
-                                             alt="Крем для лица Red Wonder Cream"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Крем для лица Red Wonder Cream</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>451 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/Red-Wonder-Cream.html"
-                                               title="Крем для лица Red Wonder Cream" class="link-item"></a>
-                                            <a id="1845" product="1845" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1844/article-medium.jpg' %});"
-                                             alt="Крем для лица Golden Dew Cream 100m"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Крем для лица Golden Dew Cream 100m</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>451 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/Golden-Dew-Cream-100m.html"
-                                               title="Крем для лица Golden Dew Cream 100m"
-                                               class="link-item"></a>
-                                            <a id="1844" product="1844" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/1843/article-medium.jpg' %});"
-                                             alt="Крем для лица Collagen Cream 100ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Arcaya</h3>
-
-
-                                        </div>
-                                        <p>Крем для лица Collagen Cream 100ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>429 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/Collagen-Cream-100ml.html"
-                                               title="Крем для лица Collagen Cream 100ml" class="link-item"></a>
-                                            <a id="1843" product="1843" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
+                            </div>
+                        </figure>
+                        {% empty %}
+                        <div class="desc-content m-v-5">
+                            <div class="cap-content">
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                            </div>
                         </div>
-                        <div class="carousel-prev-next hide">
-                            <span class="next"> <i class="fa fa-angle-right"></i></span>
-                            <span class="prev"> <i class="fa fa-angle-left"></i></span>
-                        </div>
+                        {% endfor %}
                     </div>
-                </div>
-
-                <div role="tabpanel" id="production-tab-2">
-                    <div class="productions-carousel relative">
-
-                        <div class="col-xs-6 production-cap text-left-sm"><h2>Популярные</h2></div>
-                        <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
-                                href="popularity/index.html">
-                            <div class="buttons">Все популярные</div>
-                        </a></div>
-
-                        <div class="text-center carousel-items">
-
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/562/castor40-medium.jpg' %});"
-                                             alt="Касторовое масло (castor oil) 40ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                        </div>
-                                        <p>Касторовое масло (castor oil) 40ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>45 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="lechebnoe/lechebnoe_maslo/40ml/562.html"
-                                               title="Касторовое масло (castor oil) 40ml" class="link-item"></a>
-                                            <a id="562" product="562" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/498/article-medium.jpg' %});"
-                                             alt="Змеиное масло для волос Zait Al Hayee 250ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Hemani</h3>
-
-
-                                        </div>
-                                        <p>Змеиное масло для волос Zait Al Hayee 250ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>70 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="volosy/kompleksnoe_maslo/498.html"
-                                               title="Змеиное масло для волос Zait Al Hayee 250ml"
-                                               class="link-item"></a>
-                                            <a id="498" product="498" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/302/article-medium.jpg' %});"
-                                             alt="Крем для похудения Slim Line Hot with Chili 150ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Dr Rashel</h3>
-
-
-                                        </div>
-                                        <p>Крем для похудения Slim Line Hot with Chili 150ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>42 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="telo/pohudenie/230/302.html"
-                                               title="Крем для похудения Slim Line Hot with Chili 150ml"
-                                               class="link-item"></a>
-                                            <a id="302" product="302" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/465/article-medium.jpg' %});"
-                                             alt="Масло амла для волос Green 200ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Hemani</h3>
-
-
-                                        </div>
-                                        <p>Масло амла для волос Green 200ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>35 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="volosy/249/465.html"
-                                               title="Масло амла для волос Green 200ml" class="link-item"></a>
-                                            <a id="465" product="465" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/341/article-medium.jpg' %});"
-                                             alt="Гель крем вокруг глаз 24k Gold Collagen Youthful Reviving 20ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Dr Rashel</h3>
-
-
-                                        </div>
-                                        <p>Гель крем вокруг глаз 24k Gold Collagen Youthful Reviving 20ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>46 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/vokrugglaz/304/341.html"
-                                               title="Гель крем вокруг глаз 24k Gold Collagen Youthful Reviving 20ml"
-                                               class="link-item"></a>
-                                            <a id="341" product="341" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/470/article-medium.jpg' %});"
-                                             alt="Омолаживающий крем для лица Fleurs Snake 80gr"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Hemani</h3>
-
-
-                                        </div>
-                                        <p>Омолаживающий крем для лица Fleurs Snake 80gr</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>50 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/omolazhivanie/307/470.html"
-                                               title="Омолаживающий крем для лица Fleurs Snake 80gr"
-                                               class="link-item"></a>
-                                            <a id="470" product="470" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/576/article-medium.jpg' %});"
-                                             alt="Масло алоэ (aloe oil) 30ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Hemani</h3>
-
-
-                                        </div>
-                                        <p>Масло алоэ (aloe oil) 30ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>20 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="lechebnoe/lechebnoe_maslo/576.html"
-                                               title="Масло алоэ (aloe oil) 30ml" class="link-item"></a>
-                                            <a id="576" product="576" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/342/article-medium.jpg' %});"
-                                             alt="Тональный CC крем 24K Gold Collagen SPF60+ 50ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Dr Rashel</h3>
-
-
-                                        </div>
-                                        <p>Тональный CC крем 24K Gold Collagen SPF60+ 50ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>42 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="makiyazh/face/cc_krem/342.html"
-                                               title="Тональный CC крем 24K Gold Collagen SPF60+ 50ml"
-                                               class="link-item"></a>
-                                            <a id="342" product="342" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/301/article-medium.jpg' %});"
-                                             alt="Крем от растяжек Stretch Mark 150ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Dr Rashel</h3>
-
-
-                                        </div>
-                                        <p>Крем от растяжек Stretch Mark 150ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>42 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="telo/rastyazhka/221/301.html"
-                                               title="Крем от растяжек Stretch Mark 150ml"
-                                               class="link-item"></a>
-                                            <a id="301" product="301" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                            <figure class="hover-content hover-product">
-                                <div class="wrapper">
-                                    <div class="img-content">
-                                        <div class="img"
-                                             style="background-image: url({% static 'images/articles/409/article-medium.jpg' %});"
-                                             alt="Зубная паста Miswak 100ml"></div>
-                                    </div>
-
-                                    <div class="desc-content m-v-5">
-                                        <div class="cap-content">
-
-
-                                            <h3>Hemani</h3>
-
-
-                                        </div>
-                                        <p>Зубная паста Miswak 100ml</p>
-                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                           aria-hidden="true"></i></b></p>
-                                        <div class="price color-1 text-uppercase m-v-15 flex">
-
-                                            <div class="p-h-15">
-
-                                                <p class="currentPrice"><b>20 000</b> <small>Сум</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell-hover text-center">
-                                        <div>
-                                            <a href="litso/uhod_za_polostyu_rta/198/417.html"
-                                               title="Зубная паста Miswak 100ml" class="link-item"></a>
-                                            <a id="409" product="409" class="add_to_basket link-icon"
-                                               style="cursor: pointer;"><span class="circle"><i
-                                                    class="ls-shopping-bag"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="carousel-prev-next hide">
-                            <span class="next"> <i class="fa fa-angle-right"></i></span>
-                            <span class="prev"> <i class="fa fa-angle-left"></i></span>
-                        </div>
+                    <div class="carousel-prev-next hide">
+                        <span class="next"> <i class="fa fa-angle-right"></i></span>
+                        <span class="prev"> <i class="fa fa-angle-left"></i></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    <div class="wholesalers">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 p-h-15 m-v-30">
-                    <div class="text-content">
-                        <h4>Натуральная уходовая косметика, средств для ухода за лицом, кожей и волосами</h4>
-                        <p>В интернет-магазине косметики BANAFA.UZ вы можете купить <strong>натуральную
-                            косметику для ухода за лицом, кожей и волосами,</strong> аюрведические средства,
-                            100% натуральные лечебные и косметические масла, восточную парфюмерию и
-                            профессиональную декоративную косметику по доступным низким ценам.</p>
-                        <p>&nbsp;</p>
-                        <div><strong>Доставим ваш заказ в Ташкенте день в день,</strong> если заказ оформляется
-                            до 12 часов. Оплата при получении любым удобным вам способом.
-                        </div>
-                        <div>&nbsp;</div>
-                        <p>По регионам отправляем через курьерскую службу до центра города только после
-                            онлайн-оплаты через систему Payme или Click.</p>
-                        <p>&nbsp;</p>
-                        <p>Также у нас предусмотрен <strong>самовывоз</strong>, при котором вы можете
-                            самостоятельно забрать товар, приготовленный оператором в нашем магазине по адресу:
-                            Шайхантохурский район, ул.Беруний, д.2. <strong>Ориентир: метро Тинчлик, кинотеатр
-                                Гунча.</strong></p>
-                        <p>&nbsp;</p>
+<div class="wholesalers">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-h-15 m-v-30">
+                <div class="text-content">
+                    <h4>Натуральная уходовая косметика, средств для ухода за лицом, кожей и волосами</h4>
+                    <p>В интернет-магазине косметики BANAFA.UZ вы можете купить <strong>натуральную
+                        косметику для ухода за лицом, кожей и волосами,</strong> аюрведические средства,
+                        100% натуральные лечебные и косметические масла, восточную парфюмерию и
+                        профессиональную декоративную косметику по доступным низким ценам.</p>
+                    <p>&nbsp;</p>
+                    <div><strong>Доставим ваш заказ в Ташкенте день в день,</strong> если заказ оформляется
+                        до 12 часов. Оплата при получении любым удобным вам способом.
                     </div>
-                    <div class="btn-content"><span class="btn-def inline-block"><a data-toggle="modal"
-                                                                                   data-target="#form-wholesalers"
-                                                                                   role="button">Для оптовиков</a></span>
-                    </div>
+                    <div>&nbsp;</div>
+                    <p>По регионам отправляем через курьерскую службу до центра города только после
+                        онлайн-оплаты через систему Payme или Click.</p>
+                    <p>&nbsp;</p>
+                    <p>Также у нас предусмотрен <strong>самовывоз</strong>, при котором вы можете
+                        самостоятельно забрать товар, приготовленный оператором в нашем магазине по адресу:
+                        Шайхантохурский район, ул.Беруний, д.2. <strong>Ориентир: метро Тинчлик, кинотеатр
+                            Гунча.</strong></p>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="btn-content"><span class="btn-def inline-block"><a data-toggle="modal"
+                                                                               data-target="#form-wholesalers"
+                                                                               role="button">Для оптовиков</a></span>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

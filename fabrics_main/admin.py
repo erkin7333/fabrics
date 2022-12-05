@@ -51,9 +51,9 @@ admin.site.register(Brand, BrandAdmin)
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'menucategoriy', 'categories', 'collection', 'brand',
-                    'name', 'manufacturer', 'vendor_code', 'title', 'available',
-                    'top', 'created_at')
+    list_display = ('id', 'menucategoriy', 'categories', 'subcategories', 'collection', 'brand',
+                    'name', 'manufacturer', 'vendor_code', 'title', 'available', 'price',
+                    'top', 'created_at', 'subject', 'description', 'image')
     list_display_links = ('id', 'menucategoriy', 'categories', 'collection', 'brand', 'name')
     search_fields = ('name', 'vendor_code')
     list_per_page = 4

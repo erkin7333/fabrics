@@ -29,6 +29,8 @@
                                 <h3>Aloqa telefon raqami</h3>
                                 <p>{% for p in contact_page %}
                                 <p>{{ p.phone }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                                 {% endfor %}
                                 </p>
                             </div>
@@ -43,6 +45,8 @@
                                 <p>
                                     {% for a in contact_page %}
                                 <p>{{ a.address }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                                 {% endfor %}
                                 </p>
                             </div>
@@ -57,6 +61,8 @@
                                 <p>
                                     {% for e in contact_page %}
                                 <p>{{ e.email }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                                 {% endfor %}
                                 </p>
                             </div>

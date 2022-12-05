@@ -20,6 +20,8 @@
                         <div class="text-content">
                             {% for delivery in deliver_page %}
                                 <p>{{ delivery.description | safe }}</p>
+                            {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                             {% endfor %}
                         </div>
                     </div>

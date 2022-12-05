@@ -55,17 +55,25 @@ class Brand(models.Model):
 class Product(models.Model):
     menucategoriy = models.ForeignKey(MenuCategory, on_delete=models.RESTRICT, blank=True, null=True)
     categories = models.ForeignKey(Caregory, on_delete=models.RESTRICT, blank=True, null=True)
+    subcategories = models.ForeignKey(SubCategory, on_delete=models.RESTRICT, blank=True, null=True)
     collection = models.ForeignKey(Collection, on_delete=models.RESTRICT, blank=True, null=True)
     brand = models.ForeignKey(Brand, on_delete=models.RESTRICT, blank=True, null=True)
     name = models.CharField(max_length=100, verbose_name="Maxsulot nomi")
+    title = models.CharField(max_length=255, verbose_name="Sarlovha")
+    subject = models.CharField(max_length=500, blank=True, null=True)
     manufacturer = models.CharField(max_length=200, verbose_name="Ishlab chiqaruvchi")
     vendor_code = models.CharField(max_length=10, verbose_name="Sotuvchi kodi")
-    title = models.CharField(max_length=255, verbose_name="Sarlovha")
     available = models.BooleanField(default=False, verbose_name='Sotuvda bormi')
+    price = models.FloatField()
     top = models.BooleanField(default=False, verbose_name="Top productga qo'shish")
+    description = models.TextField()
+    image = models.ImageField(upload_to='product/')
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.name
+
+    def get_display_price(self):
+        return self.price / 100
 
     class Meta:
         verbose_name = 'Maxsulot'

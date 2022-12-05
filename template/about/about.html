@@ -21,6 +21,8 @@
                     <div class="text-content m-v-30">
                         {% for about in about_post %}
                             <p>{{ about.description | safe }}</p>
+                        {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                         {% endfor %}
                     </div>
                 </div>

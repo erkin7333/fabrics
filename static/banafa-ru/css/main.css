@@ -7986,7 +7986,7 @@ html {
 }
 
 ::selection {
-    background: #ac2ae0;
+    background: #1a2b56;
     color: #fff;
     text-shadow: none;
 }
@@ -8103,7 +8103,7 @@ table {
 
 table th {
     border-right: 1px solid;
-    background-color: #ac2ae0;
+    background-color: #1a2b56;
     color: white;
 }
 
@@ -8260,7 +8260,7 @@ label {
 }
 
 .color-1 {
-    color: #ffffff;
+    color: #1a2b56;
 }
 
 .color-2 {
@@ -17065,7 +17065,7 @@ main p {
 }
 
 hr {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: #1a2b56;
 }
 
 .main-content {
@@ -20589,6 +20589,31 @@ html .p-r-120 {
 
 .pie-cells-5 .pie-cell {
     width: 20%;
+}
+
+.dicrement__item {
+    box-sizing: content-box;
+    font-size: 20px;
+    padding: 5px 15px;
+    border: 1px solid #1a2b56;
+}
+
+.dicrement__item:hover {
+    background-color: #1a2b56;
+    color: white;
+}
+
+.increment__item{
+    box-sizing: content-box;
+    font-size: 20px;
+    padding: 5px 13.5px;
+    border: 1px solid #1a2b56;
+}
+
+.dicrement__item:hover,
+ .increment__item:hover {
+    background-color: #1a2b56;
+    color: white;
 }
 
 .pie-cells-6 .pie-cell {

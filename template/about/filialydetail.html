@@ -31,6 +31,8 @@
                                 <p>
                                     {% for a in branch_detail %}
                                 <p>{{ a.phone }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                                 {% endfor %}
                                 </p>
                             </div>
@@ -49,6 +51,8 @@
                                 <p>
                                     {% for a in branch_detail %}
                                 <p>{{ a.address }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                                 {% endfor %}
                                 </p>
                             </div>
@@ -63,6 +67,8 @@
                                 <p>
                                     {% for a in branch_detail %}
                                 <p>{{ a.email }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
                                 {% endfor %}
                                 </p>
                             </div>
@@ -79,9 +85,11 @@
 
             {% for lon in branch_detail %}
             <iframe src="{{ lon.location }}"
-        width="100%" height="450" style="border:0;"
-        allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    width="100%" height="450" style="border:0;"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {% empty %}
+            <h>Kechirasiz hozircha malumot kiritilmagan</h>
             {% endfor %}
         </div>
     </div><!-- ./MAIN-CONTENT -->
