@@ -3,7 +3,8 @@ from django.views.generic import DetailView, TemplateView, ListView, View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from .cart import Cart
-from .models import MenuCategory, Caregory, Product
+from .models import MenuCategory, Caregory, Product, OrderItem
+from .forms import OrderModelForm
 
 
 def homepage(request):
@@ -20,11 +21,11 @@ def homepage(request):
 def menu_product(request, pk):
     menuproduct = Product.objects.filter(menucategoriy_id=pk)
     cart = Cart(request)
-    print("Cart tekshiruv---------------->>>>>>>>>>>>>>", cart.get_total_cost())
     context = {
         'menuproduct': menuproduct
     }
     return render(request, 'product/menu-product.html', context=context)
+
 
 
 class CategoryProduct(LoginRequiredMixin, TemplateView):
@@ -105,6 +106,38 @@ class CartAllDeleteView(View):
 
 
 
-def order(request):
-    return render(request, 'card/order.html')
+def checkout(request):
+    cart = Cart(request)
+    if request.method == "POST":
+        form = OrderModelForm(request.POST)
+        print("FORMA==============", form.errors)
+        if form.is_valid():
+
+            total_price = 0
+            for item in cart:
+                product = item['product']
+                total_price += product.price * int(item['quantity'])
+            order = form.save(commit=False)
+            order.user = request.user
+            order.paid_amount = total_price
+            print("ZAKAZ========================>>>>>>>>>>", order)
+            order.save()
+            for item in cart:
+                product = item['product']
+                quantity = int(item['quantity'])
+                price = product.price * quantity
+                print("ITEM============================", price)
+                item = OrderItem.objects.create(order=order, product=product, total_price=price, quantity=quantity)
+                item.save()
+            cart.clear()
+            return redirect('fabrics_main:homepage')
+    else:
+        # print("XATO11111111111===============================", form.errors)
+        form = OrderModelForm()
+        print("XATO222222222===============================", form.errors)
+    context = {
+        'form': form,
+        'cart': cart
+    }
+    return render(request, 'card/checkout.html', context=context)
 

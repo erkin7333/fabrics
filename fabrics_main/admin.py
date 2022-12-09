@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (MenuCategory, Caregory, SubCategory,
-                     Collection, Brand, Product)
+                     Collection, Brand, Product, Payment, Order, OrderItem, Delivery)
 
 
 class MenuCategoriyAdmin(admin.ModelAdmin):
@@ -60,3 +60,43 @@ class ProductAdmin(admin.ModelAdmin):
     class Meta:
         model = Product
 admin.site.register(Product, ProductAdmin)
+
+
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'icon')
+    list_display_links = ('id', 'name')
+    class Meta:
+        model = Payment
+admin.site.register(Payment, PaymentAdmin)
+
+# class OrderAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'user', 'payment_type', 'full_name', 'phone', 'email',
+#                     'address', 'paid_amount', 'created_at', 'delivery')
+#     list_display_links = ('id', 'user', 'payment_type', 'full_name')
+#     class Meta:
+#         model = Order
+# admin.site.register(Order, OrderAdmin)
+#
+#
+# class OrderItemAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'order', 'product', 'total_price', 'quantity')
+#     list_display_links = ('id', 'order', 'product')
+#     class Meta:
+#         model = OrderItem
+# admin.site.register(OrderItem, OrderItemAdmin)
+
+class OrderItemIneLineAdmin(admin.TabularInline):
+    model = OrderItem
+
+class AuthoreAdmin(admin.ModelAdmin):
+    inlines = [OrderItemIneLineAdmin]
+
+admin.site.register(Order, AuthoreAdmin)
+
+
+class DeliveryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    list_display_links = ('id', 'name')
+    class Meta:
+        model = Delivery
+admin.site.register(Delivery, DeliveryAdmin)

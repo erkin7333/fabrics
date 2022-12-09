@@ -27,7 +27,6 @@ def contactpage(request):
 
 def reviewspage(request):
     commnent_page = Comment.objects.all()
-    print("__________JHJJJJJJJJJJJJJJJJ----------------->>>>>>>>>>>>>>>>>>>>", commnent_page)
     context = {
         'commnent_page': commnent_page
     }
@@ -45,7 +44,7 @@ def how_to_order_page(request):
     context = {
         'how_to_order': how_to_order
     }
-    return render(request, 'about/how-to-order.html', context=context)
+    return render(request, 'about/how-to-checkout.html', context=context)
 
 def filialypage(request):
     branches = Branches.objects.all()
@@ -56,7 +55,6 @@ def filialypage(request):
 
 def filiaydetailpage(request, pk):
     branch_detail = BranchDetail.objects.filter(branch_id=pk)
-    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', branch_detail)
     context = {
         'branch_detail': branch_detail
     }

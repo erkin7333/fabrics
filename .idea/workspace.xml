@@ -5,53 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fabrics_main/cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0002_product_description_product_subject.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0003_product_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0004_product_subcategories.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabrics_main/migrations/0005_product_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/article-medium.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_CW4u98s.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_GGI9zWM.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_QhCgc0n.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_RqA0gId.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/menucategory/primary-original_kOoUsqq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_9DqPtPB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_O45PTuc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_SLm4kn3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_ZEPMCxw.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_eVknxZw.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_jfRSArv.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_kwDwHgW.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_lvJwGQn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/product/article-medium_qnhNL43.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/product/category-product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/product/menu-product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/product/new-product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/product/subcategory-product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/product/top-product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fabrics_main/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/payment/clickuz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/payment/payme.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/payment/wallet-filled-money-tool.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_about/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0002_alter_about_description.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0003_alter_about_description.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0004_delivery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0005_contact.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0006_alter_contact_address_alter_contact_email_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0007_alter_contact_phone.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0008_location_remove_contact_location.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0009_comment_delete_location.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0010_alter_comment_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0011_publicoffer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0012_order.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0013_branches.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0014_branchdetail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0015_branchdetail_branch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0016_blog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/migrations/0017_blogdetail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_about/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_about/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_config/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0002_product_description_product_subject.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0003_product_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0004_product_subcategories.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/migrations/0005_product_price.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabrics_main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/banafa-ru/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/banafa-ru/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/agreement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/blogdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/blogdetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/delivery.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/delivery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/filiallar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/filiallar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/filialydetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/filialydetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/how-to-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/how-to-order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/about/reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/reviews.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/card/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/card/card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/product/productdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/productdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/card/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/card/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_account/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_account/migrations/0002_alter_user_phone.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_account/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +84,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/erkin/projects/main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/erkin/data_site/django-ecommerce&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,

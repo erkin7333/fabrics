@@ -28,7 +28,7 @@
                     </div>
                     <div class="desc-content col-md-4 p-h-15 m-v-5 pie-flex-center">
                         <div>
-                            <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{s.product.title }}</font></font><br></h3>
+                            <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ s.product.title }}</font></font><br></h3>
                             <p><small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Maqola:
                                 {{ s.product.vendor_code }}</font></font></small></p>
                             <div class="shop-cart-buttons m-v-15">
@@ -38,19 +38,18 @@
                     </div>
                     <div class="counter-content col-md-3 p-h-15 m-v-5 pie-flex-center">
                         <div>
+                            <h3><span class="prices product-totalprice"><font
+                                    style="vertical-align: inherit;"><font
+                                    style="vertical-align: inherit;">{{ s.product.get_display_price }}</font></font></span><font
+                                    style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                so'm</font></font></h3>
                             <div class="products-cnt-form" data-counter="1">
-                                <h3><span class="prices"><font style="vertical-align: inherit;"><font
-                                        style="vertical-align: inherit;">1 x {{ s.product.get_display_price }}</font></font></span><font
-                                        style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                    so'm</font></font></h3>
-                                <a class="dicrement__item" href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease">-</a>
+                                <a class="dicrement__item"
+                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease">-</a>
                                 <h class="justify-content-between"><strong>{{ s.quantity }}</strong></h>
-                                <a class="increment__item" href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase">+</a>
-                                <h3><span class="prices product-totalprice"><font
-                                        style="vertical-align: inherit;"><font
-                                        style="vertical-align: inherit;">42 000</font></font></span><font
-                                        style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                    so'm</font></font></h3>
+                                <a class="increment__item"
+                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase">+</a>
+
                             </div>
                         </div>
                     </div>
@@ -62,14 +61,16 @@
                 <div class="recalculate-form m-v-15">
                     <div class="row">
                         <div class="col-md-6 p-h-15 flex">
-                            <a href="{% url 'fabrics_main:delete_all' %}" class="m-v-5 text-center btn-def inline-block">
-                            <b>
-                                Очистить корзину
-                            </b>
-                        </a>
+                            <a href="{% url 'fabrics_main:delete_all' %}"
+                               class="m-v-5 text-center btn-def inline-block">
+                                <b>
+                                    Очистить корзину
+                                </b>
+                            </a>
                         </div>
                         <div class="col-md-6 p-h-15 flex" style="justify-content: flex-end;"><h4>Итого к оплате</h4>
-                            <h4 class="p-l-15"><span class="price totalprice-products">{{ cart.get_total_cost }}</span> сум</h4></div>
+                            <h4 class="p-l-15"><span class="price totalprice-products">{{ cart.get_total_cost }}</span>
+                                сум</h4></div>
                     </div>
                 </div>
 
@@ -77,8 +78,7 @@
                     <hr style="border-color: #1a2b56;">
                     <div class="col-md-12 col-xs-12 m-v-5">
                         <div class="shop-cart-total text-right-md">
-                            <a href="{% url 'fabrics_main:order' %}" class="btn-def btn-res reverse inline-block">Перейти к
-                                оформлению</a>
+                            <a href="{% url 'fabrics_main:order' %}" class="btn-def btn-res reverse inline-block">Перейти к оформлению</a>
                         </div>
                     </div>
                 </div>
