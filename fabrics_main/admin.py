@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (MenuCategory, Caregory, SubCategory,
-                     Collection, Brand, Product, Payment, Order, OrderItem, Delivery)
+                     Collection, Brand, Product, Payment, Order, OrderItem, Delivery, Setting)
 
 
 class MenuCategoriyAdmin(admin.ModelAdmin):
@@ -100,3 +100,12 @@ class DeliveryAdmin(admin.ModelAdmin):
     class Meta:
         model = Delivery
 admin.site.register(Delivery, DeliveryAdmin)
+
+
+
+class SettingAdmin(admin.ModelAdmin):
+    list_display = ['key', 'value']
+
+    class Meta:
+        model = Setting
+admin.site.register(Setting, SettingAdmin)

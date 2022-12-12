@@ -8,11 +8,17 @@ app_name = "fabrics_main"
 urlpatterns = [
     path('', homepage, name='homepage'),
 
+    path('search/', SearchResultView.as_view(), name='search'),
+
+    path('select-search/', SelectSearchView.as_view(), name='select_search'),
+
     path('product/', productfilter, name='productfilter'),
 
     path('newproduct/', NewProduct.as_view(), name='newproduct'),
 
     path('top-product/', TopProduct.as_view(), name='top_product'),
+
+    path('brand-product/<int:pk>/', brand_product, name='brand_product'),
 
     path('menu-product/<int:pk>/', menu_product, name='menu_product'),
 
@@ -32,5 +38,7 @@ urlpatterns = [
 
     path('view-cart/', view_cart, name='view_cart'),
 
-    path('order/', checkout, name='order')
+    path('order/', checkout, name='order'),
+
+    path('htmxcategory/', htmxcategory, name='htmxcategory')
 ]

@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404
 from django.views.generic import DetailView, TemplateView, ListView, View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from .cart import Cart
-from .models import MenuCategory, Caregory, Product, OrderItem
+from .models import MenuCategory, Caregory, Product, OrderItem, Brand
 from .forms import OrderModelForm
+from django.db.models import Q
 
 
 def homepage(request):
@@ -18,13 +19,65 @@ def homepage(request):
     }
     return render(request, 'main/index.html', context=context)
 
+class SearchResultView(ListView):
+    model = Product
+    template_name = 'product/search.html'
+    def get_queryset(self):
+        query = self.request.GET.get('query')
+
+        object_list = Product.objects.filter(Q(name__icontains=query) | Q(title__icontains=query) | Q(subject__contains=query)
+                                                 | Q(vendor_code__icontains=query))
+        return object_list
+
+
+class SelectSearchView(ListView):
+    model = Product
+    template_name = 'product/select-search.html'
+    def get_queryset(self):
+        menucategory = self.request.GET.get('menucategory')
+        category = self.request.GET.get('category')
+        brand = self.request.GET.get('brand')
+        min_price = self.request.GET.get('min_price', '')
+        max_price = self.request.GET.get('max_price', '')
+        if min_price == "":
+            min_price = 0
+        if max_price == "":
+            max_price = 100000000000000000000000000
+        print("QWERTREW======", menucategory, category, brand, min_price, max_price)
+        object_list = Product.objects.filter(menucategoriy__id=menucategory, categories__id=category,
+                                             brand__id=brand, price__range=(min_price, max_price))
+        print("QWERTHGFSCFFN>>>>>>>>>>>>>>>>>>>", object_list)
+        return object_list
+
+
+@login_required
 def menu_product(request, pk):
+    mencategory = MenuCategory.objects.all()
+    brands = Brand.objects.all()
     menuproduct = Product.objects.filter(menucategoriy_id=pk)
-    cart = Cart(request)
     context = {
-        'menuproduct': menuproduct
+        'menuproduct': menuproduct,
+        'mencategory': mencategory,
+        'brands': brands
     }
     return render(request, 'product/menu-product.html', context=context)
+
+def htmxcategory(request):
+    menu = request.GET.get('menucategory')
+    print("ASDFGHJHGFDSAASDFGHHGFD===============", menu)
+    categories = Caregory.objects.filter(menucategory=menu)
+    context = {
+        'categories': categories
+    }
+    return render(request, 'partials/categories.html', context=context)
+
+@login_required
+def brand_product(request, pk):
+    brandproduct = Product.objects.filter(id=pk)
+    context = {
+        'brandproduct': brandproduct,
+    }
+    return render(request, 'product/brand-product.html', context=context)
 
 
 
@@ -34,8 +87,14 @@ class CategoryProduct(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
         categoryproduct = Product.objects.filter(categories_id=pk)
+        mencategory = MenuCategory.objects.all()
+        brands = Brand.objects.all()
         context['categoryproduct'] = categoryproduct
+        context['mencategory'] = mencategory
+        context['brands'] = brands
         return context
+
+
 
 class SubcategoryProduct(LoginRequiredMixin, TemplateView):
     template_name = 'product/subcategory-product.html'
@@ -46,15 +105,21 @@ class SubcategoryProduct(LoginRequiredMixin, TemplateView):
         context['subproduct'] = subproduct
         return context
 
+
+
 class NewProduct(LoginRequiredMixin, ListView):
     template_name = 'product/new-product.html'
     def get_queryset(self):
         return Product.objects.order_by('-created_at').exclude(top=True)
 
+
+
 class TopProduct(LoginRequiredMixin, ListView):
     template_name = 'product/top-product.html'
     def get_queryset(self):
         return Product.objects.filter(top=True)
+
+
 
 class ProductDetailView(LoginRequiredMixin, DetailView):
     template_name = 'product/productdetail.html'
@@ -66,10 +131,14 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
+
+
 def add_to_cart(request, product_id):
     cart = Cart(request)
     cart.add(product_id)
     return redirect("fabrics_main:view_cart")
+
+
 
 def change_quantity(request, product_id):
     action = request.GET.get('action', '')
@@ -82,10 +151,14 @@ def change_quantity(request, product_id):
 
     return redirect('fabrics_main:view_cart')
 
+
+
 def remove_cart(request, product_id):
     cart = Cart(request)
     cart.remove(product_id)
     return redirect('fabrics_main:view_cart')
+
+
 
 def view_cart(request):
     cart = Cart(request)
@@ -94,8 +167,12 @@ def view_cart(request):
     }
     return render(request, 'card/card.html', context=context)
 
+
+
 def productfilter(request):
     return render(request, 'product/productfilter.html')
+
+
 
 
 class CartAllDeleteView(View):

@@ -129,6 +129,14 @@ class OrderItem(models.Model):
 
 
 
+class Setting(models.Model):
+    key = models.CharField(max_length=52, primary_key=True)
+    value = models.TextField()
+    def __str__(self):
+        return self.key
+
+    class Meta:
+        verbose_name = "Setting"
 
 
 

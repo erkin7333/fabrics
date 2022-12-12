@@ -281,7 +281,7 @@
                         </div>
 
                         <div class="search-nav-content box-md-6 color-black">
-                            <form action="">
+                            <form action="{% url 'fabrics_main:search' %}" method="get">
                                 <div class="col-md-10 search-input">
                                     <input type="text" name="query" value="" placeholder="Поиск"
                                         style="height: 37px;" />
@@ -311,13 +311,12 @@
                                         alt="Телефон" width="32"></div>
                                 <div class="vam">
                                     <p class="text-bg">Служба поддержки:</p>
-                                    <p><b class="text-bg">+998 (95) 177-00-05</b></p>
+                                    <p><b class="text-bg">{{ phone }}</b></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- ./CONTAINER -->
             </div>
             <!-- ./HEADER MIDDLE -->
 
@@ -390,7 +389,7 @@
                                                     <ul class="sublist" style="column-count: 4;">
                                                         {% for col in brand %}
                                                         <li>
-                                                            <a href="#">{{ col.name }}</a>
+                                                            <a href="{% url 'fabrics_main:brand_product' col.pk %}">{{ col.name }}</a>
                                                         </li>
                                                         {% endfor %}
                                                     </ul>
@@ -751,10 +750,13 @@
         </footer>
     </div>
 
+    <script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
+
     <script src="{% static 'banafa-ru/js/scripts.min.js' %}"></script>
     <script src="{% static 'banafa-ru/js/validate.min.js' %}"></script>
     <script src="{% static 'banafa-ru/js/messages.js' %}"></script>
     <script src="{% static 'banafa-ru/js/main.js' %}"></script>
+    <script src="{% static 'js.htmx.min.js' %}"></script>
     <!-- jQuery REVOLUTION Slider  -->
     <script type="text/javascript"
         src="{% static 'banafa-ru/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>

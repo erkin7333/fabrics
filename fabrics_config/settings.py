@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'fabrics_config.context_processors.dropdownmenu',
+                'fabrics_config.context_processors.context_settings',
 
             ],
         },
@@ -304,6 +305,7 @@ JAZZMIN_SETTINGS = {
         {'model': "fabrics_main.Delivery"},
         {'model': "fabrics_main.Payment"},
         {'model': "fabrics_main.Order"},
+        {'model': "fabrics_main.Setting"},
 
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
@@ -339,7 +341,7 @@ JAZZMIN_SETTINGS = {
     "hide_models": ["fabrics_main.MenuCategory",
                     "fabrics_main.Caregory", "fabrics_main.SubCategory",
                     "fabrics_main.Collection", "fabrics_main.Brand", "fabrics_main.Product",
-                    "fabrics_main.Payment", "fabrics_main.Order", "fabrics_main.Delivery"],
+                    "fabrics_main.Payment", "fabrics_main.Order", "fabrics_main.Delivery", "fabrics_main.Setting"],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": ["auth", "books", "books.author", "books.book"],

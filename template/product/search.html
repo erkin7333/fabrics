@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Brand {% endblock %}
+{% block title %} Search {% endblock %}
 
 {% block content %}
 <main data-aos="fade" data-aos-delay="0">
@@ -23,12 +23,12 @@
                 <div class="products-content">
 
                     <div class="text-center figure-m-v-15 boxes-4 products-items">
-                        {% for brand in brandproduct %}
+                        {% for search in object_list %}
                         <figure class="hover-content hover-product">
                             <div class="wrapper">
                                 <div class="img-content">
                                     <div class="img"
-                                         style="background-image: url({{ brand.image.url }});"
+                                         style="background-image: url({{ search.image.url }});"
                                          alt="Brand"></div>
                                 </div>
 
@@ -36,11 +36,11 @@
                                     <div class="cap-content">
 
 
-                                        <h3>{{ brand.name }}</h3>
+                                        <h3>{{ search.name }}</h3>
 
 
                                     </div>
-                                    <p>{{ brand.title }}</p>
+                                    <p></p>
                                     <p><b>В наличии <i style="color:green;" class="fa fa-check"
                                                        aria-hidden="true"></i></b></p>
                                     <div class="price color-1 text-uppercase m-v-15 flex">
@@ -53,10 +53,20 @@
                                 </div>
                                 <div class="cell-hover text-center">
                                     <div>
-                                        <a href="{% url 'fabrics_main:detail_product' brand.pk %}" class="link-item"></a>
+                                        <a href="" class="link-item"></a>
                                         <a id="1545" product="1545" class="add_to_basket link-icon"
                                            style="cursor: pointer;"><span class="circle"><i
                                                 class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% empty %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+                                        <h3>Kechirasiz siz izlagan maxsulot mavjud emas</h3>
                                     </div>
                                 </div>
                             </div>
