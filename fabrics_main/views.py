@@ -184,7 +184,7 @@ def view_cart(request):
     context = {
         'cart': cart
     }
-    return render(request, 'card/card.html', context=context)
+    return render(request, 'card/cart.html', context=context)
 
 
 class CartAllDeleteView(View):
