@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Order detail{% endblock %}
+
+
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table mt-5">
+                        <thead>
+                        <tr>
+                            <th scope="col">Product name</th>
+                            <th scope="col">Sotish kodi</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in order %}
+                        <tr>
+                            <td>
+                                <h5>{{ item.product.name }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ item.product.vendor_code }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ item.quantity }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ item.total_price }}</h5>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td>
+                                <h2>Sizda buyurtmalar mavjud emas</h2>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

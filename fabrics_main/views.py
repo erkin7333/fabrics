@@ -3,7 +3,7 @@ from django.views.generic import DetailView, TemplateView, ListView, View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from .cart import Cart
-from .models import MenuCategory, Caregory, Product, OrderItem, Brand
+from .models import MenuCategory, Caregory, Product, OrderItem, Brand, Order
 from .forms import OrderModelForm
 from django.db.models import Q
 
@@ -207,7 +207,7 @@ def checkout(request):
                 item = OrderItem.objects.create(order=order, product=product, total_price=price, quantity=quantity)
                 item.save()
             cart.clear()
-            return redirect('fabrics_main:homepage')
+            return redirect('fabrics_main:my_orders')
     else:
         # print("XATO11111111111===============================", form.errors)
         form = OrderModelForm()
@@ -218,3 +218,18 @@ def checkout(request):
     }
     return render(request, 'card/checkout.html', context=context)
 
+
+def my_orders(request):
+    ordet_items = OrderItem.objects.filter(order__user=request.user)
+    context = {
+        'ordet_items': ordet_items
+    }
+    return render(request, 'card/myorder.html', context=context)
+
+def order_detail(request, pk):
+    order = get_list_or_404(OrderItem, id=pk)
+    print("QWERTYUIOPKJHGFDSAASDFGHJKLKJHG===============", order)
+    context = {
+        'order': order
+    }
+    return render(request, 'card/orderdetaile.html', context=context)

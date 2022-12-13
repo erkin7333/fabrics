@@ -94,11 +94,6 @@ class Payment(models.Model):
         verbose_name = "Payment"
 
 class Order(models.Model):
-    DELIVERY_CHOICES = [
-        (1, "24 soat ichida bepul yetkazib berish - 200 000 so'mdan boshlab buyurtma berishda bepul ."),
-        (2, "24 soat ichida muntazam yetkazib berish - 200 000 so'mdan kam buyurtmalar uchun 15 000 so'm"),
-        (3, "Viloyat markazlariga kuryerlik xizmati orqali jo‘natish faqat Payme yoki Click orqali to‘lov amalga oshirilgandan so‘ng – 1 kg uchun 20 000 so‘m.")
-    ]
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     payment_type = models.ForeignKey(Payment, on_delete=models.RESTRICT)
     delivery_type = models.ForeignKey(Delivery, on_delete=models.RESTRICT)

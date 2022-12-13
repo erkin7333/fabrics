@@ -123,7 +123,7 @@
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <title>SofDilShop.uz</title>
+    <title>{% block title %}SofDilShop.uz{% endblock %}</title>
 </head>
 
 <body>
@@ -230,23 +230,34 @@
 
                         <div class="user-panel pie-md-4 p-h-15 hover-color-1 text-nowrap">
                             <div class="flex-content pie-flex-justify row">
-
-                                <div class="panel-face p-h-15 unauthorized">
-                                    <a class="p-h-5" href="{% url 'user_account:register' %}" role="button"
-                                        title="Регистрация">
+                                {% if request.user.is_authenticated %}
+                                 <div class="panel-face p-h-15 unauthorized">
+                                    <a class="p-h-5" href="{% url 'fabrics_main:my_orders' %}" role="button"><span class="text-content vam">
+                                            <p>My orders</p>
+                                        </span>
+                                    </a>
+                                    <a class="p-h-5" href="#" role="button">
+                                        <span class="text-content vam">
+                                            <p>Logout</p>
+                                        </span>
+                                    </a>
+                                </div>
+                                {% else %}
+                                 <div class="panel-face p-h-15 unauthorized">
+                                    <a class="p-h-5" href="{% url 'user_account:register' %}" role="button">
                                         <span class="icon-content vam"><i class="fa fa-user p-r-5"></i></span>
                                         <span class="text-content vam">
                                             <p>Регистрация</p>
                                         </span>
                                     </a>
-                                    <a class="p-h-5" href="{% url 'user_account:login' %}" role="button"
-                                        title="Регистрация">
+                                    <a class="p-h-5" href="{% url 'user_account:login' %}" role="button">
                                         <span class="icon-content vam"><i class="fa fa-user p-r-5"></i></span>
                                         <span class="text-content vam">
                                             <p>Aвторизоваться</p>
                                         </span>
                                     </a>
                                 </div>
+                                {% endif %}
                             </div>
                         </div>
 

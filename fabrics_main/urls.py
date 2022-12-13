@@ -40,5 +40,9 @@ urlpatterns = [
 
     path('order/', checkout, name='order'),
 
+    path('my-orders', my_orders, name='my_orders'),
+
+    path('order-detail/<int:pk>/', order_detail, name='order_detail'),
+
     path('htmxcategory/', htmxcategory, name='htmxcategory')
 ]
