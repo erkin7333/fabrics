@@ -24,11 +24,13 @@ class Delivery(models.Model):
     class Meta:
         verbose_name = 'Yetkaziberish xizmati'
 
+
 # Manzil va Kontakt uchun model
 class Contact(models.Model):
     phone = models.CharField(max_length=20, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
     email = models.CharField(max_length=60, blank=True, null=True)
+
     def __str__(self):
         return f"{str(self.phone)} {self.address} {self.email}"
 
@@ -42,14 +44,18 @@ class Comment(models.Model):
     url = models.URLField(max_length=255)
     image = models.ImageField(upload_to='media/comment/image')
     content = models.TextField()
+
     def __str__(self):
         return self.title
+
     class Meta:
         verbose_name = "Sayt uchun koment"
+
 
 # OMMAVIY TAKLIFLAR uchun model
 class PublicOffer(models.Model):
     description = models.TextField()
+
     class Meta:
         verbose_name = "OMMAVIY TAKLIF"
 
@@ -73,6 +79,7 @@ class Branches(models.Model):
     title = models.CharField(max_length=300)
     phone = models.CharField(max_length=20)
     image = models.ImageField(upload_to='braches')
+
     def __str__(self):
         return self.name
 
@@ -100,8 +107,10 @@ class Blog(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='blog')
     content = models.TextField()
+
     def __str__(self):
         return str(self.title)
+
     class Meta:
         verbose_name = "Blog"
 
@@ -110,7 +119,9 @@ class Blog(models.Model):
 class BlogDetail(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE, blank=True, null=True)
     description = models.TextField()
+
     def __str__(self):
         return str(self.blog)
+
     class Meta:
         verbose_name = "Blog Tavsifi"

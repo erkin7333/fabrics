@@ -6,24 +6,30 @@ from .models import (MenuCategory, Caregory, SubCategory,
 class MenuCategoriyAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'image')
     list_display_links = ('id', 'name')
+
     class Meta:
         model = MenuCategory
+
 admin.site.register(MenuCategory, MenuCategoriyAdmin)
 
 
 class CategoriyAdmin(admin.ModelAdmin):
     list_display = ('id', 'menucategory', 'name')
     list_display_links = ('id', 'menucategory', 'name')
+
     class Meta:
         model = Caregory
+
 admin.site.register(Caregory, CategoriyAdmin)
 
 
 class SubCategoriyAdmin(admin.ModelAdmin):
     list_display = ('id', 'category', 'name')
     list_display_links = ('id', 'category', 'name')
+
     class Meta:
         model = SubCategory
+
 admin.site.register(SubCategory, SubCategoriyAdmin)
 
 

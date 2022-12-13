@@ -11,6 +11,7 @@ class PhoneValidator:
     def clean(value):
         return re.sub('[^0-9]+', '', value)
 
+
     @staticmethod
     def validate(value):
         try:
@@ -25,6 +26,7 @@ class PhoneValidator:
             return False
 
         return True
+
 
     def __call__(self, value):
         if not PhoneValidator.validate(value):

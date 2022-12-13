@@ -23,15 +23,18 @@ class RegistrationForm(forms.Form):
             raise ValidationError("Ushbu username band")
         return self.cleaned_data["username"]
 
+
     def clean_phone(self):
         if User.objects.filter(phone=self.cleaned_data.get('phone')).exists():
             raise ValidationError('Ushbu telefon raqam band')
         return self.cleaned_data['phone']
 
+
     def clean_email(self):
         if User.objects.filter(email=self.cleaned_data.get('email')).exists():
             raise ValidationError('Ushbu elektron pochta manzili band')
         return self.cleaned_data['email']
+
 
     def clean_confirm(self):
         if self.cleaned_data['password'] != self.cleaned_data['confirm']:

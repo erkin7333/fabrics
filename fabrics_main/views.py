@@ -9,6 +9,7 @@ from django.db.models import Q
 
 
 def homepage(request):
+    """For home page"""
     image = MenuCategory.objects.all()
     products = Product.objects.order_by('-created_at').exclude(top=True)
     top_product = Product.objects.filter(top=True)
@@ -19,9 +20,12 @@ def homepage(request):
     }
     return render(request, 'main/index.html', context=context)
 
+
 class SearchResultView(ListView):
+    """Search results class"""
     model = Product
     template_name = 'product/search.html'
+
     def get_queryset(self):
         query = self.request.GET.get('query')
 
@@ -31,8 +35,10 @@ class SearchResultView(ListView):
 
 
 class SelectSearchView(ListView):
+    """Search items class"""
     model = Product
     template_name = 'product/select-search.html'
+
     def get_queryset(self):
         menucategory = self.request.GET.get('menucategory')
         category = self.request.GET.get('category')
@@ -43,15 +49,14 @@ class SelectSearchView(ListView):
             min_price = 0
         if max_price == "":
             max_price = 100000000000000000000000000
-        print("QWERTREW======", menucategory, category, brand, min_price, max_price)
         object_list = Product.objects.filter(menucategoriy__id=menucategory, categories__id=category,
                                              brand__id=brand, price__range=(min_price, max_price))
-        print("QWERTHGFSCFFN>>>>>>>>>>>>>>>>>>>", object_list)
         return object_list
 
 
 @login_required
 def menu_product(request, pk):
+    """Fuction for menu products"""
     mencategory = MenuCategory.objects.all()
     brands = Brand.objects.all()
     menuproduct = Product.objects.filter(menucategoriy_id=pk)
@@ -62,17 +67,20 @@ def menu_product(request, pk):
     }
     return render(request, 'product/menu-product.html', context=context)
 
+
 def htmxcategory(request):
+    """Using HTMX for check dropdown exist."""
     menu = request.GET.get('menucategory')
-    print("ASDFGHJHGFDSAASDFGHHGFD===============", menu)
     categories = Caregory.objects.filter(menucategory=menu)
     context = {
         'categories': categories
     }
     return render(request, 'partials/categories.html', context=context)
 
+
 @login_required
 def brand_product(request, pk):
+    """View for brand products."""
     brandproduct = Product.objects.filter(id=pk)
     context = {
         'brandproduct': brandproduct,
@@ -80,9 +88,10 @@ def brand_product(request, pk):
     return render(request, 'product/brand-product.html', context=context)
 
 
-
 class CategoryProduct(LoginRequiredMixin, TemplateView):
+    """Find category on generics view."""
     template_name = 'product/category-product.html'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
@@ -97,7 +106,9 @@ class CategoryProduct(LoginRequiredMixin, TemplateView):
 
 
 class SubcategoryProduct(LoginRequiredMixin, TemplateView):
+    """Class for subcategory."""
     template_name = 'product/subcategory-product.html'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
@@ -108,22 +119,28 @@ class SubcategoryProduct(LoginRequiredMixin, TemplateView):
 
 
 class NewProduct(LoginRequiredMixin, ListView):
+    """Filter new products."""
     template_name = 'product/new-product.html'
+
     def get_queryset(self):
         return Product.objects.order_by('-created_at').exclude(top=True)
 
 
 
 class TopProduct(LoginRequiredMixin, ListView):
+    """Find Top products."""
     template_name = 'product/top-product.html'
+
     def get_queryset(self):
         return Product.objects.filter(top=True)
 
 
 
 class ProductDetailView(LoginRequiredMixin, DetailView):
+    """Product detail class."""
     template_name = 'product/productdetail.html'
     model = Product
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         newproduct = products = Product.objects.order_by('-created_at').exclude(top=True)[0:3]
@@ -134,6 +151,7 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
 
 
 def add_to_cart(request, product_id):
+    """Adding to cart func."""
     cart = Cart(request)
     cart.add(product_id)
     return redirect("fabrics_main:view_cart")
@@ -141,6 +159,7 @@ def add_to_cart(request, product_id):
 
 
 def change_quantity(request, product_id):
+    """Change amount of the products."""
     action = request.GET.get('action', '')
     if action:
         quantity = 1
@@ -152,15 +171,15 @@ def change_quantity(request, product_id):
     return redirect('fabrics_main:view_cart')
 
 
-
 def remove_cart(request, product_id):
+    """Function for remove prodct from cart."""
     cart = Cart(request)
     cart.remove(product_id)
     return redirect('fabrics_main:view_cart')
 
 
-
 def view_cart(request):
+    """Fuction for view cart."""
     cart = Cart(request)
     context = {
         'cart': cart
@@ -168,14 +187,9 @@ def view_cart(request):
     return render(request, 'card/card.html', context=context)
 
 
-
-def productfilter(request):
-    return render(request, 'product/productfilter.html')
-
-
-
-
 class CartAllDeleteView(View):
+    """Delete all cart items view."""
+
     def get(self, request, *args, **kwargs):
         cart = Cart(request)
         cart.save()
@@ -184,10 +198,10 @@ class CartAllDeleteView(View):
 
 
 def checkout(request):
+    """Function for checkout product"""
     cart = Cart(request)
     if request.method == "POST":
         form = OrderModelForm(request.POST)
-        print("FORMA==============", form.errors)
         if form.is_valid():
 
             total_price = 0
@@ -197,21 +211,20 @@ def checkout(request):
             order = form.save(commit=False)
             order.user = request.user
             order.paid_amount = total_price
-            print("ZAKAZ========================>>>>>>>>>>", order)
             order.save()
             for item in cart:
                 product = item['product']
                 quantity = int(item['quantity'])
                 price = product.price * quantity
-                print("ITEM============================", price)
-                item = OrderItem.objects.create(order=order, product=product, total_price=price, quantity=quantity)
+                item = OrderItem.objects.create(order=order,
+                                                product=product,
+                                                total_price=price,
+                                                quantity=quantity)
                 item.save()
             cart.clear()
             return redirect('fabrics_main:my_orders')
     else:
-        # print("XATO11111111111===============================", form.errors)
         form = OrderModelForm()
-        print("XATO222222222===============================", form.errors)
     context = {
         'form': form,
         'cart': cart
@@ -220,15 +233,17 @@ def checkout(request):
 
 
 def my_orders(request):
+    """View for my orders filter"""
     ordet_items = OrderItem.objects.filter(order__user=request.user)
     context = {
         'ordet_items': ordet_items
     }
     return render(request, 'card/myorder.html', context=context)
 
+
 def order_detail(request, pk):
+    """For use order detail"""
     order = get_list_or_404(OrderItem, id=pk)
-    print("QWERTYUIOPKJHGFDSAASDFGHJKLKJHG===============", order)
     context = {
         'order': order
     }

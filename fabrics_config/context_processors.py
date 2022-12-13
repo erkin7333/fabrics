@@ -21,7 +21,6 @@ def context_settings(request):
     phone =''
     try:
         return {"phone": Setting.objects.get(key='phone').value,}
-        print("AETRERFDASRDTHG=============", phone)
 
         cart = Cart(request)
     except:

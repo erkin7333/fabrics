@@ -9,6 +9,7 @@ class MenuCategory(models.Model):
 
     def __str__(self):
         return self.name
+
     class Meta:
         verbose_name = "Menyu Kategoriya"
 
@@ -21,6 +22,7 @@ class Caregory(models.Model):
 
     def __str__(self):
         return self.menucategory.name + " -- " + self.name
+
     class Meta:
         verbose_name = 'Kategoriya'
 
@@ -28,6 +30,7 @@ class Caregory(models.Model):
 class SubCategory(models.Model):
     category = models.ForeignKey(Caregory, on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
+
     def __str__(self):
         return self.category.menucategory.name + ' -- ' + self.category.name + ' -- ' + self.name
 
@@ -35,6 +38,7 @@ class SubCategory(models.Model):
 # To'plam uchun model
 class Collection(models.Model):
     name = models.CharField(max_length=50)
+
     def __str__(self):
         return self.name
     class Meta:
@@ -43,6 +47,7 @@ class Collection(models.Model):
 # Brendlar uchun model
 class Brand(models.Model):
     name = models.CharField(max_length=60)
+
     def __str__(self):
         return self.name
 
@@ -68,6 +73,7 @@ class Product(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='product/')
     created_at = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.name
 
@@ -79,8 +85,10 @@ class Product(models.Model):
 
 class Delivery(models.Model):
     name = models.CharField(max_length=500)
+
     def __str__(self):
         return str(self.name)
+
     class Meta:
         verbose_name = "Delivery"
 
@@ -88,8 +96,10 @@ class Delivery(models.Model):
 class Payment(models.Model):
     name = models.CharField(max_length=50)
     icon = models.FileField(upload_to='payment')
+
     def __str__(self):
         return self.name
+
     class Meta:
         verbose_name = "Payment"
 
@@ -106,6 +116,7 @@ class Order(models.Model):
 
     def __str__(self):
         return self.full_name
+
     class Meta:
         verbose_name = "Order"
 
@@ -117,8 +128,10 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return str(self.order)
+
     def get_total_price(self):
         return self.total_price / 100
+
     class Meta:
         verbose_name = "OrderItem"
 
@@ -127,6 +140,7 @@ class OrderItem(models.Model):
 class Setting(models.Model):
     key = models.CharField(max_length=52, primary_key=True)
     value = models.CharField(max_length=2000)
+
     def __str__(self):
         return self.key
 

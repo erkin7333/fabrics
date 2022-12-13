@@ -6,8 +6,11 @@ from .models import User
 
 
 class UserRegistration(View):
+    """User registration."""
+
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
+
 
     def get(self, request):
         form = RegistrationForm()
@@ -15,6 +18,7 @@ class UserRegistration(View):
             'form': form
         }
         return render(request, 'account/sing-up.html', context=context)
+
 
     def post(self, request):
         form = RegistrationForm(data=request.POST)
@@ -31,8 +35,8 @@ class UserRegistration(View):
         return render(request, 'account/sing-up.html', context=context)
 
 
-
 def user_login(request):
+    """User login."""
     form = LoginForm()
     if request.method == 'POST':
         form = LoginForm(data=request.POST)

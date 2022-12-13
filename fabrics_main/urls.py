@@ -12,8 +12,6 @@ urlpatterns = [
 
     path('select-search/', SelectSearchView.as_view(), name='select_search'),
 
-    path('product/', productfilter, name='productfilter'),
-
     path('newproduct/', NewProduct.as_view(), name='newproduct'),
 
     path('top-product/', TopProduct.as_view(), name='top_product'),

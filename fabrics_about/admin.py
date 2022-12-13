@@ -7,9 +7,12 @@ from .models import (About, Delivery, Contact, Comment, PublicOffer,
 
 class AboutModelForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
         model = About
         fields = '__all__'
+
+
 class AboutAdmin(admin.ModelAdmin):
     form = AboutModelForm
     list_per_page = 2
@@ -19,9 +22,11 @@ admin.site.register(About, AboutAdmin)
 
 class DelivreyModelForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
         model = Delivery
         exclude = ('created_add',)
+
 
 class DeliveryAdmin(admin.ModelAdmin):
     form = DelivreyModelForm
@@ -33,8 +38,10 @@ admin.site.register(Delivery, DeliveryAdmin)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('id', 'phone', 'address', 'email')
     list_display_links = ('id', 'phone', 'address',)
+
     class Meta:
         model = Contact
+
 admin.site.register(Contact, ContactAdmin)
 
 
