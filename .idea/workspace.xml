@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/template/card/myorder.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/card/orderdetaile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabrics_main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

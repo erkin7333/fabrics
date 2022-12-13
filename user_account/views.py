@@ -49,3 +49,9 @@ def user_login(request):
             form.add_error('password', "Username yoki parol noto'g'ri")
 
     return render(request, 'account/login.html', {'form': form})
+
+
+def user_logout(request):
+    """User Logot"""
+    logout(request)
+    return redirect('fabrics_main:homepage')
