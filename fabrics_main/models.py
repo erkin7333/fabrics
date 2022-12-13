@@ -131,7 +131,7 @@ class OrderItem(models.Model):
 
 class Setting(models.Model):
     key = models.CharField(max_length=52, primary_key=True)
-    value = models.TextField()
+    value = models.CharField(max_length=2000)
     def __str__(self):
         return self.key
 

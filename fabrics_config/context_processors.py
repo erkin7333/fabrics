@@ -1,5 +1,7 @@
 from fabrics_main.models import MenuCategory, Caregory, Collection, Brand, Setting
-
+from django.core.exceptions import ValidationError
+from django.shortcuts import  get_object_or_404
+from fabrics_main.cart import Cart
 
 
 def dropdownmenu(request):
@@ -13,9 +15,15 @@ def dropdownmenu(request):
     }
     return ctx
 
+
 def context_settings(request):
-    phone = Setting.objects.get(key='phone').value,
-    context = {
-        'phone': phone
-    }
-    return context
+    cart = ''
+    phone =''
+    try:
+        return {"phone": Setting.objects.get(key='phone').value,}
+        print("AETRERFDASRDTHG=============", phone)
+
+        cart = Cart(request)
+    except:
+        pass
+    return {'phone': phone, 'cart': cart}

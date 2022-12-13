@@ -76,7 +76,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'fabrics_config.context_processors.dropdownmenu',
                 'fabrics_config.context_processors.context_settings',
-
             ],
         },
     },
