@@ -236,7 +236,7 @@
                                             <p>My orders</p>
                                         </span>
                                     </a>
-                                    <a class="p-h-5" href="#" role="button">
+                                    <a class="p-h-5" href="{% url 'user_account:logout' %}" role="button">
                                         <span class="text-content vam">
                                             <p>Logout</p>
                                         </span>
@@ -286,8 +286,7 @@
                         <div class="logo p-h-15 box-md-3">
                             <div class="img-content pie-md pie-dry mt-5"><a
                                     href="{% url 'fabrics_main:homepage' %}"><img
-                                        src="{% static 'images/logosofdil-removebg-preview.png' %}"
-                                        atl="Интернет-магазин косметики в Ташкенте Banafa.uz"></a>
+                                        src="{% static 'images/logosofdil-removebg-preview.png' %}"></a>
                             </div>
                         </div>
 
