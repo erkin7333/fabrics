@@ -12,18 +12,15 @@
                 <li data-transition="boxfade" data-masterspeed="1200">
                     <a href="{% url 'fabrics_main:menu_product' img.pk %}" class="fulllink"></a>
                     <img src="{{ img.image.url }}" alt="  ">
-                    <div class="wrapper-bg tp-caption customin customout start hidden"
-                         data-x="center"
-                         data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
-                         data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
-                         data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                         data-captionhidden="on"></div>
+                    <div class="wrapper-bg tp-caption customin customout start hidden" data-x="center" data-y="center"
+                        data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0"
+                        data-voffset="0" data-start="1000" data-easing="Power4.easeOut" data-endspeed="1000"
+                        data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
                     <div class="container">
-                        <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
-                             data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
-                             data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
-                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                             data-captionhidden="on">
+                        <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm" data-x="left"
+                            data-y="top" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800"
+                            data-hoffset="20" data-voffset="50" data-start="1200" data-easing="Power4.easeOut"
+                            data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on">
                             <h2></h2>
                         </div>
                     </div>
@@ -36,15 +33,12 @@
 </div>
 
 <style>
-
-        .fulllink {
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-        }
-
-
+    .fulllink {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+    }
 </style>
 
 <div class="short-advantages">
@@ -57,8 +51,10 @@
                             <div><i class="fa fa-truck"></i></div>
                         </div>
                     </div>
-                    <div class="desc-content pie-xs-8 p-h-15"><p>Доставка по Узбекистану в течении 2-х
-                        дней</p></div>
+                    <div class="desc-content pie-xs-8 p-h-15">
+                        <p>Доставка по Узбекистану в течении 2-х
+                            дней</p>
+                    </div>
                 </figure>
                 <figure>
                     <div class="img-content pie-xs-4 p-h-15">
@@ -66,7 +62,9 @@
                             <div><i class="fa fa-mail-reply-all"></i></div>
                         </div>
                     </div>
-                    <div class="desc-content pie-xs-8 p-h-15"><p>Удобные способы оплаты</p></div>
+                    <div class="desc-content pie-xs-8 p-h-15">
+                        <p>Удобные способы оплаты</p>
+                    </div>
                 </figure>
                 <figure>
                     <div class="img-content pie-xs-4 p-h-15">
@@ -74,7 +72,9 @@
                             <div><i class="fa fa-bullhorn"></i></div>
                         </div>
                     </div>
-                    <div class="desc-content pie-xs-8 p-h-15"><p>Только подлинные товары</p></div>
+                    <div class="desc-content pie-xs-8 p-h-15">
+                        <p>Только подлинные товары</p>
+                    </div>
                 </figure>
             </div>
         </div>
@@ -101,20 +101,21 @@
 
             <div role="tabpanel" id="production-tab-1">
                 <div class="productions-carousel relative">
-                    <div class="col-xs-6 production-cap  text-left-sm"><h2>Новинки</h2></div>
+                    <div class="col-xs-6 production-cap  text-left-sm">
+                        <h2>Новинки</h2>
+                    </div>
                     <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
                             href="{% url 'fabrics_main:newproduct' %}">
-                        <div class="buttons">Все новинки</div>
-                    </a></div>
+                            <div class="buttons">Все новинки</div>
+                        </a></div>
 
                     <div class="text-center carousel-items">
                         {% for product in products %}
                         <figure class="hover-content hover-product">
                             <div class="wrapper">
                                 <div class="img-content">
-                                    <div class="img"
-                                         style="background-image: url({{ product.image.url }});"
-                                         alt="Тональный крем DD Cream natural 01"></div>
+                                    <div class="img" style="background-image: url({{ product.image.url }});"
+                                        alt="Тональный крем DD Cream natural 01"></div>
                                 </div>
 
                                 <div class="desc-content m-v-5">
@@ -127,7 +128,7 @@
                                     </div>
                                     <p>{{ product.title }}</p>
                                     <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                       aria-hidden="true"></i></b></p>
+                                                aria-hidden="true"></i></b></p>
                                     <div class="price color-1 text-uppercase m-v-15 flex">
 
                                         <div class="p-h-15">
@@ -139,10 +140,13 @@
                                 <div class="cell-hover text-center">
                                     <div>
                                         <a href="{% url 'fabrics_main:detail_product' product.pk %}"
-                                           title="Тональный крем DD Cream natural 01" class="link-item"></a>
-                                        <a href="{% url 'fabrics_main:addtocard' product.id %}" class="add_to_basket link-icon"
-                                           style="cursor: pointer;"><span class="circle"><i
-                                                class="ls-shopping-bag"></i></span></a>
+                                            title="Тональный крем DD Cream natural 01" class="link-item"></a>
+                                        <a id="product{{ product.id }}" href="#"  onclick="return false;" data-productId="{{ product.id }}" 
+                                            class="add_to_basket link-icon" style="cursor: pointer;">
+                                            <span class="circle">
+                                                <i class="ls-shopping-bag"></i>
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -165,20 +169,21 @@
             <div role="tabpanel" id="production-tab-2">
                 <div class="productions-carousel relative">
 
-                    <div class="col-xs-6 production-cap text-left-sm"><h2>Популярные</h2></div>
+                    <div class="col-xs-6 production-cap text-left-sm">
+                        <h2>Популярные</h2>
+                    </div>
                     <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
                             href="{% url 'fabrics_main:top_product' %}">
-                        <div class="buttons">Все популярные</div>
-                    </a></div>
+                            <div class="buttons">Все популярные</div>
+                        </a></div>
 
                     <div class="text-center carousel-items">
                         {% for top in top_product %}
                         <figure class="hover-content hover-product">
                             <div class="wrapper">
                                 <div class="img-content">
-                                    <div class="img"
-                                         style="background-image: url({{ top.image.url }});"
-                                         alt="Касторовое масло (castor oil) 40ml"></div>
+                                    <div class="img" style="background-image: url({{ top.image.url }});"
+                                        alt="Касторовое масло (castor oil) 40ml"></div>
                                 </div>
 
                                 <div class="desc-content m-v-5">
@@ -187,7 +192,7 @@
                                     </div>
                                     <p>{{ top.name }}</p>
                                     <p><b>В наличии <i style="color:green;" class="fa fa-check"
-                                                       aria-hidden="true"></i></b></p>
+                                                aria-hidden="true"></i></b></p>
                                     <div class="price color-1 text-uppercase m-v-15 flex">
 
                                         <div class="p-h-15">
@@ -199,10 +204,10 @@
                                 <div class="cell-hover text-center">
                                     <div>
                                         <a href="{% url 'fabrics_main:detail_product' top.pk %}"
-                                           title="Касторовое масло (castor oil) 40ml" class="link-item"></a>
-                                        <a href="#" class="add_to_basket link-icon"
-                                           style="cursor: pointer;"><span class="circle"><i
-                                                class="ls-shopping-bag"></i></span></a>
+                                            title="Касторовое масло (castor oil) 40ml" class="link-item"></a>
+                                        <a id="product{{ top.id }}" href="#"  onclick="return false;" data-productId="{{ top.id }}" 
+                                        class="add_to_basket link-icon" style="cursor: pointer;"><span
+                                                class="circle"><i class="ls-shopping-bag"></i></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +238,7 @@
                 <div class="text-content">
                     <h4>Натуральная уходовая косметика, средств для ухода за лицом, кожей и волосами</h4>
                     <p>В интернет-магазине косметики BANAFA.UZ вы можете купить <strong>натуральную
-                        косметику для ухода за лицом, кожей и волосами,</strong> аюрведические средства,
+                            косметику для ухода за лицом, кожей и волосами,</strong> аюрведические средства,
                         100% натуральные лечебные и косметические масла, восточную парфюмерию и
                         профессиональную декоративную косметику по доступным низким ценам.</p>
                     <p>&nbsp;</p>
@@ -251,8 +256,7 @@
                     <p>&nbsp;</p>
                 </div>
                 <div class="btn-content"><span class="btn-def inline-block"><a data-toggle="modal"
-                                                                               data-target="#form-wholesalers"
-                                                                               role="button">Для оптовиков</a></span>
+                            data-target="#form-wholesalers" role="button">Для оптовиков</a></span>
                 </div>
             </div>
         </div>

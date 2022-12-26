@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_list_or_404
 from django.views.generic import DetailView, TemplateView, ListView, View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -30,7 +31,7 @@ class SearchResultView(ListView):
         query = self.request.GET.get('query')
 
         object_list = Product.objects.filter(Q(name__icontains=query) | Q(title__icontains=query) | Q(subject__contains=query)
-                                                 | Q(vendor_code__icontains=query))
+                                             | Q(vendor_code__icontains=query))
         return object_list
 
 
@@ -104,7 +105,6 @@ class CategoryProduct(LoginRequiredMixin, TemplateView):
         return context
 
 
-
 class SubcategoryProduct(LoginRequiredMixin, TemplateView):
     """Class for subcategory."""
     template_name = 'product/subcategory-product.html'
@@ -117,14 +117,12 @@ class SubcategoryProduct(LoginRequiredMixin, TemplateView):
         return context
 
 
-
 class NewProduct(LoginRequiredMixin, ListView):
     """Filter new products."""
     template_name = 'product/new-product.html'
 
     def get_queryset(self):
         return Product.objects.order_by('-created_at').exclude(top=True)
-
 
 
 class TopProduct(LoginRequiredMixin, ListView):
@@ -135,7 +133,6 @@ class TopProduct(LoginRequiredMixin, ListView):
         return Product.objects.filter(top=True)
 
 
-
 class ProductDetailView(LoginRequiredMixin, DetailView):
     """Product detail class."""
     template_name = 'product/productdetail.html'
@@ -143,19 +140,17 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        newproduct = products = Product.objects.order_by('-created_at').exclude(top=True)[0:3]
+        newproduct = products = Product.objects.order_by(
+            '-created_at').exclude(top=True)[0:3]
         context['newproduct'] = newproduct
         return context
-
-
 
 
 def add_to_cart(request, product_id):
     """Adding to cart func."""
     cart = Cart(request)
     cart.add(product_id)
-    return redirect("fabrics_main:view_cart")
-
+    return HttpResponse(cart.__len__())
 
 
 def change_quantity(request, product_id):
@@ -167,8 +162,27 @@ def change_quantity(request, product_id):
             quantity = -1
         cart = Cart(request)
         cart.add(product_id, quantity, True)
+    count = cart.get_one_card(product_id=product_id)['quantity']
+    cart_len = cart.__len__()
+    result = f"{count}|{cart_len}"
+    return HttpResponse(result)
 
-    return redirect('fabrics_main:view_cart')
+    # action = request.GET.get('action', '')
+    # if action:
+    #     quantity = 1
+    #     if action == 'decrease':
+    #         quantity = -1
+    #     cart = Cart(request)
+    #     cart.add(product_id, quantity, True)
+
+    # return redirect('fabrics_main:view_cart')
+
+
+def get_cart_summ(request):
+    """Get cart summ"""
+    cart = Cart(request)
+    summ = cart.get_total_cost()
+    return HttpResponse(summ)
 
 
 def remove_cart(request, product_id):
@@ -194,7 +208,6 @@ class CartAllDeleteView(View):
         cart = Cart(request)
         cart.save()
         return redirect('fabrics_main:view_cart')
-
 
 
 def checkout(request):
