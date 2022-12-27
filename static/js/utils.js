@@ -26,7 +26,10 @@ $('.dicrement__item').click(function () {
                 $('#cart-product' + productId).text(count)
                 $('.bakset-cnt').text(cartLength)
                 getSumm();
-                alert('Удалено')
+                
+                console.log(list);
+                // alert('Удалено')
+
             }
         })
 });
@@ -45,7 +48,7 @@ $('.increment__item').click(function () {
                 $('#cart-product' + productId).text(count)
                 $('.bakset-cnt').text(cartLength)
                 getSumm();
-                alert('Добавлено')
+                // alert('Добавлено')
             }
         })
 });
