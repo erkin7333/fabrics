@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+
+
+{% block content %}
+    <div class="main-content over-hidden">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="active"><a href="{% url 'fabrics_about:aboutpage' %}">О компании</a></li>
+                </ol>
+            </div>
+        </div>    <!-- about -->
+        <div class="about">
+            <div class="container">
+                <div class="about-content m-b-60">
+                    <div class="entry-content text-center color-1 m-v-30"><h1>О компании</h1></div>
+                    <div class="text-content m-v-30">
+                        {% for about in about_post %}
+                            <p>{{ about.description | safe }}</p>
+                        {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                        {% endfor %}
+                    </div>
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+
+    </div><!-- ./MAIN-CONTENT -->
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Detail-Product{% endblock %}
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden m-b-30">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="products-article table-content">
+                <div class="container">
+                    <div class="row">
+
+
+                        <div class="carousel-article col-md-4 p-h-15">
+                            <div class="carousel carousel-main">
+
+                                <div class="carousel-cell " data-color="">
+                                    <div class="img-content">
+                                        <a href="{{ object.image.url }}" data-fancybox>
+                                            <img src="{{ object.image.url }}"
+                                                 data-zoom-image="{{ object.image.url }}">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel carousel-nav">
+
+                                <div data-id="" class="carousel-cell ">
+                                    <div class="img-content"><img src="{{ object.image.url }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="products-article-content col-md-5 p-h-15 parag-m-v-15">
+                            <h1>Тональный крем DD Cream natural 01 </h1>
+                            <p><small>Производитель: <b>
+
+                                <a href="{% static 'brands/brendy/arcaya/index.html' %}">{{ object.name }}</a>
+                            </b></small><br/>
+                                <small>Артикул: <b>{{ object.vendor_code }}</b></small></p>
+                            <p><strong>&nbsp;<span
+                                    style="color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">{{ object.subject }}</span></strong>
+                            </p>
+
+                            <div class="block_price">
+
+                                <p><span class="discountprice">Цена: <b>{{ object.price }}<small>сум</small></b></span></p>
+
+                            </div>
+
+
+                            <div class="products-cnt">
+                                <div class="products-btns">
+                                    <div class="col-md-6 p-h-15 m-v-30 row">
+																		<span class="btn btn-def reverse">
+										<a href="{% url 'fabrics_main:addtocard' object.id %}" class="add_basket"
+                                           style="margin: auto; padding:7px 16px;">Добавить в корзину</a>
+									</span>
+                                    </div>
+                                    <div class="float-left-md p-h-15 m-v-30">
+                                        <div class="post">
+                                            <input type="hidden" name="id" value="1854">
+                                            <input type="hidden" name="izbr" value="1"/>
+                                                <span unique="{{ product.pk }}" id="favourite" onclick="favourite()" class="btn btn-opacity reverse flex-center inline-block">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="heart" fill="#f7721ced" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                                      </svg>
+                                                    <button id="liked-btn"  style="border: none;background: none; ">LIKE</button>
+                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prod_available col-md-3 p-t-15 parag-m-v-10">
+                            <p>Товар в наличии <i style="color:green;" class="fa fa-check" aria-hidden="true"></i></p>
+                            <p>Доставка по Узбекистану <a href="../../../delivery.html"<i style="color:#9a4781;"
+                                                                                          class="fa fa-question-circle"
+                                                                                          aria-hidden="true"></i></a>
+                            </p>
+                            <p>Способы оплаты</p>
+                            <p>
+                                <img src="{% static 'banafa-ru/img/icons/wallet-filled-money-tool.svg' %}"
+                                     height="25px">
+                                <img src="{% static 'banafa-ru/img/icons/calculator.svg' %}" height="25px">
+                                <img src="{% static 'banafa-ru/img/icons/clickuz.png' %}" height="25px">
+                                <img src="{% static 'banafa-ru/img/icons/payme.png' %}" height="25px">
+
+                            </p></div>
+
+                        <div class="products-tabs col-md-12">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#products-tab-1" data-toggle="tab">Описание</a></li>
+                                <li><a href="#products-tab-2" data-toggle="tab">Применение</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade table-content in active" id="products-tab-1">
+                                    <p>&nbsp;<span
+                                            style="background-color: rgb(255, 255, 255); color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px;">{{ object.description }}&nbsp;</span>
+                                    </p>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade table-content " id="products-tab-2"><p>
+                                    &nbsp;<span
+                                        style="color: rgb(33, 33, 33); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"></span>
+                                </p></div>
+                            </div>
+                        </div>
+
+
+                        <div class="products-content col-md-12">
+                            <div class="entry-header"><h1 class="text-center text-uppercase">Также используют</h1></div>
+                            <div class="text-center figure-m-v-15 boxes-5 products-items">
+                                {% for pro in newproduct %}
+                                <figure class="hover-content hover-product">
+                                    <div class="wrapper">
+                                        <div class="img-content">
+                                            <div class="img"
+                                                 style="background-image: url({{ pro.image.url }});"
+                                                 alt="Тональный крем DD Cream natural 01"></div>
+                                        </div>
+
+                                        <div class="desc-content m-v-5">
+                                            <div class="cap-content">
+
+
+                                                <h3>{{ pro.name }}</h3>
+
+
+                                            </div>
+                                            <p>{{ pro.title }}</p>
+                                            <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                               aria-hidden="true"></i></b></p>
+                                            <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                                <div class="p-h-15">
+
+                                                    <p class="currentPrice"><b>{{ pro.price }}</b> <small>Сум</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell-hover text-center">
+                                            <div>
+                                                <a href="{% url 'fabrics_main:detail_product' pro.pk %}"
+                                                   title="Тональный крем DD Cream natural 01" class="link-item"></a>
+                                                <a class="add_to_basket link-icon"
+                                                   style="cursor: pointer;"><span class="circle"><i
+                                                        class="ls-shopping-bag"></i></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const box = document.getElementById("favourite");
+        const text = document.getElementById("liked-btn");
+        const heart = document.getElementById("heart");
+
+        const unique = box.getAttribute("unique")
+
+        let active = localStorage.getItem(unique);
+
+        if(localStorage.getItem(unique) ){
+            box.style.borderColor = "red";
+            text.innerHTML = "LIKED";
+            heart.style.fill = "red";
+            text.style.color = "red";
+
+        } else {
+            box.style.borderColor = "black";
+            text.innerHTML = "LIKE";
+            heart.style.fill = "#f46f1c";
+            text.style.color = "black";
+        }
+        
+        function favourite() {
+            localStorage.getItem(unique) 
+                ? localStorage.removeItem(unique) 
+                : localStorage.setItem(unique, true)
+
+            if(localStorage.getItem(unique) ){
+                box.style.borderColor = "red";
+                text.innerHTML = "LIKED";
+                heart.style.fill = "red";
+                text.style.color = "red";
+            } else {
+                box.style.borderColor = "black";
+                text.innerHTML = "LIKE";
+                heart.style.fill = "#f46f1c";
+                text.style.color = "black";
+                
+            }
+        }
+
+        
+
+    </script>
+{% endblock %}

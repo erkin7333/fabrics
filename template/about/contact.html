@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden bg-texture-1">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Bosh sahifa</a></li>
+                    <li class="active"><a href="{% url 'fabrics_about:contactpage' %}">Kontaktlar</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- contacts -->
+        <div class="contacts">
+            <div class="container">
+                <div class="entry-content m-v-60">
+                    <div class="contacts-info row">
+
+                        <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="phone-call"
+                                                                                            src="{% static 'banafa-ru/img/icons/phone-call-2.svg' %}"
+                                                                                            alt="+998 (95) 177-00-05">
+                            </div>
+                            <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                <h3>Aloqa telefon raqami</h3>
+                                <p>{% for p in contact_page %}
+                                <p>{{ p.phone }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                                {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="map-marker"
+                                                                                            src="{% static 'banafa-ru/img/icons/map-marker.svg' %}"
+                                                                                            alt="Toshkent shahri, Beruniy ko&#039;chasi, 2-uy +998951770005">
+                            </div>
+                            <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                <h3>Manzil</h3>
+                                <p>
+                                    {% for a in contact_page %}
+                                <p>{{ a.address }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                                {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-md-offset-1 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-3 col-xs-3 text-center-sm"><img class="envelope"
+                                                                                            src="{% static 'banafa-ru/img/icons/envelope.svg' %}"
+                                                                                            alt="info@banafa.uz">
+                            </div>
+                            <div class="desc-content col-md-9 col-xs-9 text-left-sm">
+                                <h3>E-mail</h3>
+                                <p>
+                                    {% for e in contact_page %}
+                                <p>{{ e.email }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                                {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- ./MAIN-CONTENT -->
+
+
+    {# !!!!!!!!!!!!!!!!!!!!!!#}
+    <div class="mapouter">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.356042548649!2d69.23667731471322!3d41.27935501064959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8a60121a4933%3A0x2e06e174eda6444b!2zRGF0YVNpdGUgVGVjaG5vbG9neSAtINCb0LjQtNC10YAg0YDQsNC30YDQsNCx0L7RgtC-0Log0YHQsNC50YLQvtCyINC4INC80L7QsdC40LvRjNC90YvRhSDQv9GA0LjQu9C-0LbQtdC90LjQuSDQsiDQotCw0YjQutC10L3RgtC1!5e0!3m2!1suz!2s!4v1668758857220!5m2!1suz!2s"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    {# 111111111111111111#}
+
+
+</main><!-- ./MAIN -->
+{% endblock %}

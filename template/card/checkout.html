@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden">
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="active"><a href="#">Оформить заказ</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- order -->
+        <div class="cabinet">
+            <div class="container">
+                <div class="entry-content text-uppercase"><h2 class="h-clear m-v-10">Оформить заказ</h2></div>
+                <div class="cabinet-user-content">
+                    <div class="user-control col-md-12 p-b-15">
+                        <font color="green" id="order_success"></font>
+
+                        <form method="post">
+                                {% csrf_token %}
+                            <div class="user-settings col-md-6 m-v-10" id="user-settings">
+
+                                <div class="col-md-12 input-content"><label>Ф.И.О.</label>
+                                    {{ form.full_name }}
+                                </div>
+                                <div class="col-md-12 input-content"><label>Телефон</label>
+                                    {{ form.phone }}
+                                </div>
+                                <div class="col-md-12 input-content"><label>E-mail</label>
+                                    {{ form.email }}
+                                </div>
+                                <div class="col-md-12 input-content"><label>Адрес</label>
+                                    {{ form.address }}
+                                </div>
+                                <br/><br/>
+                            </div>
+
+                            <div class="user-settings col-md-6 m-v-10" id="your_order">
+                                <div class="__total totalcost-content color-primary m-v-5 p-v-15 p-h-10"
+                                     style="border: 1px solid #aeaeae;display: inline-block;">
+                                    <p class="col-xs-6">Товаров (<span class="bakset-cnt"></span>):</p>
+                                    {% for count in cart %}
+                                    <p class="col-xs-6 text-center"><span class="totalprice-products">{{ count.quantity }}</span> сум
+                                    </p>
+                                    {% endfor %}
+                                    <p class="col-xs-6">Доставка:</p>
+                                    <p class="col-xs-6 text-center"><span class="delivery">0</span> сум</p>
+                                    <div class="itog ">
+                                        <h5 class="col-xs-6">Итого к оплате</h5>
+                                        <h5 class="col-xs-6 text-center"><span class="price amount-due">{{ cart.get_total_cost }}</span> сум
+                                        </h5>
+                                        <span class="totalPayment"></span>
+                                    </div>
+                                    <span class="col-xs-12 btn-def inline-block">
+                                    <button class="btn-res" type="submit"
+                                            style="width: 100%; z-index:1;">Оформить заказ</button>
+                                </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-left-sm">
+                                <label class="col-md-12">Выберите способ оплаты: </label>
+                                <div class="paymethod col-md-6">
+                                    <div class="pay col-md-3">
+                                        <label>{{ form.payment_type }}</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 input-content text-left-sm delivery_method">
+                                <label>Выберите способ доставки: </label>
+                                <div class="paymethod col-md-12">
+                                    <label class="m-v-5 m-t-15 free_box">
+                                        {{ form.delivery_type }}
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="form-payments"></div>
+
+                    </div>
+                </div>
+
+                <br><br><br>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- ./MAIN-CONTENT -->
+    <style>
+            input.form-control.error {
+                border-color: #f10000;
+            }
+
+    </style>
+
+</main><!-- ./MAIN -->
+{% endblock %}
+

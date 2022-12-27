@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}My orders{% endblock %}
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table mt-5">
+                        <thead>
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">User</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for order_item in ordet_items %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'fabrics_main:order_detail' order_item.order.pk %}"><h5>{{ order_item.order.id }}</h5></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'fabrics_main:order_detail' order_item.order.pk %}"><h5>{{ order_item }}</h5></a>
+                            </td>
+                            <td>
+                                <h5>{{ order_item.order.phone }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ order_item.quantity }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ order_item.total_price }}</h5>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td>
+                                <h2>Sizda buyurtmalar mavjud emas</h2>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

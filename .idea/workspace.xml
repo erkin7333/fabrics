@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabrics_main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabrics_main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/agreement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/blogdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/blogdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/delivery.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/delivery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/filiallar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/filiallar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/filialydetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/filialydetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/how-to-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/how-to-order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/about/reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/about/reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/account/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/account/sing-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/account/sing-up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/card/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/card/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/card/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/card/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/category-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/category-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/menu-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/menu-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/new-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/new-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/productdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/productdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/productfilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/productfilter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/select-search.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/select-search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/subcategory-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/subcategory-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/top-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/top-product.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="fabrics/invalid/Django" />
+    </ignored-facets>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HXKfZIoNtHM1Z3J3eVseIPvVMd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/erkin/django_portfoliya/django_chat",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fabrics_main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.admin">
+    <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fabrics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fabrics_about" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fabrics_about/admin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pil" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fabrics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fabrics_main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fabrics_main/pil.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fabrics" type="Python.DjangoServer" factoryName="Django server">
+      <module name="fabrics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.admin" />
+        <item itemvalue="Python.pil" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="841413ae-74b2-4c34-a26d-cc17d1f05fa2" name="Changes" comment="" />
+      <created>1668426091575</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668426091575</updated>
+      <workItem from="1668426093410" duration="3010000" />
+      <workItem from="1668437830882" duration="12073000" />
+      <workItem from="1668488944108" duration="24786000" />
+      <workItem from="1668573900418" duration="7222000" />
+      <workItem from="1668583465872" duration="12754000" />
+      <workItem from="1668598450727" duration="5174000" />
+      <workItem from="1668612076802" duration="9494000" />
+      <workItem from="1668660411295" duration="25468000" />
+      <workItem from="1668747022949" duration="30000" />
+      <workItem from="1668747127060" duration="59000" />
+      <workItem from="1668747765100" duration="8000" />
+      <workItem from="1668749570431" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
