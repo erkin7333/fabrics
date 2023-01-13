@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+
+
+    <div class="main-content over-hidden m-b-30">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="active"><a href="#">Отзывы</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row reviews">
+            <div class="container m-v-30">
+                <div class="short-reviews-carousel relative flickity-btn-1 m-v-45">
+                    <h1>Отзывы наших клентов</h1>
+                    <div class="carousel-items pie-cells-2 text-center m-v-30">
+                        {% for com in commnent_page %}
+                        <figure class="pie-cell">
+                            <div class="img-content"><img src="{{ com.image.url }}" alt="Оставить отзыв"></div>
+                            <div class="desc-content m-v-30">
+                                <p>{{ com.title }}&nbsp;<a
+                                        href="{{ com.url }}"><u><strong>телеграм-канале</strong></u></a>&nbsp;<a
+                                        href="{{ com.url }}"><strong><u>{{ com.url }}</u></strong></a>
+                                </p>
+                                <p>&nbsp;</p>
+                                <p>{{ com.content }}</p>
+                                <p>&nbsp;</p>
+                                <p><strong>Вы можете оставить отзыв&nbsp;<a href="{{ com.url }}"><span
+                                        style="color: rgb(0, 0, 255);"><u>здесь</u></span></a></strong></p>
+                                <div class="m-v-30">
+                                    <h4>Оставить отзыв</h4>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </figure>
+                        {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-prev-next">
+                        <span class="next"> <i class="fa fa-angle-right"></i></span>
+                        <span class="prev"> <i class="fa fa-angle-left"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div><!-- ./MAIN-CONTENT -->
+
+</main><!-- ./MAIN -->
+{% endblock %}

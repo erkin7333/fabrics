@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Filial Detail{% endblock %}
+
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden bg-texture-1">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="active"><a href="{% url 'fabrics_about:filialypage' %}">Филиалы</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- contacts -->
+        <div class="contacts">
+            <div class="container">
+                <div class="entry-content m-v-60">
+                    <div class="entry-content text-center color-1 m-v-30"></div>
+                    <div class="contacts-info row">
+
+                        <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="phone-call"
+                                                                                            src="{% static 'banafa-ru/img/icons/phone-call-2.svg' %}"
+                                                                                            alt="phone"></div>
+                            <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                <h3>Контактный телефон</h3>
+                                <p>
+                                    {% for a in branch_detail %}
+                                <p>{{ a.phone }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                                {% endfor %}
+                                </p>
+                            </div>
+                            <div class="map clearfix">
+                                <div class="map-content col-xs-12" data-aos="fade">
+                                    <div id="map-canvas" class="map-container col-md-12 m-t-30"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-2 col-xs-3 text-center-sm"><img class="map-marker"
+                                                                                            src="{% static 'banafa-ru/img/icons/map-marker.svg' %}"
+                                                                                            alt=""></div>
+                            <div class="desc-content col-md-10 col-xs-9 text-left-sm">
+                                <h3>Адрес</h3>
+                                <p>
+                                    {% for a in branch_detail %}
+                                <p>{{ a.address }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                                {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-md-offset-1 p-h-15 m-v-30 clearfix">
+                            <div class="icon-content col-md-3 col-xs-3 text-center-sm"><img class="envelope"
+                                                                                            src="{% static 'banafa-ru/img/icons/envelope.svg' %}"
+                                                                                            alt="info@banafa.uz">
+                            </div>
+                            <div class="desc-content col-md-9 col-xs-9 text-left-sm">
+                                <h3>Email</h3>
+                                <p>
+                                    {% for a in branch_detail %}
+                                <p>{{ a.email }}</p>
+                                {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                                {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL -->
+
+        <div class="mapouter">
+
+            {% for lon in branch_detail %}
+            <iframe src="{{ lon.location }}"
+                    width="100%" height="450" style="border:0;"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {% empty %}
+            <h>Kechirasiz hozircha malumot kiritilmagan</h>
+            {% endfor %}
+        </div>
+    </div><!-- ./MAIN-CONTENT -->
+</main><!-- ./MAIN -->
+{% endblock %}

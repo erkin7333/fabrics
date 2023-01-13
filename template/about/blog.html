@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="active"><a href="{% url 'fabrics_about:blogpage' %}">Блог</a></li>
+                </ol>
+            </div>
+        </div>
+
+
+        <!-- partners -->
+        <div class="partners">
+            <div class="container">
+                <div class="entry-content m-v-30"><h1>Блог</h1></div>
+
+                <div class="partners-items figure-m-v-30 row m-b-60">
+                    {% for blog in blog_page %}
+                    <figure>
+                        <div class="img-content col-md-4 flex-center p-h-15">
+                            <a href="{% url 'fabrics_about:blogdetail' blog.pk %}"> <img
+                                    src="{{ blog.image.url }}"
+                                    alt="АЮРВЕДИЧЕСКАЯ КОСМЕТИКА: ЦЕЛЕБНЫЕ СРЕДСТВА ИЗ ПРИРОДНОЙ СОКРОВИЩНИЦЫ"></a>
+                        </div>
+                        <div class="desc-content col-md-8 p-h-15">
+                            <h4>{{ blog.title }}</h4>
+                            <p>{{ blog.content }}</p>
+                            <a href="{% url 'fabrics_about:blogdetail' blog.pk %}"> Читать...</a>
+                        </div>
+                    </figure>
+                    {% empty %}
+                    <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                    {% endfor %}
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+
+    </div><!-- ./MAIN-CONTENT -->
+
+</main><!-- ./MAIN -->
+{% endblock %}

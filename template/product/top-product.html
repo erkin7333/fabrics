@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Top-Product{% endblock %}
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+
+
+    <div class="main-content over-hidden">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="">Главная</a></li>
+                    <li class="active"><a href="">Новинки</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- products -->
+        <div class="products">
+            <div class="container">
+                <div class="entry-header text-center color-1"><h1>Новинки</h1></div>
+                <div class="products-content">
+
+                    <div class="text-center figure-m-v-15 boxes-5 products-items">
+                        {% for n in object_list %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ n.image.url }});"
+                                         alt="Тональный крем DD Cream natural 01"></div>
+                                </div>
+
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+
+
+                                        <h3>{{ n.name }}</h3>
+
+
+                                    </div>
+                                    <p>{{ n.title }}</p>
+                                    <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                       aria-hidden="true"></i></b></p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                        <div class="p-h-15">
+
+                                            <p class="currentPrice"><b>{{ n.price }}</b> <small>Сум</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' n.pk %}"
+                                           title="Тональный крем DD Cream natural 01" class="link-item"></a>
+                                        <a id="1854" product="1854" class="add_to_basket link-icon"
+                                           style="cursor: pointer;"><span class="circle"><i
+                                                class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% endfor %}
+                    </div>
+
+                    <div class="pagination-div col-xs-12 m-b-15 text-center">
+                        <ul class="pagination">
+                            <li class="active"><a href="index.html">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

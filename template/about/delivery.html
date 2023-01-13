@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Delivery{% endblock %}
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="{% url 'fabrics_about:deliverypage' %}">Доставка</a></li>
+                    </ol>
+                </div>
+            </div>    <!-- delivery -->
+            <div class="delivery">
+                <div class="container">
+                    <div class="delivery-content m-b-60 m-t-30">
+                        <div class="text-content">
+                            {% for delivery in deliver_page %}
+                                <p>{{ delivery.description | safe }}</p>
+                            {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+        </div><!-- ./MAIN-CONTENT -->
+
+
+    </main><!-- ./MAIN -->
+{% endblock %}

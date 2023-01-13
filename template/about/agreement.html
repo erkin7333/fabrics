@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}Agreement{% endblock %}
+
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="active"><a href="#">Публичная оферта</a></li>
+                </ol>
+            </div>
+        </div>    <!-- about -->
+        <div class="about">
+            <div class="container">
+                <div class="about-content m-b-60">
+                    <div class="entry-content text-center color-1 m-v-30"><h1>Публичная оферта</h1></div>
+                    <div class="text-content m-v-30">
+
+                        <p>
+                            {% for col in public_offer %}
+                        <p>{{ col.description | safe }}</p>
+                        {% empty %}
+                        <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                        {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+
+    </div><!-- ./MAIN-CONTENT -->
+
+</main><!-- ./MAIN -->
+{% endblock %}

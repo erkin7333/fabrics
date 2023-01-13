@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Blog-Detail{% endblock %}
+
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden">
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="active"><a href="{% url 'fabrics_about:blogpage' %}">Блог</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- news-article -->
+        <div class="news-article p-b-45">
+            <div class="container">
+                <div class="entry-header text-center m-v-40 p-t-30"><h2>Блог</h2></div>
+                {% for detail in detail_blog %}
+                <div class="news-article-content row m-v-15">
+                    <div class="img-content col-md-4 p-h-15 m-t-15">
+                        <img src="{{ detail.blog.image.url }}"
+                             alt="АЮРВЕДИЧЕСКАЯ КОСМЕТИКА: ЦЕЛЕБНЫЕ СРЕДСТВА ИЗ ПРИРОДНОЙ СОКРОВИЩНИЦЫ"
+                             class="box-100">
+                    </div>
+                    <div class="text-content p-h-15">
+                        <h3>{{ detail.blog.title }}</h3>
+                        <p>{{ detail.blog.content }}&nbsp;</p>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>{{ detail.description | safe }}</div>
+                    </div>
+                </div>
+                {% empty %}
+                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div><!-- ./MAIN-CONTENT -->
+
+
+</main><!-- ./MAIN -->
+{% endblock %}

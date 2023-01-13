@@ -1,0 +1,604 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Filter-Product{% endblock %}
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="index.html">Косметика по уходу за волосами</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- products -->
+            <div class="products">
+                <div class="container">
+                    <div class="products-selection">
+                        <div class="form-selection text-center">
+                            <h3 class="visible-xs visible-sm">Фильтрация</h3>
+
+
+                            <form method="get" action="" id="form"
+                                  accept-charset="utf-8">
+                                <div class="row fields-items">
+
+                                    <div class="field pie-md-flex-4 m-v-15">
+                                        <select class="js-select search-hide" id="section_id" name="sectionId">
+                                            <option value="0">Выберите направление</option>
+                                            <option value="6" selected="selected">Косметика по уходу за волосами
+                                            </option>
+                                            <option value="4">Косметика по уходу за лицом</option>
+                                            <option value="5">Косметика по уходу за телом</option>
+                                            <option value="8">Лечебные средства</option>
+                                            <option value="3">Макияж</option>
+                                            <option value="287">Парфюмерия</option>
+                                            <option value="336">Наборы</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="field pie-md-flex-4 m-v-15">
+                                        <select class="js-select search-hide 1" id="subsection_id" name="parentId">
+                                            <option value="0">Выберите из списка</option>
+                                            <option value="247">Шампунь</option>
+                                            <option value="248">Комплексное масло</option>
+                                            <option value="97">Кондиционер</option>
+                                            <option value="249">Масло</option>
+                                            <option value="250">Маска</option>
+                                            <option value="253">Хна</option>
+                                            <option value="251">Для бровей</option>
+                                            <option value="252">Загуститель волос</option>
+                                            <option value="329">Для бороды</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="field pie-md-flex-4 m-v-15">
+                                        <select class="js-select" id="brands" name="brand">
+                                            <option value="0">Все бренды</option>
+                                            <option value="345">Arcaya</option>
+                                            <option value="344">Parachute</option>
+                                            <option value="343">Inci</option>
+                                            <option value="342">Vollare</option>
+                                            <option value="341">Tony Moly</option>
+                                            <option value="338">Trichup</option>
+                                            <option value="274">Hemani</option>
+                                            <option value="271">Dr Rashel</option>
+                                            <option value="339">Vasu</option>
+                                            <option value="273">Forever52</option>
+                                            <option value="268">Buabed Banafa</option>
+                                            <option value="275">Skin Doctor</option>
+                                            <option value="270">Dr James</option>
+                                            <option value="278">Constanta</option>
+                                            <option value="267">Argussy</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="field pie-md-flex-2 m-v-15 input">
+                                        <input type="number" name="min_price" value="" placeholder="Мин. цена"
+                                               class="form-control"/>
+                                    </div>
+                                    <div class="field pie-md-flex-2 m-v-15 input">
+                                        <input type="number" name="max_price" value="" placeholder="Макс. цена"
+                                               class="form-control"/>
+                                    </div>
+
+                                    <div class="field pie-md-flex-2 m-v-15 btn-content">
+                                        <span class="btn-def"><button type="submit"
+                                                                      class="btn-res box-100">Найти</button></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="entry-header text-center color-1"><h1>Косметика по уходу за волосами</h1></div>
+                    <div class="products-content">
+
+                        <div class="text-center figure-m-v-15 boxes-5 products-items">
+
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1652/article-medium.jpg' %});"
+                                             alt="Травяные капсулы для роста волос Тричуп, 60 кап, Trichup Capsules"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Травяные капсулы для роста волос Тричуп, 60 кап, Trichup Capsules</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>85 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Травяные капсулы для роста волос Тричуп, 60 кап, Trichup Capsules"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1652" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1567/article-medium.jpg' %});"
+                                             alt="Сыворотка для сияния волос Trichup Nutrishine 60ml (New)"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Сыворотка для сияния волос Trichup Nutrishine 60ml (New)</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>42 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Сыворотка для сияния волос Trichup Nutrishine 60ml (New)"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1567" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1510/article-medium.jpg' %});"
+                                             alt="Набор для бороды Greeko Man 3в1"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Vasu</h3>
+                                        </div>
+                                        <p>Набор для бороды Greeko Man 3в1</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>135 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}" title="Набор для бороды Greeko Man 3в1"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1510" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1506/article-medium.jpg' %});"
+                                             alt="Крем для бороды Greeko Man Beard Cream 50ml"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Vasu</h3>
+                                        </div>
+                                        <p>Крем для бороды Greeko Man Beard Cream 50ml</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>45 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Крем для бороды Greeko Man Beard Cream 50ml"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1506" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url('{% static 'images/articles/1505/article-medium.jpg' %}');"
+                                             alt="Средство для мытья бороды и лица Greeko Man Beard &amp; Face Wash 75ml"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Vasu</h3>
+                                        </div>
+                                        <p>Средство для мытья бороды и лица Greeko Man Beard &amp; Face Wash 75ml</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+
+                                                <p class="currentPrice"><b>35 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Средство для мытья бороды и лица Greeko Man Beard &amp; Face Wash 75ml"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1505" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1504/article-medium.jpg' %});"
+                                             alt="Масло для бороды Greeko Man Beard Oil 50ml"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Vasu</h3>
+                                        </div>
+                                        <p>Масло для бороды Greeko Man Beard Oil 50ml</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+
+                                                <p class="currentPrice"><b>55 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Масло для бороды Greeko Man Beard Oil 50ml" class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1504" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1503/article-medium.jpg' %});"
+                                             alt="Шампунь Тричап Арган Trichup Argan 400мл"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Шампунь Тричап Арган Trichup Argan 400мл</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+
+                                                <p class="currentPrice"><b>65 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Шампунь Тричап Арган Trichup Argan 400мл" class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1503" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1502/article-medium.jpg' %});"
+                                             alt="Шампунь от выпадения волос Trichup Hair Fall Control 700ml"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Шампунь от выпадения волос Trichup Hair Fall Control 700ml</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>100 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Шампунь от выпадения волос Trichup Hair Fall Control 700ml"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1502" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1368/article-medium.jpg' %});"
+                                             alt="Лечебная маска для волос с Чёрным тмином Trichup 200ml"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Лечебная маска для волос с Чёрным тмином Trichup 200ml</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                            <div class="p-h-15">
+
+                                                <p class="currentPrice"><b>38 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Лечебная маска для волос с Чёрным тмином Trichup 200ml"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1368" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url{% static 'images/articles/1367/article-medium.jpg' %};"
+                                             alt="Лечебная маска для волос Против выпадения волос Hair Fall Control 200ml"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Лечебная маска для волос Против выпадения волос Hair Fall Control 200ml</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>38 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Лечебная маска для волос Против выпадения волос Hair Fall Control 200ml"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1367" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url{% static 'images/articles/1366/article-medium.jpg' %};"
+                                             alt="Маска с горячим маслом Здоровые, длинные и сильные 200ml"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Маска с горячим маслом Здоровые, длинные и сильные 200ml</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+
+                                                <p class="currentPrice"><b>38 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Маска с горячим маслом Здоровые, длинные и сильные 200ml"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1366" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1308/article-medium.jpg' %});"
+                                             alt="Краска хна для волос Тричап - Бургунди 6x10гр"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Краска хна для волос Тричап - Бургунди 6x10гр</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>28 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Краска хна для волос Тричап - Бургунди 6x10гр"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1308" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1307/article-medium.jpg' %});"
+                                             alt="Краска хна для волос Тричап - Коричневый 6x10гр"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Краска хна для волос Тричап - Коричневый 6x10гр</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>28 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Краска хна для волос Тричап - Коричневый 6x10гр"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1307" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: url({% static 'images/articles/1305/article-medium.jpg' %});"
+                                             alt="Шампунь для окрашенных волос Тричап Защита цвета 200мл"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Шампунь для окрашенных волос Тричап Защита цвета 200мл</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>48 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Шампунь для окрашенных волос Тричап Защита цвета 200мл"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1305" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                            class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="hover-content hover-product">
+                                <div class="wrapper">
+                                    <div class="img-content">
+                                        <div class="img"
+                                             style="background-image: ur{% static 'images/articles/1295/article-medium.jpg' %};"
+                                             alt="Сыворотка для волос Тричап - Термозащита Thermal Protection 60мл"></div>
+                                    </div>
+                                    <div class="desc-content m-v-5">
+                                        <div class="cap-content">
+                                            <h3>Trichup</h3>
+                                        </div>
+                                        <p>Сыворотка для волос Тричап - Термозащита Thermal Protection 60мл</p>
+                                        <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                           aria-hidden="true"></i></b></p>
+                                        <div class="price color-1 text-uppercase m-v-15 flex">
+                                            <div class="p-h-15">
+                                                <p class="currentPrice"><b>42 000</b> <small>Сум</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell-hover text-center">
+                                        <div>
+                                            <a href="{% url 'fabrics_main:productdetail' %}"
+                                               title="Сыворотка для волос Тричап - Термозащита Thermal Protection 60мл"
+                                               class="link-item"></a>
+                                            <a href="{% url 'fabrics_main:addtocard' %}" product="1295" class="add_to_basket link-icon"
+                                               style="cursor: pointer;"><span class="circle"><i
+                                                    class="ls-shopping-bag"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+
+
+                        <div class="pagination-div col-xs-12 m-b-15 text-center">
+                            <ul class="pagination">
+                                <li class="active"><a href="index.html">1</a></li>
+                                <li><a href="page2.html">2</a></li>
+                                <li><a href="page3.html">3</a></li>
+                                <li><a href="page4.html">4</a></li>
+                                <li><a href="page2.html"><i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="page4.html"><i class="fa fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main><!-- ./MAIN -->
+{% endblock %}

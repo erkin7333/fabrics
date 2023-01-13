@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Brand {% endblock %}
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+
+
+    <div class="main-content over-hidden">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="brands"><a href="#">Бренды</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- products -->
+        <div class="products">
+            <div class="container">
+                <div class="products-content">
+
+                    <div class="text-center figure-m-v-15 boxes-4 products-items">
+                        {% for brand in brandproduct %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ brand.image.url }});"
+                                         alt="Brand"></div>
+                                </div>
+
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+
+
+                                        <h3>{{ brand.name }}</h3>
+
+
+                                    </div>
+                                    <p>{{ brand.title }}</p>
+                                    <p><b>В наличии <i style="color:green;" class="fa fa-check"
+                                                       aria-hidden="true"></i></b></p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                        <div class="p-h-15">
+
+                                            <p class="currentPrice"><b>24 000</b> <small>Сум</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' brand.pk %}" class="link-item"></a>
+                                        <a id="1545" product="1545" class="add_to_basket link-icon"
+                                           style="cursor: pointer;"><span class="circle"><i
+                                                class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main><!-- ./MAIN -->
+{% endblock %}

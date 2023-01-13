@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}How to order{% endblock %}
+
+
+
+{% block content %}
+    <main data-aos="fade" data-aos-delay="0">
+        <div class="main-content over-hidden">
+            <!-- breadcrumb -->
+            <div class="container">
+                <div class="breadcrumb-container text-center-sm">
+                    <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                        <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                        <li class="active"><a href="{% url 'fabrics_about:how_to_order' %}">Как оформить заказ?</a></li>
+                    </ol>
+                </div>
+            </div>    <!-- about -->
+            <div class="about">
+                <div class="container">
+                    <div class="about-content m-b-60">
+                        <div class="entry-content text-center color-1 m-v-30"><h1>Как оформить заказ?</h1></div>
+                        <div class="text-content m-v-30">
+                            {% for row in how_to_order %}
+                            <p><strong>{{ row.title }}</strong></p>
+                            <div><strong><img src="{{ row.image.url }}" class="box-100" alt=""/></strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                            {% empty %}
+                                <h>Kechirasiz hozircha malumot kiritilmagan</h>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+        </div><!-- ./MAIN-CONTENT -->
+
+    </main><!-- ./MAIN -->
+{% endblock %}
