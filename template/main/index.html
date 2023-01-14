@@ -12,18 +12,15 @@
                 <li data-transition="boxfade" data-masterspeed="1200">
                     <a href="{% url 'fabrics_main:menu_product' img.pk %}" class="fulllink"></a>
                     <img src="{{ img.image.url }}" alt="  ">
-                    <div class="wrapper-bg tp-caption customin customout start hidden"
-                         data-x="center"
+                    <div class="wrapper-bg tp-caption customin customout start hidden" data-x="center"
                          data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
                          data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
-                         data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                         data-captionhidden="on"></div>
+                         data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
                     <div class="container">
                         <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
                              data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
                              data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
-                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn"
-                             data-captionhidden="on">
+                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on">
                             <h2></h2>
                         </div>
                     </div>
@@ -86,13 +83,13 @@
     <div class="container">
         <div class="entry-header m-v-30">
             <h2 class="font-family-2 color-1 h-clear">Best products</h2>
-            <h1 class="h-clear">Товары Banafa.uz<span class="color-1"></span></h1>
+            <h1 class="h-clear">Товары SofdilShop.uz<span class="color-1"></span></h1>
             <div class="productions-tablist hide float-right-md">
                 <ul class="list-inline">
-                    <li class="active"><a href="#production-tab-1" data-toggle="tab" flickity="resize">Новинки</a>
+                    <li class="active"><a href="{% url 'fabrics_main:newproduct' %}" data-toggle="tab" flickity="resize">Новинки</a>
                     </li>
-                    <li><a href="#production-tab-2" data-toggle="tab" flickity="resize">Популярные</a></li>
-                    <li><a href="#production-tab-3" data-toggle="tab" flickity="resize">Распродажа</a></li>
+                    <li><a href="{% url 'fabrics_main:top_product' %}" data-toggle="tab" flickity="resize">Популярные</a></li>
+                    <li><a href="{% url 'fabrics_main:newproduct' %}" data-toggle="tab" flickity="resize">Скидка</a></li>
                 </ul>
             </div>
         </div>
@@ -140,9 +137,13 @@
                                     <div>
                                         <a href="{% url 'fabrics_main:detail_product' product.pk %}"
                                            title="Тональный крем DD Cream natural 01" class="link-item"></a>
-                                        <a href="{% url 'fabrics_main:addtocard' product.id %}" class="add_to_basket link-icon"
-                                           style="cursor: pointer;"><span class="circle"><i
-                                                class="ls-shopping-bag"></i></span></a>
+                                        <a id="product{{ product.id }}" href="#" onclick="return false;"
+                                           data-productId="{{ product.id }}"
+                                           class="add_to_basket link-icon" style="cursor: pointer;">
+                                            <span class="circle">
+                                                <i class="ls-shopping-bag"></i>
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -200,9 +201,10 @@
                                     <div>
                                         <a href="{% url 'fabrics_main:detail_product' top.pk %}"
                                            title="Касторовое масло (castor oil) 40ml" class="link-item"></a>
-                                        <a href="#" class="add_to_basket link-icon"
-                                           style="cursor: pointer;"><span class="circle"><i
-                                                class="ls-shopping-bag"></i></span></a>
+                                        <a id="product{{ top.id }}" href="#" onclick="return false;"
+                                           data-productId="{{ top.id }}"
+                                           class="add_to_basket link-icon" style="cursor: pointer;"><span
+                                                class="circle"><i class="ls-shopping-bag"></i></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -220,6 +222,55 @@
                         <span class="prev"> <i class="fa fa-angle-left"></i></span>
                     </div>
                 </div>
+                <div role="tabpanel" id="production-tab-3">
+                <div class="productions-carousel relative">
+
+                    <div class="col-xs-6 production-cap text-left-sm"><h2>Акция</h2></div>
+                    <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a href="#">
+                        <div class="buttons">Посмотреть все</div>
+                    </a></div>
+                    <div class="text-center carousel-items">
+                        {% for acsia in product_a %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ acsia.image.url }});"
+                                         alt="КОКОСОВОЕ МАСЛО COCO SOUL VIRGIN - 250ML"></div>
+                                </div>
+                                <aside class="sticker pink">{{ acsia.percent }}%</aside>
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+                                        <h3>{{ acsia.name }}</h3>
+                                    </div>
+                                    <p>{{ acsia.title }}</p>
+                                    <p><b>В наличии <i style="color:green;" class="fa fa-check" aria-hidden="true"></i></b>
+                                    </p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+                                        <div class="p-h-15">
+                                            <p class="oldPrice"><span class="old_price">{{ acsia.price }} <small>сум</small></span>
+                                            </p>
+                                            <p class="currentPrice"><b>{{ acsia.sell_price }}</b> <small>Сум</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' acsia.pk %}"
+                                           title="КОКОСОВОЕ МАСЛО COCO SOUL VIRGIN - 250ML" class="link-item"></a>
+                                        <a id="product{{ acsia.id }}" href="#" onclick="return false;" data-productId="{{ acsia.id }}" class="add_to_basket link-icon" style="cursor: pointer;"><span class="circle"><i class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="carousel-prev-next hide">
+                    <span class="next"> <i class="fa fa-angle-right"></i></span>
+                    <span class="prev"> <i class="fa fa-angle-left"></i></span>
+                </div>
+            </div>
             </div>
         </div>
     </div>

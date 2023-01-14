@@ -42,5 +42,8 @@ urlpatterns = [
 
     path('order-detail/<int:pk>/', order_detail, name='order_detail'),
 
-    path('htmxcategory/', htmxcategory, name='htmxcategory')
+    path('htmxcategory/', htmxcategory, name='htmxcategory'),
+
+    path('cart-summ/', get_cart_summ, name='get_cart_summ'),
+
 ]

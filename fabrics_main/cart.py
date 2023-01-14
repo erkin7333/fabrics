@@ -19,7 +19,12 @@ class Cart(object):
             self.cart[str(p)]['product'] = Product.objects.get(pk=p)
 
         for item in self.cart.values():
-            item['total_price'] = int(item['product'].price * item['quantity']) / 100
+            if item['product'].selling_price:
+                item['total_price'] = int(item['product'].selling_price * item['quantity'])
+                print("PPPPPPPPPPPPPPPPPPPPP", item)
+            else:
+                item['total_price'] = int(item['product'].price * item['quantity'])
+                print("SSSSSSSSSSSSSSSSSSSSSSSSSSSS", item)
             yield item
 
 
@@ -55,9 +60,18 @@ class Cart(object):
         del self.session[settings.CART_SESSION_ID]
         self.session.modified = True
 
+    def get_one_card(self, product_id):
+        id = str(product_id)
+        if id in self.cart:
+            return self.cart[id]
 
     def get_total_cost(self):
+        total_cost = 0
         for p in self.cart.keys():
             self.cart[str(p)]['product'] = Product.objects.get(pk=p)
-
-        return int(sum(item['product'].price * item['quantity'] for item in self.cart.values())) / 100
+            item = self.cart[str(p)]
+            if item['product'].selling_price:
+                total_cost += item['product'].selling_price * item['quantity']
+            else:
+                total_cost += item['product'].price * item['quantity']
+        return total_cost

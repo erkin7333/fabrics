@@ -6,6 +6,7 @@ from .cart import Cart
 from .models import MenuCategory, Caregory, Product, OrderItem, Brand, Order
 from .forms import OrderModelForm
 from django.db.models import Q
+from django.http import HttpResponse
 
 
 def homepage(request):
@@ -13,10 +14,12 @@ def homepage(request):
     image = MenuCategory.objects.all()
     products = Product.objects.order_by('-created_at').exclude(top=True)
     top_product = Product.objects.filter(top=True)
+    product_a = Product.objects.filter(auction=True).exclude(top=True)
     context = {
         'image': image,
         'products': products,
-        'top_product': top_product
+        'top_product': top_product,
+        'product_a': product_a
     }
     return render(request, 'main/index.html', context=context)
 
@@ -48,13 +51,12 @@ class SelectSearchView(ListView):
         if min_price == "":
             min_price = 0
         if max_price == "":
-            max_price = 100000000000000000000000000
+            max_price = 1000000000
         object_list = Product.objects.filter(menucategoriy__id=menucategory, categories__id=category,
                                              brand__id=brand, price__range=(min_price, max_price))
         return object_list
 
 
-from django.core.paginator import Paginator
 @login_required
 def menu_product(request, pk):
     """Fuction for menu products"""
@@ -143,7 +145,7 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        newproduct = products = Product.objects.order_by('-created_at').exclude(top=True)[0:3]
+        newproduct = Product.objects.order_by('-created_at').exclude(top=True)[0:3]
         context['newproduct'] = newproduct
         return context
 
@@ -154,7 +156,7 @@ def add_to_cart(request, product_id):
     """Adding to cart func."""
     cart = Cart(request)
     cart.add(product_id)
-    return redirect("fabrics_main:view_cart")
+    return HttpResponse(cart.__len__())
 
 
 
@@ -167,8 +169,17 @@ def change_quantity(request, product_id):
             quantity = -1
         cart = Cart(request)
         cart.add(product_id, quantity, True)
+    count = cart.get_one_card(product_id=product_id)['quantity']
+    cart_len = cart.__len__()
+    result = f"{count}|{cart_len}"
+    return HttpResponse(result)
 
-    return redirect('fabrics_main:view_cart')
+
+def get_cart_summ(request):
+    """Get cart summ"""
+    cart = Cart(request)
+    summ = cart.get_total_cost()
+    return HttpResponse(summ)
 
 
 def remove_cart(request, product_id):

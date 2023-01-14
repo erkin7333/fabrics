@@ -125,10 +125,7 @@
                                         <a href="{% url 'fabrics_main:detail_product' sub.pk %}"
                                            title="Травяные капсулы для роста волос Тричуп, 60 кап, Trichup Capsules"
                                            class="link-item"></a>
-                                        <a href="{% url 'fabrics_main:addtocard' %}" product="1652"
-                                           class="add_to_basket link-icon"
-                                           style="cursor: pointer;"><span class="circle"><i
-                                                class="ls-shopping-bag"></i></span></a>
+                                        <a id="product{{ sub.id }}" href="#" onclick="return false;" data-productId="{{ sub.id }}" class="add_to_basket link-icon" style="cursor: pointer;"><span class="circle"><i class="ls-shopping-bag"></i></span></a>
                                     </div>
                                 </div>
                             </div>

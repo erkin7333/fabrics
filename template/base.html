@@ -362,28 +362,6 @@
                                     </div>
                                 </li>
                                 {% endfor %}
-                                <li><a href="#">Наборы</a>
-                                    <div class="submenu-box megamenu text-left">
-                                        <div class="submenu-box-wrapper clearfix container">
-                                            <div class="megasubmenu-items" style="width: 100%;">
-                                                <div class="megasubmenu-item" role="menuitem-1"
-                                                    style="opacity: 1;visibility: visible;display: block;">
-                                                    <ul class="sublist" style="column-count: 4;">
-                                                        {% for col in collection %}
-                                                        <li>
-                                                            <a href="" title="">{{ col.name }}</a>
-                                                        </li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-
-
                                 <li><a href="#">Бренды</a>
                                     <div class="submenu-box megamenu text-left">
                                         <div class="submenu-box-wrapper clearfix container">
@@ -404,6 +382,7 @@
                                         </div>
                                     </div>
                                 </li>
+                                <li><a href="#">Акция</a></li>
                             </ul>
                         </div>
                     </div>
@@ -421,11 +400,11 @@
                         <div class="lang text-center text-uppercase">
                             <div class="lang-carousel-items">
                                 <div class="carousel-cell">
-                                    <div class="link-content"><a href="uz/index.html" title="Узбекский"><img
+                                    <div class="link-content"><a href="#" title="Узбекский"><img
                                                 src="{% static 'banafa-ru/img/icons/uz.jpg' %}" alt="">Uz</a></div>
                                 </div>
                                 <div class="carousel-cell">
-                                    <div class="link-content"><a href="index.html" title="Русский"><img
+                                    <div class="link-content"><a href="#" title="Русский"><img
                                                 src="{% static 'banafa-ru/img/icons/ru.jpg' %}" alt="">Ru</a></div>
                                 </div>
                             </div>
@@ -435,7 +414,7 @@
                         <div class="row">
                             <div class="p-h-15 col-xs-6">
 
-                                <a href="http://banafa.uz/favorites.htm" role="button">
+                                <a href="#" role="button">
                                     <div class="panel-favorites p-h-15"><span class="icon-content vam"><i
                                                 class="ls-like"></i></span></div>
                                 </a>
@@ -450,7 +429,7 @@
                     </div>
                     <div class="col-xs-12">
                         <div class="search-nav-content color-black p-h-15">
-                            <form action="https://www.banafa.uz/search.php">
+                            <form action="#">
                                 <div class="col-md-12 search-input">
                                     <input type="text" name="query" value="" placeholder="Поиск"
                                         style="height: 27px;" />
@@ -557,7 +536,7 @@
                                             <div class="btn-content col-md-12">
                                                 <span
                                                     class="btn-def m-v-15 radius-6 col-md-7 col-xs-offset-2 col-md-offset-0 col-xs-8">
-                                                    <a href="payment-methods.html" title="Оплата">Подробнее</a>
+                                                    <a href="#" title="Оплата">Подробнее</a>
                                                 </span>
                                             </div>
                                         </div>
@@ -710,7 +689,7 @@
                                     <li><a href="{% url 'fabrics_about:agreementpage' %}" title="Публичная оферта">Публичная оферта</a></li>
                                     <li><a href="{% url 'fabrics_about:how_to_order' %}" title="Как оформить заказ?">Как оформить заказ?</a>
                                     </li>
-                                    <li><a href="payment-methods.html" title="Способы оплаты">Способы оплаты</a></li>
+                                    <li><a href="#" title="Способы оплаты">Способы оплаты</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -841,6 +820,7 @@
     <script type="text/javascript" src="{% static 'basket/basket.js' %}"></script>
     <script type="text/javascript" src="{% static 'basket/maskedinput.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/mail-bron.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
     {% block js %}{% endblock %}
 
 

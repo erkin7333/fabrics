@@ -66,8 +66,7 @@
                                 <div class="products-btns">
                                     <div class="col-md-6 p-h-15 m-v-30 row">
 																		<span class="btn btn-def reverse">
-										<a href="{% url 'fabrics_main:addtocard' object.id %}" class="add_basket"
-                                           style="margin: auto; padding:7px 16px;">Добавить в корзину</a>
+										<a id="product{{ object.id }}" href="#" onclick="return false;" data-productId="{{ object.id }}" class="add_to_basket" style="margin: auto; padding:7px 16px;">Добавить в корзину</a>
 									</span>
                                     </div>
                                     <div class="float-left-md p-h-15 m-v-30">

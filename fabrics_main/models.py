@@ -35,15 +35,6 @@ class SubCategory(models.Model):
         return self.category.menucategory.name + ' -- ' + self.category.name + ' -- ' + self.name
 
 
-# To'plam uchun model
-class Collection(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-    class Meta:
-        verbose_name = "To'plam"
-
 # Brendlar uchun model
 class Brand(models.Model):
     name = models.CharField(max_length=60)
@@ -60,7 +51,6 @@ class Product(models.Model):
     menucategoriy = models.ForeignKey(MenuCategory, on_delete=models.RESTRICT, blank=True, null=True)
     categories = models.ForeignKey(Caregory, on_delete=models.RESTRICT, blank=True, null=True)
     subcategories = models.ForeignKey(SubCategory, on_delete=models.RESTRICT, blank=True, null=True)
-    collection = models.ForeignKey(Collection, on_delete=models.RESTRICT, blank=True, null=True)
     brand = models.ForeignKey(Brand, on_delete=models.RESTRICT, blank=True, null=True)
     name = models.CharField(max_length=100, verbose_name="Maxsulot nomi")
     title = models.CharField(max_length=255, verbose_name="Sarlovha")
@@ -68,8 +58,11 @@ class Product(models.Model):
     manufacturer = models.CharField(max_length=200, verbose_name="Ishlab chiqaruvchi")
     vendor_code = models.CharField(max_length=10, verbose_name="Sotuvchi kodi")
     available = models.BooleanField(default=False, verbose_name='Sotuvda bormi')
-    price = models.FloatField()
+    price = models.IntegerField()
     top = models.BooleanField(default=False, verbose_name="Top productga qo'shish")
+    percent = models.IntegerField(blank=True, null=True)
+    auction = models.BooleanField(default=False, verbose_name='Aksiya')
+    selling_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     description = models.TextField()
     image = models.ImageField(upload_to='product/')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -78,7 +71,27 @@ class Product(models.Model):
         return self.name
 
     def get_display_price(self):
-        return self.price / 100
+        return self.price
+
+    @property
+    def percentprice(self):
+        a = ((self.price) * (self.percent)) / 100
+        return a
+
+    @property
+    def sell_price(self):
+        b = (self.price) - (self.percentprice)
+        return b
+    def save(self, *args, **kwargs):
+        self.selling_price = self.sell_price
+        super().save(*args, kwargs)
+
+
+    def discount(self):
+        if self.auction == True:
+            return self.sell_price
+        else:
+            self.get_display_price
 
     class Meta:
         verbose_name = 'Maxsulot'

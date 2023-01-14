@@ -40,16 +40,14 @@
                         <div>
                             <h3><span class="prices product-totalprice"><font
                                     style="vertical-align: inherit;"><font
-                                    style="vertical-align: inherit;">{{ s.product.get_display_price }}</font></font></span><font
-                                    style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                so'm</font></font></h3>
+                                    style="vertical-align: inherit;">{% if s.product.discount %}{{ s.product.discount }}{% else %}{{ s.product.price }}{% endif %}</font></font></span><font
+                                    style="vertical-align: inherit;"><font style="vertical-align: inherit;">so'm</font></font></h3>
                             <div class="products-cnt-form" data-counter="1">
-                                <a class="dicrement__item"
-                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease">-</a>
-                                <h class="justify-content-between"><strong>{{ s.quantity }}</strong></h>
-                                <a class="increment__item"
-                                   href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase">+</a>
-
+                                <a  href="#"  onclick="return false;" data-productId="{{ s.product.id }}" class="dicrement__item"
+                                   {% comment %} href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease" {% endcomment %}>-</a>
+                                <h id="cart-product{{ s.product.id }}" class="justify-content-between"><strong>{{ s.quantity }}</strong></h>
+                                <a  href="#"  onclick="return false;" data-productId="{{ s.product.id }}" class="increment__item"
+                                   {% comment %} href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase" {% endcomment %}>+</a>
                             </div>
                         </div>
                     </div>
@@ -63,13 +61,13 @@
                         <div class="col-md-6 p-h-15 flex">
                             <a href="{% url 'fabrics_main:delete_all' %}"
                                class="m-v-5 text-center btn-def inline-block">
-                                <p>
+                                <b>
                                     Очистить корзину
-                                </p>
+                                </b>
                             </a>
                         </div>
                         <div class="col-md-6 p-h-15 flex" style="justify-content: flex-end;"><h4>Итого к оплате</h4>
-                            <h4 class="p-l-15"><span class="price totalprice-products">{{ cart.get_total_cost }}</span>
+                            <h4 class="p-l-15"><span id="summ" class="price totalprice-products">{{ cart.get_total_cost }}</span>
                                 сум</h4></div>
                     </div>
                 </div>
