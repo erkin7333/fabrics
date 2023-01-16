@@ -71,7 +71,7 @@
                 <div class="products-content">
 
                     <div class="text-center figure-m-v-15 boxes-5 products-items">
-                        {% for sub in subproduct %}
+                        {% for sub in page_obj %}
                         <figure class="hover-content hover-product">
                             <div class="wrapper">
                                 <div class="img-content">
@@ -114,12 +114,23 @@
                     </div>
                     <div class="pagination-div col-xs-12 m-b-15 text-center">
                         <ul class="pagination">
-                            <li class="active"><a href="index.html">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                             <span class="step-links">
+                                {% if page_obj.has_previous %}
+                                    <a href="?page=1" class="btn btn-outline-info">&laquo;Birinchi</a>
+                                    <a href="?page={{ page_obj.previous_page_number }}"
+                                       class="btn btn-outline bg-primary">««</a>
+                                {% endif %}
+
+                                <span class="current text-light btn bg-primary">
+                                    {{ page_obj.number }}
+                                </span>
+
+                                {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}"
+                                       class="btn btn-outline bg-primary"> »»</a>
+                                    <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info">Oxirgi&raquo;</a>
+                                    {% endif %}
+                                </span>
                         </ul>
                     </div>
                 </div>

@@ -125,7 +125,10 @@ class SubcategoryProduct(LoginRequiredMixin, TemplateView):
         subproduct = Product.objects.filter(subcategories_id=pk)
         mencategory = MenuCategory.objects.all()
         brands = Brand.objects.all()
-        context['subproduct'] = subproduct
+        paginator = Paginator(subproduct, 1)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['page_obj'] = page_obj
         context['mencategory'] = mencategory
         context['brands'] = brands
         return context
