@@ -123,7 +123,11 @@ class SubcategoryProduct(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
         subproduct = Product.objects.filter(subcategories_id=pk)
+        mencategory = MenuCategory.objects.all()
+        brands = Brand.objects.all()
         context['subproduct'] = subproduct
+        context['mencategory'] = mencategory
+        context['brands'] = brands
         return context
 
 

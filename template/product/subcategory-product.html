@@ -22,59 +22,31 @@
                 <div class="products-selection">
                     <div class="form-selection text-center">
                         <h3 class="visible-xs visible-sm">Фильтрация</h3>
-
-
-                        <form method="get" action="" id="form"
-                              accept-charset="utf-8">
+                        <form method="get" action="{% url 'fabrics_main:select_search' %}">
+                            {% csrf_token %}
                             <div class="row fields-items">
-
                                 <div class="field pie-md-flex-4 m-v-15">
-                                    <select class="js-select search-hide" id="section_id" name="sectionId">
-                                        <option value="0">Выберите направление</option>
-                                        <option value="6" selected="selected">Косметика по уходу за волосами
-                                        </option>
-                                        <option value="4">Косметика по уходу за лицом</option>
-                                        <option value="5">Косметика по уходу за телом</option>
-                                        <option value="8">Лечебные средства</option>
-                                        <option value="3">Макияж</option>
-                                        <option value="287">Парфюмерия</option>
-                                        <option value="336">Наборы</option>
+                                    <select name="menucategory"
+                                            hx-get="{% url 'fabrics_main:htmxcategory' %}"
+                                            hx-trigger="change"
+                                            hx-target="#menucat">
+                                        <option selected>Menyu Categorya tanlang
+                                        <option>
+                                            {% for m in mencategory %}
+                                        <option value="{{ m.pk }}">{{ m.name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
 
-                                <div class="field pie-md-flex-4 m-v-15">
-                                    <select class="js-select search-hide 1" id="subsection_id" name="parentId">
-                                        <option value="0">Выберите из списка</option>
-                                        <option value="247">Шампунь</option>
-                                        <option value="248">Комплексное масло</option>
-                                        <option value="97">Кондиционер</option>
-                                        <option value="249">Масло</option>
-                                        <option value="250">Маска</option>
-                                        <option value="253">Хна</option>
-                                        <option value="251">Для бровей</option>
-                                        <option value="252">Загуститель волос</option>
-                                        <option value="329">Для бороды</option>
-                                    </select>
+                                <div id="menucat">
+                                    {% include 'partials/categories.html' %}
                                 </div>
 
                                 <div class="field pie-md-flex-4 m-v-15">
-                                    <select class="js-select" id="brands" name="brand">
-                                        <option value="0">Все бренды</option>
-                                        <option value="345">Arcaya</option>
-                                        <option value="344">Parachute</option>
-                                        <option value="343">Inci</option>
-                                        <option value="342">Vollare</option>
-                                        <option value="341">Tony Moly</option>
-                                        <option value="338">Trichup</option>
-                                        <option value="274">Hemani</option>
-                                        <option value="271">Dr Rashel</option>
-                                        <option value="339">Vasu</option>
-                                        <option value="273">Forever52</option>
-                                        <option value="268">Buabed Banafa</option>
-                                        <option value="275">Skin Doctor</option>
-                                        <option value="270">Dr James</option>
-                                        <option value="278">Constanta</option>
-                                        <option value="267">Argussy</option>
+                                    <select name="brand">
+                                        {% for brand in brands %}
+                                        <option value="{{ brand.id }}">{{ brand.name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
 
@@ -125,7 +97,9 @@
                                         <a href="{% url 'fabrics_main:detail_product' sub.pk %}"
                                            title="Травяные капсулы для роста волос Тричуп, 60 кап, Trichup Capsules"
                                            class="link-item"></a>
-                                        <a id="product{{ sub.id }}" href="#" onclick="return false;" data-productId="{{ sub.id }}" class="add_to_basket link-icon" style="cursor: pointer;"><span class="circle"><i class="ls-shopping-bag"></i></span></a>
+                                        <a id="product{{ sub.id }}" href="#" onclick="return false;"
+                                           data-productId="{{ sub.id }}" class="add_to_basket link-icon"
+                                           style="cursor: pointer;"><span class="circle"><i class="ls-shopping-bag"></i></span></a>
                                     </div>
                                 </div>
                             </div>
