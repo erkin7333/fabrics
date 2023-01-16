@@ -7,6 +7,7 @@ from .models import MenuCategory, Caregory, Product, OrderItem, Brand, Order
 from .forms import OrderModelForm
 from django.db.models import Q
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 
 def homepage(request):
@@ -63,10 +64,14 @@ def menu_product(request, pk):
     mencategory = MenuCategory.objects.all()
     brands = Brand.objects.all()
     menuproduct = Product.objects.filter(menucategoriy_id=pk)
+    paginator = Paginator(menuproduct, 2)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
         'menuproduct': menuproduct,
         'mencategory': mencategory,
-        'brands': brands
+        'brands': brands,
+        'page_obj': page_obj
     }
     return render(request, 'product/menu-product.html', context=context)
 
@@ -95,13 +100,16 @@ class CategoryProduct(LoginRequiredMixin, TemplateView):
     """Find category on generics view."""
     template_name = 'product/category-product.html'
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self,  **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
         categoryproduct = Product.objects.filter(categories_id=pk)
         mencategory = MenuCategory.objects.all()
         brands = Brand.objects.all()
-        context['categoryproduct'] = categoryproduct
+        paginator = Paginator(categoryproduct, 1)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['page_obj'] = page_obj
         context['mencategory'] = mencategory
         context['brands'] = brands
         return context
