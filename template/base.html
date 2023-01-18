@@ -429,7 +429,7 @@
                     </div>
                     <div class="col-xs-12">
                         <div class="search-nav-content color-black p-h-15">
-                            <form action="#">
+                            <form action="{% url 'fabrics_main:search' %}" method="get">
                                 <div class="col-md-12 search-input">
                                     <input type="text" name="query" value="" placeholder="Поиск"
                                         style="height: 27px;" />

@@ -230,20 +230,33 @@ def checkout(request):
             total_price = 0
             for item in cart:
                 product = item['product']
-                total_price += product.price * int(item['quantity'])
+                if product.selling_price:
+                    total_price += product.selling_price * int(item['quantity'])
+                else:
+                    total_price += product.price * int(item['quantity'])
             order = form.save(commit=False)
             order.user = request.user
             order.paid_amount = total_price
             order.save()
             for item in cart:
                 product = item['product']
-                quantity = int(item['quantity'])
-                price = product.price * quantity
-                item = OrderItem.objects.create(order=order,
-                                                product=product,
-                                                total_price=price,
-                                                quantity=quantity)
-                item.save()
+                if product.selling_price:
+                    quantity = int(item['quantity'])
+                    price = product.selling_price * quantity
+                    item = OrderItem.objects.create(order=order,
+                                                    product=product,
+                                                    total_price=price,
+                                                    quantity=quantity)
+                    item.save()
+                else:
+                    quantity = int(item['quantity'])
+                    price = product.price * quantity
+                    item = OrderItem.objects.create(order=order,
+                                                    product=product,
+                                                    total_price=price,
+                                                    quantity=quantity)
+                    item.save()
+
             cart.clear()
             return redirect('fabrics_main:my_orders')
     else:
