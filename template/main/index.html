@@ -1,0 +1,308 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="main-slider">
+    <div class="fullscreen-container">
+        <div class="rev-slider bg-color-white">
+            <ul>
+                {% for img in image %}
+                <li data-transition="boxfade" data-masterspeed="1200">
+                    <a href="{% url 'fabrics_main:menu_product' img.pk %}" class="fulllink"></a>
+                    <img src="{{ img.image.url }}" alt="  ">
+                    <div class="wrapper-bg tp-caption customin customout start hidden" data-x="center"
+                         data-y="center" data-customin="opacity:0;" data-customout="opacity:0;"
+                         data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000"
+                         data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
+                    <div class="container">
+                        <div class="tp-caption slide-header customin customout start hidden-xs hidden-sm"
+                             data-x="left" data-y="top" data-customin="opacity:0;" data-customout="opacity:0;"
+                             data-speed="1800" data-hoffset="20" data-voffset="50" data-start="1200"
+                             data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on">
+                            <h2></h2>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="arrow-container container"></div>
+    </div>
+</div>
+
+<style>
+
+        .fulllink {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+        }
+
+
+</style>
+
+<div class="short-advantages">
+    <div class="container p-v-10">
+        <div class="row">
+            <div class="short-advantages-items text-left-sm boxes hidden-xs hidden-sm figure-m-v-5">
+                <figure>
+                    <div class="img-content pie-xs-4 p-h-15">
+                        <div class="icon pie-flex-center text-center">
+                            <div><i class="fa fa-truck"></i></div>
+                        </div>
+                    </div>
+                    <div class="desc-content pie-xs-8 p-h-15"><p>{% trans 'Доставка по Узбекистану в течении 2-х дней' %}
+                        </p></div>
+                </figure>
+                <figure>
+                    <div class="img-content pie-xs-4 p-h-15">
+                        <div class="icon pie-flex-center text-center">
+                            <div><i class="fa fa-mail-reply-all"></i></div>
+                        </div>
+                    </div>
+                    <div class="desc-content pie-xs-8 p-h-15"><p>{% trans 'Удобные способы оплаты' %}</p></div>
+                </figure>
+                <figure>
+                    <div class="img-content pie-xs-4 p-h-15">
+                        <div class="icon pie-flex-center text-center">
+                            <div><i class="fa fa-bullhorn"></i></div>
+                        </div>
+                    </div>
+                    <div class="desc-content pie-xs-8 p-h-15"><p>{% trans 'Только подлинные товары' %}</p></div>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="productions-tab bg-texture-1 flickity-btn-1">
+    <div class="container">
+        <div class="entry-header m-v-30">
+            <h2 class="font-family-2 color-1 h-clear">{% trans 'Best products' %}</h2>
+            <h1 class="h-clear">{% trans 'Товары' %} SofdilShop.uz<span class="color-1"></span></h1>
+            <div class="productions-tablist hide float-right-md">
+                <ul class="list-inline">
+                    <li class="active"><a href="{% url 'fabrics_main:newproduct' %}" data-toggle="tab" flickity="resize">{% trans 'Новинки' %}</a>
+                    </li>
+                    <li><a href="{% url 'fabrics_main:top_product' %}" data-toggle="tab" flickity="resize">{% trans 'Популярные' %}</a></li>
+                    <li><a href="{% url 'fabrics_main:newproduct' %}" data-toggle="tab" flickity="resize">{% trans 'Скидка' %}</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content">
+
+            <div role="tabpanel" id="production-tab-1">
+                <div class="productions-carousel relative">
+                    <div class="col-xs-6 production-cap  text-left-sm"><h2>{% trans 'Новинки' %}</h2></div>
+                    <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
+                            href="{% url 'fabrics_main:newproduct' %}">
+                        <div class="buttons">{% trans 'Все новинки' %}</div>
+                    </a></div>
+
+                    <div class="text-center carousel-items">
+                        {% for product in products %}
+                        <figure key="{{ product.pk }}" class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ product.image.url }});"
+                                         alt="Тональный крем DD Cream natural 01"></div>
+                                </div>
+
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+
+
+                                        <h3>{{ product.name }}</h3>
+
+
+                                    </div>
+                                    <p>{{ product.title }}</p>
+                                    <p><b>{% trans 'В наличии' %} <i style="color:green;" class="fa fa-check"
+                                                       aria-hidden="true"></i></b></p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                        <div class="p-h-15">
+
+                                            <p class="currentPrice"><b>{{ product.price }}</b> <small>{% trans 'Сум' %}</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' product.pk %}"
+                                           title="Тональный крем DD Cream natural 01" class="link-item"></a>
+                                        <a id="product{{ product.id }}" href="#" onclick="return false;"
+                                           data-productId="{{ product.id }}"
+                                           class="add_to_basket link-icon" style="cursor: pointer;">
+                                            <span class="circle">
+                                                <i class="ls-shopping-bag"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% empty %}
+                        <div class="desc-content m-v-5">
+                            <div class="cap-content">
+                                <h>{% trans 'Извините, информация еще не введена' %}</h>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-prev-next hide">
+                        <span class="next"> <i class="fa fa-angle-right"></i></span>
+                        <span class="prev"> <i class="fa fa-angle-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" id="production-tab-2">
+                <div class="productions-carousel relative">
+
+                    <div class="col-xs-6 production-cap text-left-sm"><h2>{% trans 'Популярные' %}</h2></div>
+                    <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a
+                            href="{% url 'fabrics_main:top_product' %}">
+                        <div class="buttons">{% trans 'Все популярные' %}</div>
+                    </a></div>
+
+                    <div class="text-center carousel-items">
+                        {% for top in top_product %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ top.image.url }});"
+                                         alt="Касторовое масло (castor oil) 40ml"></div>
+                                </div>
+
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+                                        <h3>{{ top.name }}</h3>
+                                    </div>
+                                    <p>{{ top.name }}</p>
+                                    <p><b>{% trans 'В наличии'%} <i style="color:green;" class="fa fa-check"
+                                                       aria-hidden="true"></i></b></p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+
+                                        <div class="p-h-15">
+
+                                            <p class="currentPrice"><b>{{ top.price }}</b> <small>{% trans 'Сум'%}</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' top.pk %}"
+                                           title="Касторовое масло (castor oil) 40ml" class="link-item"></a>
+                                        <a id="product{{ top.id }}" href="#" onclick="return false;"
+                                           data-productId="{{ top.id }}"
+                                           class="add_to_basket link-icon" style="cursor: pointer;"><span
+                                                class="circle"><i class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% empty %}
+                        <div class="desc-content m-v-5">
+                            <div class="cap-content">
+                                <h>{% trans 'Извините, информация еще не введена'%}</h>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-prev-next hide">
+                        <span class="next"> <i class="fa fa-angle-right"></i></span>
+                        <span class="prev"> <i class="fa fa-angle-left"></i></span>
+                    </div>
+                </div>
+                <div role="tabpanel" id="production-tab-3">
+                <div class="productions-carousel relative">
+
+                    <div class="col-xs-6 production-cap text-left-sm"><h2>{% trans 'Акция'%}</h2></div>
+                    <div class="col-xs-6 production-linkall text-right-sm p-v-10"><a href="#">
+                        <div class="buttons">{% trans 'осмотреть все'%}</div>
+                    </a></div>
+                    <div class="text-center carousel-items">
+                        {% for acsia in product_a %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ acsia.image.url }});"
+                                         alt="КОКОСОВОЕ МАСЛО COCO SOUL VIRGIN - 250ML"></div>
+                                </div>
+                                <aside class="sticker pink">{{ acsia.percent }}%</aside>
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+                                        <h3>{{ acsia.name }}</h3>
+                                    </div>
+                                    <p>{{ acsia.title }}</p>
+                                    <p><b>{% trans 'В наличии'%} <i style="color:green;" class="fa fa-check" aria-hidden="true"></i></b>
+                                    </p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+                                        <div class="p-h-15">
+                                            <p class="oldPrice"><span class="old_price">{{ acsia.price }} <small>{% trans 'сум'%}</small></span>
+                                            </p>
+                                            <p class="currentPrice"><b>{{ acsia.sell_price }}</b> <small>{% trans 'Сум'%}</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' acsia.pk %}"
+                                           title="КОКОСОВОЕ МАСЛО COCO SOUL VIRGIN - 250ML" class="link-item"></a>
+                                        <a id="product{{ acsia.id }}" href="#" onclick="return false;" data-productId="{{ acsia.id }}" class="add_to_basket link-icon" style="cursor: pointer;"><span class="circle"><i class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="carousel-prev-next hide">
+                    <span class="next"> <i class="fa fa-angle-right"></i></span>
+                    <span class="prev"> <i class="fa fa-angle-left"></i></span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="wholesalers">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-h-15 m-v-30">
+                <div class="text-content">
+                    <h4>{% trans 'Натуральная уходовая косметика, средств для ухода за лицом, кожей и волосами' %}</h4>
+                    <p>{% trans 'В интернет-магазине косметики BANAFA.UZ вы можете купить' %} <strong>
+                        {% trans 'натуральную осметику для ухода за лицом, кожей и волосами,' %}</strong> 
+                        {% trans 'аюрведические средства,100% натуральные лечебные и косметические масла, восточную парфюмерию ипрофессиональную декоративную косметику по доступным низким ценам.' %}</p>
+                    <p>&nbsp;</p>
+                    <div><strong>{% trans 'Доставим ваш заказ в Ташкенте день в день,' %}</strong> {% trans 'если заказ оформляется до 12 часов. Оплата при получении любым удобным вам способом.' %}
+                    </div>
+                    <div>&nbsp;</div>
+                    <p>{% trans 'По регионам отправляем через курьерскую службу до центра города только после онлайн-оплаты через систему Payme или Click.' %}</p>
+                    <p>&nbsp;</p>
+                    <p>{% trans 'Также у нас предусмотрен ' %}<strong>{% trans 'самовывоз' %}</strong>, 
+                        {% trans 'при котором вы можетесамостоятельно забрать товар, приготовленный оператором в нашем магазине по адресу:Шайхантохурский район, ул.Беруний, д.2. ' %}<strong>
+                            {% trans ' Ориентир: метро Тинчлик, кинотеатрГунча.' %}</strong></p>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="btn-content"><span class="btn-def inline-block"><a data-toggle="modal"
+                                                                               data-target="#form-wholesalers"
+                                                                               role="button">{% trans 'Для оптовиков' %}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

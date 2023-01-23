@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="index.html">{% trans 'Главная' %}</a></li>
+                    <li class="active"><a href="#">{% trans 'Корзина' %}</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- about -->
+        <div class="basket">
+            <div class="container">
+                <div class="basket-content">
+                    <div class="entry-content text-center color-1"><h1 align="left">{% trans 'Корзина' %}</h1></div>
+                </div>
+                <!-- Корзина пуста -->
+                {% for s in cart %}
+                <figure class="col-xs-12 block-51471">
+                    <div class="img-content col-md-2 p-h-15 m-v-5">
+                        <img src="{{ s.product.image.url }}" alt="qwerty">
+                    </div>
+                    <div class="desc-content col-md-4 p-h-15 m-v-5 pie-flex-center">
+                        <div>
+                            <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ s.product.title }}</font></font><br></h3>
+                            <p><small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{% trans 'Maqola:' %}
+                                {{ s.product.vendor_code }}</font></font></small></p>
+                            <div class="shop-cart-buttons m-v-15">
+                                <a class="btn-def inline-block" href="{% url 'fabrics_main:remove_cart' s.id %}"><b>{% trans 'Oʻchirish' %}</b></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="counter-content col-md-3 p-h-15 m-v-5 pie-flex-center">
+                        <div>
+                            <h3><span class="prices product-totalprice"><font
+                                    style="vertical-align: inherit;"><font
+                                    style="vertical-align: inherit;">{% if s.product.discount %}{{ s.product.discount }}{% else %}{{ s.product.price }}{% endif %}</font></font></span><font
+                                    style="vertical-align: inherit;"><font style="vertical-align: inherit;">so'm</font></font></h3>
+                            <div class="products-cnt-form" data-counter="1">
+                                <a  href="#"  onclick="return false;" data-productId="{{ s.product.id }}" class="dicrement__item"
+                                   {% comment %} href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=decrease" {% endcomment %}>-</a>
+                                <h id="cart-product{{ s.product.id }}" class="justify-content-between"><strong>{{ s.quantity }}</strong></h>
+                                <a  href="#"  onclick="return false;" data-productId="{{ s.product.id }}" class="increment__item"
+                                   {% comment %} href="{% url 'fabrics_main:change_quantity' s.product.id %}?action=increase" {% endcomment %}>+</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-content col-md-5 p-h-15 m-v-5 pie-flex-center">
+                        <div class="col-md-12 col-xs-12 border-bottom"></div>
+                    </div>
+                </figure>
+                {% endfor %}
+                <div class="recalculate-form m-v-15">
+                    <div class="row">
+                        <div class="col-md-6 p-h-15 flex">
+                            <a href="{% url 'fabrics_main:delete_all' %}"
+                               class="m-v-5 text-center btn-def inline-block">
+                                <b>
+                                    {% trans ' Очистить корзину' %}
+                                </b>
+                            </a>
+                        </div>
+                        <div class="col-md-6 p-h-15 flex" style="justify-content: flex-end;"><h4>{% trans 'Итого к оплате' %}</h4>
+                            <h4 class="p-l-15"><span id="summ" class="price totalprice-products">{{ cart.get_total_cost }}</span>
+                                {% trans ' сум' %}</h4></div>
+                    </div>
+                </div>
+
+                <div class="orders-details m-v-15 cleafix">
+                    <hr style="border-color: #1a2b56;">
+                    <div class="col-md-12 col-xs-12 m-v-5">
+                        <div class="shop-cart-total text-right-md">
+                            <a href="{% url 'fabrics_main:order' %}" class="btn-def btn-res reverse inline-block">{% trans 'Перейти к оформлению' %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</main>
+{% endblock %}

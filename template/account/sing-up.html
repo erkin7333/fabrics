@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %}Sing-Up{% endblock %}
+
+
+{% block content %}
+
+<main data-aos="fade" data-aos-delay="0">
+    <div class="main-content over-hidden">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">{% trans 'Главная' %}</a></li>
+                    <li class="active"><a href="{% url 'user_account:register' %}">{% trans 'Регистрация' %}</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                  <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary">{% trans 'Saqlash' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
