@@ -60,7 +60,7 @@ class Product(models.Model):
     available = models.BooleanField(default=False, verbose_name='Sotuvda bormi')
     price = models.IntegerField()
     top = models.BooleanField(default=False, verbose_name="Top productga qo'shish")
-    percent = models.IntegerField(blank=True, null=True)
+    percent = models.IntegerField(blank=True, null=True, default=0)
     auction = models.BooleanField(default=False, verbose_name='Aksiya')
     selling_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     description = models.TextField()
@@ -75,7 +75,10 @@ class Product(models.Model):
 
     @property
     def percentprice(self):
-        a = ((self.price) * (self.percent)) / 100
+        if self.percent == None:
+            a = self.price
+        else:
+            a = ((self.price) * (self.percent)) / 100
         return a
 
     @property
