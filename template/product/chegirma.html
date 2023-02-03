@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Brand {% endblock %}
+
+{% block content %}
+<main data-aos="fade" data-aos-delay="0">
+
+
+    <div class="main-content over-hidden">
+        <!-- breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb-container text-center-sm">
+                <ol class="breadcrumb font-w-6 p-h-0 m-b-0 m-t-15">
+                    <li><a href="{% url 'fabrics_main:homepage' %}">Главная</a></li>
+                    <li class="brands"><a href="#">Акция</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- products -->
+        <div class="products">
+            <div class="container">
+                <div class="products-content">
+
+                    <div class="text-center figure-m-v-15 boxes-4 products-items">
+                        {% for cheg in object_list %}
+                        <figure class="hover-content hover-product">
+                            <div class="wrapper">
+                                <div class="img-content">
+                                    <div class="img"
+                                         style="background-image: url({{ cheg.image.url }});"
+                                         alt="КОКОСОВОЕ МАСЛО COCO SOUL VIRGIN - 250ML"></div>
+                                </div>
+                                <aside class="sticker pink">{{ cheg.percent }}%</aside>
+                                <div class="desc-content m-v-5">
+                                    <div class="cap-content">
+                                        <h3>{{ cheg.name }}</h3>
+                                    </div>
+                                    <p>{{ cheg.title }}</p>
+                                    <p><b>В наличии <i style="color:green;" class="fa fa-check" aria-hidden="true"></i></b>
+                                    </p>
+                                    <div class="price color-1 text-uppercase m-v-15 flex">
+                                        <div class="p-h-15">
+                                            <p class="oldPrice"><span class="old_price">{{ cheg.price }} <small>сум</small></span>
+                                            </p>
+                                            <p class="currentPrice"><b>{{ cheg.sell_price }}</b> <small>Сум</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell-hover text-center">
+                                    <div>
+                                        <a href="{% url 'fabrics_main:detail_product' cheg.pk %}"
+                                           title="КОКОСОВОЕ МАСЛО COCO SOUL VIRGIN - 250ML" class="link-item"></a>
+                                        <a id="product{{ cheg.id }}" href="#" onclick="return false;" data-productId="{{ cheg.id }}" class="add_to_basket link-icon" style="cursor: pointer;"><span class="circle"><i class="ls-shopping-bag"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main><!-- ./MAIN -->
+{% endblock %}

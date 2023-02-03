@@ -1,9 +1,12 @@
 from django.db import models
+from parler.models import TranslatableModel, TranslatedFields
 
 
 # Kompaniya haqida malumotlar modeli
-class About(models.Model):
-    description = models.TextField()
+class About(TranslatableModel):
+    translations = TranslatedFields(
+        description=models.TextField()
+    )
     created_add = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

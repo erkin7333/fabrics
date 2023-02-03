@@ -24,6 +24,8 @@ urlpatterns = [
 
     path('subcategory-product/<int:pk>/', SubcategoryProduct.as_view(), name='subproduct'),
 
+    path('chegirma/', ChegirmaListView.as_view(), name='chegirma'),
+
     path('detail-product/<int:pk>/', ProductDetailView.as_view(), name='detail_product'),
 
     path('add-to-cart/<int:product_id>/', add_to_cart, name='addtocard'),

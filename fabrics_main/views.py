@@ -284,3 +284,12 @@ def order_detail(request, pk):
         'order': order
     }
     return render(request, 'card/orderdetaile.html', context=context)
+
+
+class ChegirmaListView(ListView):
+    """ Chegirmalar uchun """
+    template_name = 'product/chegirma.html'
+    model = Product
+
+    def get_queryset(self):
+        return Product.objects.filter(auction=True).exclude(top=True)

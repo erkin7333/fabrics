@@ -3,9 +3,11 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 from .models import (About, Delivery, Contact, Comment, PublicOffer,
                      Order, Branches, BranchDetail, Blog, BlogDetail)
+from parler.admin import TranslatableAdmin
+from parler.forms import TranslatableModelForm
 
 
-class AboutModelForm(forms.ModelForm):
+class AboutModelForm(TranslatableModelForm):
     description = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
