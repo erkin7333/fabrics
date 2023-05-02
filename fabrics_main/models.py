@@ -164,34 +164,6 @@ class Setting(models.Model):
         verbose_name = "Setting"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # def make_tree(categories, parent_id, child=None):
 #     for category in categories:
 #         if category.parent_id == parent_id:

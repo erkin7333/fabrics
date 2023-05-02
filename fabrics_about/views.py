@@ -55,7 +55,7 @@ def how_to_order_page(request):
     context = {
         'how_to_order': how_to_order
     }
-    return render(request, 'about/how-to-checkout.html', context=context)
+    return render(request, 'about/how-to-order.html', context=context)
 
 
 def filialypage(request):
